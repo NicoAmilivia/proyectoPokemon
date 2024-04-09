@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
  */
 public class SplashController implements Initializable {
 
-    public static final String PATH_SPLASH_BG_MUSIC = Utils.PATH_BASE_SOURCES + "/audio/splash.mp3";
+    public static final String PATH_SPLASH_BG_MUSIC = Utils.PATH_BASE_SOURCES + "/audio/sonidoCarga.mp3";
     private static final String PATH_IMAGE_ENTRENADOR = Utils.PATH_BASE_SOURCES + "/images/entren-espaldas.png";
 
 

@@ -68,7 +68,7 @@ public class SplashApplication extends Application {
 
                             MediaPlayer mpMusic = controllerSplash.getMpMusic();
                             mpMusic.setOnEndOfMedia(null);
-                            mpMusic.stop();
+                           // mpMusic.stop();  ESTA COMENTADO PARA QUE LA PANTALLA DE LOGIN CONTINUE CON LA MUSICA.
 
                             Label label = controllerSplash.getLabelPorcentaje();
                             Stage stageAnterior = (Stage) label.getScene().getWindow();
