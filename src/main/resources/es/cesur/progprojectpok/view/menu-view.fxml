@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="396.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="407.0" fitWidth="653.0" layoutX="-7.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondo-menu.jpg" />
+         </image></ImageView>
+      <Button layoutX="255.0" layoutY="22.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Combate" />
+      <Button layoutX="255.0" layoutY="76.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Entrenamiento" />
+      <Button layoutX="255.0" layoutY="132.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Equipo" />
+      <Button layoutX="255.0" layoutY="184.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Captura" />
+      <Button layoutX="255.0" layoutY="298.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Centro Pokémon" />
+      <Button layoutX="255.0" layoutY="240.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Crianza" />
+   </children>
+</AnchorPane>
