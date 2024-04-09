@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="406.0" fitWidth="661.0" layoutX="-6.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondo-batalla.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="416.0" layoutY="290.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Ataque 1" />
+      <Button layoutX="416.0" layoutY="341.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Ataque 2" />
+      <Button layoutX="538.0" layoutY="290.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Ataque 3" />
+      <Button layoutX="538.0" layoutY="341.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Ataque 4" />
+      <Pane layoutX="22.0" layoutY="6.0" prefHeight="38.0" prefWidth="268.0" style="-fx-background-color: black;">
+         <children>
+            <Text fill="#f5f5f5" layoutX="62.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log del combate" wrappingWidth="191.8291015625" />
+         </children>
+      </Pane>
+      <Button layoutX="538.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="89.0" text="Escapar" />
+      <Pane layoutX="29.0" layoutY="271.0" prefHeight="101.0" prefWidth="122.0" style="-fx-background-color: black;">
+         <children>
+            <Text fill="WHITE" layoutX="19.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEMON 1" />
+         </children>
+      </Pane>
+      <Pane layoutX="435.0" layoutY="118.0" prefHeight="101.0" prefWidth="111.0" style="-fx-background-color: black;">
+         <children>
+            <Text fill="#fcfcfc" layoutX="13.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEMON 2" />
+         </children>
+      </Pane>
+      <Pane layoutX="159.0" layoutY="253.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="6.0" layoutX="9.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="192.0" />
+            <Text fill="WHITE" layoutX="16.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Charizar" />
+            <Text fill="WHITE" layoutX="146.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 43" />
+         </children>
+      </Pane>
+      <Pane layoutX="193.0" layoutY="67.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ratata" />
+            <Text fill="WHITE" layoutX="149.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 50" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="6.0" layoutX="9.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="192.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
