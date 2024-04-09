@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.LoginController">
+   <children>
+      <ImageView fitHeight="408.0" fitWidth="728.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondo.jpg" />
+         </image>
+      </ImageView>
+      <TextField layoutX="188.0" layoutY="80.0" />
+      <Text fill="WHITE" layoutX="72.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+      <Text fill="WHITE" layoutX="74.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+      <TextField layoutX="186.0" layoutY="152.0" />
+      <Button layoutX="226.0" layoutY="235.0" mnemonicParsing="false" text="Log In" />
+      <CheckBox layoutX="36.0" layoutY="241.0" mnemonicParsing="false" text="Remember me" textFill="WHITE" />
+      <Button layoutX="325.0" layoutY="235.0" mnemonicParsing="false" text="Sign Up" />
+   </children>
+</AnchorPane>

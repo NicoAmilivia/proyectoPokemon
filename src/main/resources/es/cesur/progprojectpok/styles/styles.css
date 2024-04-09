@@ -1,0 +1,50 @@
+.progress-bar {
+    -fx-accent: green;
+}
+
+.progress-bar .bar {
+    -fx-background-color: green;
+}
+
+.progress-bar .track {
+    -fx-background-color: grey;
+}
+
+.label {
+
+
+}
+
+
+.grid-pane {
+    -fx-padding: 10; /* Espacio alrededor del GridPane */
+    -fx-hgap: 10; /* Espacio horizontal entre celdas */
+    -fx-vgap: 10; /* Espacio vertical entre celdas */
+    -fx-border-color: blue; /* Color del borde */
+    -fx-border-width: 2; /* Ancho del borde */
+    -fx-border-insets: 5; /* Espacio entre el borde y las celdas */
+    -fx-border-style: solid; /* Estilo del borde */
+    -fx-background-color: rgba(0,0,0,0.1); /* Color de fondo con transparencia */
+}
+
+.grid-cell {
+    -fx-min-width: 150px; /* Ancho mínimo de celda */
+    -fx-min-height: 150px; /* Alto mínimo de celda */
+    -fx-pref-width: 150px; /* Ancho preferido de celda */
+    -fx-pref-height: 150px; /* Alto preferido de celda */
+    -fx-max-width: 150px; /* Ancho máximo de celda */
+    -fx-max-height: 150px; /* Alto máximo de celda */
+    -fx-background-color: lightgrey; /* Color de fondo de la celda */
+    -fx-border-color: black; /* Color del borde de la celda */
+    -fx-border-width: 1; /* Ancho del borde de la celda */
+    -fx-alignment: center; /* Alineación del contenido de la celda */
+}
+
+.scroll-pane .viewport {
+       -fx-background-color: transparent;
+}
+
+#anchorPaneInventario .viewport {
+       -fx-background-color: transparent;
+}
+

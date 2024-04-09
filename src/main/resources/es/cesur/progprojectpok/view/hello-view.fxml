@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+
+<AnchorPane prefHeight="519.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.HelloController">
+   <children>
+   
+             <Label fx:id="welcomeText" layoutX="26.0" layoutY="21.0" text="label" />
+       <Button fx:id="btnHello" layoutX="328.0" layoutY="461.0" onAction="#onHelloButtonClick" text="Hello!" />
+      <ComboBox fx:id="comboBoxColores" layoutX="26.0" layoutY="58.0" prefWidth="150.0" />
+      <ImageView fx:id="imgViewEjemplo" fitHeight="150.0" fitWidth="200.0" layoutX="26.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ImageView>
+      <ProgressBar fx:id="progressBar" layoutX="34.0" layoutY="304.0" prefWidth="200.0" progress="0.0" />
+      <ListView fx:id="listView" layoutX="484.0" layoutY="21.0" prefHeight="200.0" prefWidth="200.0" />
+      <TableView fx:id="tableView" layoutX="484.0" layoutY="240.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="imageColumn" prefWidth="75.0" text="image" />
+          <TableColumn fx:id="nameColumn" prefWidth="75.0" text="name" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
