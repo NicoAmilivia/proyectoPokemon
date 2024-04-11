@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Menu principal">
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/BatallaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_13_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_13_13__Changes_.xml" afterDir="false" />
+    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Menu de Equipo.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/CapturaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/bulbasaur.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondoCaptura.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/capturar-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/HelloApplication.java" afterDir="false" />
     </list>
@@ -38,9 +40,6 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2eoUk8pKkNpz97mLMPf1oL3fs3x" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -65,6 +64,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\images" />
+      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\view" />
     </key>
   </component>
   <component name="RunManager" selected="Application.HelloApplication">
@@ -111,8 +111,6 @@
       <updated>1712570567542</updated>
       <workItem from="1712657495884" duration="1920000" />
       <workItem from="1712660360273" duration="247000" />
-      <workItem from="1712664012067" duration="181000" />
-      <workItem from="1712664254207" duration="158000" />
     </task>
     <task id="LOCAL-00001" summary="Base del proyecto + menu de login.">
       <created>1712647307928</created>
