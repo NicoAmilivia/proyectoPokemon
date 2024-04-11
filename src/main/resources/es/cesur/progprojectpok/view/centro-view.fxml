@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="523.0" fitWidth="932.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/centro-pokemon.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="226.0" fitWidth="91.0" layoutX="456.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/enfermeraJoy.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="756.0" layoutY="42.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="112.0" text="Salir" />
+      <Button layoutX="756.0" layoutY="425.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="112.0" text="Recuperar" />
+      <Pane layoutX="14.0" layoutY="31.0" prefHeight="65.0" prefWidth="356.0" style="-fx-background-color: black;" />
+      <Pane layoutX="14.0" layoutY="119.0" prefHeight="65.0" prefWidth="356.0" style="-fx-background-color: black;" />
+      <Pane layoutX="14.0" layoutY="202.0" prefHeight="65.0" prefWidth="356.0" style="-fx-background-color: black;" />
+      <Pane layoutX="14.0" layoutY="279.0" prefHeight="65.0" prefWidth="356.0" style="-fx-background-color: black;" />
+      <Pane layoutX="20.0" layoutY="360.0" prefHeight="65.0" prefWidth="356.0" style="-fx-background-color: black;" />
+      <Pane layoutX="20.0" layoutY="443.0" prefHeight="65.0" prefWidth="356.0" style="-fx-background-color: black;" />
+   </children>
+</AnchorPane>
