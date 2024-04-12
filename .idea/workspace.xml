@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Menu principal">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondo-menu.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2024_9_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2024_9_37__Changes_.xml" afterDir="false" />
+    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Cambios en la pantalla de login.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/crianzaFondo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/crianza-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2024_12_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2024_12_39__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondo-menu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/menu-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/menu-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,35 +38,31 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2eoUk8pKkNpz97mLMPf1oL3fs3x" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Program Files (x86)/Oracle/JavaFX Scene Builder 2.0/JavaFX Scene Builder 2.0.exe",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "shared-indexes",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicoa/Desktop/PROG-PROJECT-POK&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;shared-indexes&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ferna\OneDrive\Escritorio\proyectoPokemon\src\main\resources\es\cesur\progprojectpok\images" />
-      <recent name="C:\Users\ferna\OneDrive\Escritorio\proyectoPokemon\src\main\resources\es\cesur\progprojectpok\view" />
       <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\images" />
+      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\view" />
     </key>
   </component>
   <component name="RunManager" selected="Application.HelloApplication">
@@ -115,9 +109,6 @@
       <updated>1712570567542</updated>
       <workItem from="1712657495884" duration="1920000" />
       <workItem from="1712660360273" duration="247000" />
-      <workItem from="1712664012067" duration="181000" />
-      <workItem from="1712664254207" duration="158000" />
-      <workItem from="1712832116634" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="Base del proyecto + menu de login.">
       <created>1712647307928</created>
