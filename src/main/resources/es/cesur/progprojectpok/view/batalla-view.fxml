@@ -36,16 +36,16 @@
       </Pane>
       <Pane layoutX="159.0" layoutY="253.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="6.0" layoutX="9.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="192.0" />
             <Text fill="WHITE" layoutX="16.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Charizar" />
             <Text fill="WHITE" layoutX="146.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 43" />
+            <ProgressBar layoutX="12.0" layoutY="41.0" minHeight="8.0" prefHeight="8.0" prefWidth="186.0" progress="0.0" />
          </children>
       </Pane>
       <Pane layoutX="193.0" layoutY="67.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
          <children>
             <Text fill="WHITE" layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ratata" />
             <Text fill="WHITE" layoutX="149.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 50" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="6.0" layoutX="9.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="192.0" />
+            <ProgressBar layoutX="12.0" layoutY="41.0" minHeight="8.0" prefHeight="8.0" prefWidth="186.0" progress="0.0" />
          </children>
       </Pane>
    </children>

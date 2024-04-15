@@ -14,6 +14,19 @@ public class MenuController {
     private Button irCombateButton;
 
     @FXML
+    private Button irEquipoButton;
+
+    @FXML
+    private Button irCapturaButton;
+
+    @FXML
+    private Button irCrianzaButton;
+
+    @FXML
+    private Button irCentroButton;
+
+
+    @FXML
     private void irCombateOnAction() {
 
         Stage stage = (Stage) irCombateButton.getScene().getWindow();
@@ -30,4 +43,85 @@ public class MenuController {
             e.printStackTrace(); // Maneja el error apropiadamente
         }
     }
+
+    @FXML
+    private void irEquipoOnAction() {
+
+        Stage stage = (Stage) irEquipoButton.getScene().getWindow();
+        stage.close();
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/equipo-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            Stage menuStage = new Stage();
+            menuStage.setTitle("Menu");
+            menuStage.setScene(scene);
+            menuStage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Maneja el error apropiadamente
+        }
+    }
+
+
+    @FXML
+    private void irCapturaOnAction() {
+
+        Stage stage = (Stage) irCapturaButton.getScene().getWindow();
+        stage.close();
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/capturar-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            Stage menuStage = new Stage();
+            menuStage.setTitle("Menu");
+            menuStage.setScene(scene);
+            menuStage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Maneja el error apropiadamente
+        }
+    }
+
+
+    @FXML
+    private void irCrianzaOnAction() {
+
+        Stage stage = (Stage) irCrianzaButton.getScene().getWindow();
+        stage.close();
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/crianza-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            Stage menuStage = new Stage();
+            menuStage.setTitle("Menu");
+            menuStage.setScene(scene);
+            menuStage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Maneja el error apropiadamente
+        }
+    }
+
+
+
+    @FXML
+    private void irCentroOnAction() {
+
+        Stage stage = (Stage) irCentroButton.getScene().getWindow();
+        stage.close();
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/centro-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            Stage menuStage = new Stage();
+            menuStage.setTitle("Menu");
+            menuStage.setScene(scene);
+            menuStage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Maneja el error apropiadamente
+        }
+    }
+
 }
+
+
+
+
