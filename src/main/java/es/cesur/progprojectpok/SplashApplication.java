@@ -57,7 +57,7 @@ public class SplashApplication extends Application {
                             FXMLLoader fxmlLoader = new FXMLLoader(SplashApplication.class.getResource("view/login-view.fxml"));
                             Scene scene = null;
                             try {
-                                scene = new Scene(fxmlLoader.load(), 728, 408);
+                                scene = new Scene(fxmlLoader.load(), 716, 717);
                                 scene.getStylesheets().add(getClass().getResource("styles/styles.css").toExternalForm());
                                 stage.setTitle("Menu");
                                 stage.setScene(scene);

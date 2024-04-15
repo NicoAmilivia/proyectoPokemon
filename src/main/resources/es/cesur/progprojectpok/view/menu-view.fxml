@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.MenuController">
+<AnchorPane maxHeight="645.0" maxWidth="639.0" minHeight="645.0" minWidth="639.0" prefHeight="645.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.MenuController">
    <children>
       <ImageView fitHeight="648.0" fitWidth="758.0" layoutX="-7.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
