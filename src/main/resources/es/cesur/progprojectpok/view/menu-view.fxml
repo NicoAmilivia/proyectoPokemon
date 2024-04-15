@@ -5,13 +5,13 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.MenuController">
    <children>
       <ImageView fitHeight="648.0" fitWidth="758.0" layoutX="-7.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/fondo-menu.jpeg" />
          </image></ImageView>
-      <Button layoutX="255.0" layoutY="159.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Combate" />
+      <Button fx:id="irCombateButton" layoutX="255.0" layoutY="159.0" mnemonicParsing="false" onAction="#irCombateOnAction" prefHeight="31.0" prefWidth="152.0" text="Combate" />
       <Button layoutX="255.0" layoutY="223.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Entrenamiento" />
       <Button layoutX="255.0" layoutY="292.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Equipo" />
       <Button layoutX="255.0" layoutY="361.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Captura" />

@@ -13,6 +13,12 @@ import java.io.IOException;
 public class BatallaController {
     @FXML
     private Button ataque1;
+    @FXML
+    private Button ataque2;
+    @FXML
+    private Button ataque3;
+    @FXML
+    private Button ataque4;
 
     @FXML
     private TextArea log;
