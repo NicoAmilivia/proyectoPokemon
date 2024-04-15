@@ -7,12 +7,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.EquipoController">
    <children>
       <ImageView fitHeight="407.0" fitWidth="647.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/fondoPantallaEquipo.jpeg"/>
+            <Image url="@../images/fondoPantallaEquipo.jpeg" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="94.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipo" />
@@ -24,6 +23,6 @@
       <Pane layoutX="22.0" layoutY="258.0" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: grey;" />
       <Pane layoutX="22.0" layoutY="350.0" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: grey;" />
       <Pane layoutX="22.0" layoutY="304.0" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: grey;" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: grey;" text="Atrás" />
+      <Button fx:id="irMenuFromEquipoButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#irMenuFromEquipoOnAction" style="-fx-background-color: grey;" text="Atrás" />
    </children>
 </AnchorPane>

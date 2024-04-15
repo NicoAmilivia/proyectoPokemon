@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.CrianzaController">
    <children>
       <ImageView fitHeight="606.0" fitWidth="611.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -18,6 +18,6 @@
       <Button layoutX="259.0" layoutY="516.0" mnemonicParsing="false" text="Abrir Huevo" />
       <Button layoutX="42.0" layoutY="177.0" mnemonicParsing="false" text="Seleccionar" />
       <Button layoutX="451.0" layoutY="177.0" mnemonicParsing="false" text="Seleccionar" />
-      <Button layoutX="528.0" layoutY="23.0" mnemonicParsing="false" text="Salir" />
+      <Button fx:id="irMenuFromCrianzaButton" layoutX="528.0" layoutY="23.0" mnemonicParsing="false" onAction="#irMenuFromCrianzaOnAction" text="Salir" />
    </children>
 </AnchorPane>

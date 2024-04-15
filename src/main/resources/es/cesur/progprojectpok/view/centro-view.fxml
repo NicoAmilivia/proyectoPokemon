@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="es.cesur.progprojectpok.controllers.CentroController">
    <children>
       <ImageView fitHeight="523.0" fitWidth="932.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -18,7 +18,7 @@
             <Image url="@../images/enfermeraJoy.png" />
          </image>
       </ImageView>
-      <Button layoutX="756.0" layoutY="42.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="112.0" text="Salir" />
+      <Button fx:id="irMenuFromCentroButton" layoutX="756.0" layoutY="42.0" mnemonicParsing="false" onAction="#irMenuFromCentroOnAction" prefHeight="37.0" prefWidth="112.0" text="Salir" />
       <Button layoutX="756.0" layoutY="425.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="112.0" text="Recuperar" />
       <Pane layoutX="14.0" layoutY="31.0" prefHeight="65.0" prefWidth="356.0" style="-fx-background-color: black;" />
       <Pane layoutX="14.0" layoutY="119.0" prefHeight="65.0" prefWidth="356.0" style="-fx-background-color: black;" />
