@@ -25,6 +25,9 @@ public class MenuController {
     @FXML
     private Button irCentroButton;
 
+    @FXML
+    private Button irEntrenamientoButton;
+
 
     @FXML
     private void irCombateOnAction() {
@@ -110,6 +113,24 @@ public class MenuController {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/centro-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            Stage menuStage = new Stage();
+            menuStage.setTitle("Menu");
+            menuStage.setScene(scene);
+            menuStage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Maneja el error apropiadamente
+        }
+    }
+
+    @FXML
+    private void irEntrenamientoOnAction() {
+
+        Stage stage = (Stage) irEntrenamientoButton.getScene().getWindow();
+        stage.close();
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/entrenamiento-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 800, 600);
             Stage menuStage = new Stage();
             menuStage.setTitle("Menu");
