@@ -14,7 +14,7 @@
             <Image url="@../images/loginFondo.jpeg" />
          </image>
       </ImageView>
-      <Button layoutX="226.0" layoutY="469.0" mnemonicParsing="false" text="Log In" />
+      <Button fx:id="loginButton" layoutX="226.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleLoginButtonAction" text="Log In" />
       <Button layoutX="423.0" layoutY="469.0" mnemonicParsing="false" text="Sign Up" />
       <Pane layoutX="96.0" layoutY="187.0" opacity="0.58" prefHeight="230.0" prefWidth="498.0" style="-fx-background-color: pink; -fx-border-color: red; -fx-border-width: 5px;" />
       <TextField layoutX="249.0" layoutY="235.0" />
