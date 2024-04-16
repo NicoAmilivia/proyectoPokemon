@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Lógica botones de vuelta al menu">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondo-captura.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondo-equipo.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_13_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_13_17__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_07__Changes_.xml" afterDir="false" />
+    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Pantalla de entrenamiento + boton de menu">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/daos/ProductDAOJDBC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/database/ConfigDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/database/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_12_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_12_15__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondoCaptura.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondoPantallaEquipo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/capturar-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/capturar-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/equipo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/equipo-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/SplashApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/SplashApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,9 +68,13 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ferna\OneDrive\Escritorio\proyectoPokemon\src\main\resources\es\cesur\progprojectpok\images" />
+      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\java\es\cesur\progprojectpok\daos" />
+      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\java\es\cesur\progprojectpok\database" />
       <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\images" />
       <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\view" />
+    </key>
+    <key name="IntroduceConstantDialog.RECENTS_KEY">
+      <recent name="es.cesur.progprojectpok.database.ConfigDB" />
     </key>
   </component>
   <component name="RunManager" selected="Application.SplashApplication">
@@ -131,15 +132,7 @@
       <option name="project" value="LOCAL" />
       <updated>1712647307928</updated>
     </task>
-    <task id="LOCAL-00002" summary="Lógica botones de vuelta al menu">
-      <option name="closed" value="true" />
-      <created>1713179801822</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1713179801822</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +163,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Base del proyecto + menu de login." />
-    <MESSAGE value="Lógica botones de vuelta al menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lógica botones de vuelta al menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base del proyecto + menu de login." />
   </component>
 </project>
