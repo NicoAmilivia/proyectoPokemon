@@ -7,41 +7,41 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.BatallaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.BatallaController">
    <children>
-      <ImageView fitHeight="406.0" fitWidth="661.0" layoutX="-6.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="-6.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/fondo-batalla.png" />
+            <Image url="@../images/fondo-batalla.jpeg" />
          </image>
       </ImageView>
-      <Button fx:id="ataque1" layoutX="416.0" layoutY="290.0" mnemonicParsing="false" onAction="#ataqueOnAction1" prefHeight="31.0" prefWidth="111.0" text="Ataque 1" />
-      <Button fx:id="ataque2" layoutX="416.0" layoutY="341.0" mnemonicParsing="false" onAction="#ataqueOnAction2" prefHeight="31.0" prefWidth="111.0" text="Ataque 2" />
-      <Button fx:id="ataque3" layoutX="538.0" layoutY="290.0" mnemonicParsing="false" onAction="#ataqueOnAction3" prefHeight="31.0" prefWidth="111.0" text="Ataque 3" />
-      <Button fx:id="ataque4" layoutX="538.0" layoutY="341.0" mnemonicParsing="false" onAction="#ataqueOnAction4" prefHeight="31.0" prefWidth="111.0" text="Ataque 4" />
-      <Pane layoutX="10.0" layoutY="3.0" prefHeight="53.0" prefWidth="283.0" style="-fx-background-color: black;">
+      <Button fx:id="ataque1" layoutX="15.0" layoutY="474.0" mnemonicParsing="false" onAction="#ataqueOnAction1" prefHeight="39.0" prefWidth="101.0" text="Ataque 1" />
+      <Button fx:id="ataque2" layoutX="135.0" layoutY="474.0" mnemonicParsing="false" onAction="#ataqueOnAction2" prefHeight="39.0" prefWidth="101.0" text="Ataque 2" />
+      <Button fx:id="ataque3" layoutX="349.0" layoutY="474.0" mnemonicParsing="false" onAction="#ataqueOnAction3" prefHeight="39.0" prefWidth="101.0" text="Ataque 3" />
+      <Button fx:id="ataque4" layoutX="478.0" layoutY="474.0" mnemonicParsing="false" onAction="#ataqueOnAction4" prefHeight="39.0" prefWidth="101.0" text="Ataque 4" />
+      <Pane layoutX="21.0" layoutY="21.0" prefHeight="85.0" prefWidth="296.0" style="-fx-background-color: black;">
          <children>
-            <TextArea fx:id="log" prefHeight="53.0" prefWidth="283.0" />
+            <TextArea fx:id="log" layoutX="7.0" layoutY="16.0" prefHeight="53.0" prefWidth="283.0" />
          </children>
       </Pane>
-      <Button fx:id="huirBatallaButton" layoutX="538.0" layoutY="14.0" mnemonicParsing="false" onAction="#huirBatallaOnAction" prefHeight="31.0" prefWidth="89.0" text="Huir" />
-      <Pane layoutX="29.0" layoutY="271.0" prefHeight="101.0" prefWidth="122.0" style="-fx-background-color: black;">
+      <Button fx:id="huirBatallaButton" layoutX="479.0" layoutY="21.0" mnemonicParsing="false" onAction="#huirBatallaOnAction" prefHeight="31.0" prefWidth="89.0" text="Huir" />
+      <Pane layoutX="108.0" layoutY="362.0" prefHeight="101.0" prefWidth="122.0" style="-fx-background-color: black;">
          <children>
-            <Text fill="WHITE" layoutX="19.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEMON 1" />
+            <Text fill="WHITE" layoutX="14.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEMON 1" />
          </children>
       </Pane>
-      <Pane layoutX="435.0" layoutY="118.0" prefHeight="101.0" prefWidth="111.0" style="-fx-background-color: black;">
+      <Pane layoutX="381.0" layoutY="312.0" prefHeight="101.0" prefWidth="111.0" style="-fx-background-color: black;">
          <children>
-            <Text fill="#fcfcfc" layoutX="13.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEMON 2" />
+            <Text fill="#fcfcfc" layoutX="5.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEMON 2" />
          </children>
       </Pane>
-      <Pane layoutX="159.0" layoutY="253.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
+      <Pane layoutX="45.0" layoutY="540.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
          <children>
             <Text fill="WHITE" layoutX="16.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Charizar" />
             <Text fill="WHITE" layoutX="146.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 43" />
             <ProgressBar layoutX="12.0" layoutY="41.0" minHeight="8.0" prefHeight="8.0" prefWidth="186.0" progress="0.0" />
          </children>
       </Pane>
-      <Pane layoutX="193.0" layoutY="67.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
+      <Pane layoutX="332.0" layoutY="540.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
          <children>
             <Text fill="WHITE" layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ratata" />
             <Text fill="WHITE" layoutX="149.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 50" />

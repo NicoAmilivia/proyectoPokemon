@@ -5,15 +5,15 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.EntrenamientoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.EntrenamientoController">
    <children>
-      <ImageView fitHeight="717.0" fitWidth="613.0" layoutX="-5.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="-5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/gimnasioPokemon.jpeg" />
          </image>
       </ImageView>
-      <Pane layoutX="51.0" layoutY="405.0" opacity="0.44" prefHeight="141.0" prefWidth="143.0" style="-fx-background-color: lightgrey;" />
-      <Pane layoutX="390.0" layoutY="312.0" opacity="0.44" prefHeight="141.0" prefWidth="143.0" style="-fx-background-color: lightgrey;" />
+      <Pane layoutX="60.0" layoutY="406.0" opacity="0.44" prefHeight="141.0" prefWidth="143.0" style="-fx-background-color: lightgrey;" />
+      <Pane layoutX="380.0" layoutY="311.0" opacity="0.44" prefHeight="141.0" prefWidth="143.0" style="-fx-background-color: lightgrey;" />
       <Button fx:id="irMenuFromEntrenamientoButton" layoutX="494.0" layoutY="25.0" mnemonicParsing="false" onAction="#irMenuFromEntrenamientoOnAction" text="Huir" />
       <Button layoutX="342.0" layoutY="488.0" mnemonicParsing="false" text="Ataque 1" />
       <Button layoutX="446.0" layoutY="540.0" mnemonicParsing="false" text="Ataque 4" />
