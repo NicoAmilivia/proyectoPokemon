@@ -34,7 +34,7 @@ public class SplashApplication extends Application {
 
 
         //Preparar una consulta
-        String sql = "SELECT * FROM ENTRENAODR";
+        String sql = "SELECT * FROM ENTRENADOR";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             //Ejecutar consulta
