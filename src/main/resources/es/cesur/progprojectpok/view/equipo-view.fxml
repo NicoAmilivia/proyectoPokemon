@@ -7,11 +7,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.EquipoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.EquipoController">
    <children>
-      <ImageView fitHeight="407.0" fitWidth="647.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="-5.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/fondoPantallaEquipo.jpeg" />
+            <Image url="@../images/fondo-equipo.jpeg" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="94.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipo" />

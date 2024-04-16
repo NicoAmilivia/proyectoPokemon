@@ -6,17 +6,17 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.CapturaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.CapturaController">
    <children>
-      <ImageView fitHeight="469.0" fitWidth="716.0" layoutX="-2.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="-5.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/fondoCaptura.jpg" />
+            <Image url="@../images/fondo-captura.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="211.0" layoutY="363.0" mnemonicParsing="false" text="Capturar" />
-      <Button layoutX="334.0" layoutY="363.0" mnemonicParsing="false" text="Nuevo" />
+      <Button layoutX="149.0" layoutY="215.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" text="Capturar" />
+      <Button layoutX="355.0" layoutY="215.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" text="Nuevo" />
       <Button fx:id="irMenuFromCapturarButton" layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#irMenuFromCapturarOnAction" text="Huir" />
-      <ImageView fitHeight="294.0" fitWidth="513.0" layoutX="164.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="303.0" fitWidth="232.0" layoutX="197.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/bulbasaur.png" />
          </image>
