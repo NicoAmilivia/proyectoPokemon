@@ -86,7 +86,6 @@ public class LoginController {
             statement.executeUpdate();
             invalidCredential.appendText("Usuario registrado \n");
         } catch (SQLException e) {
-            e.printStackTrace();
             invalidCredential.appendText("Error al registrar usuario en la base de datos \n");
         }
     }
