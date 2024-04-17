@@ -15,7 +15,7 @@
          </image>
       </ImageView>
       <Button fx:id="loginButton" layoutX="226.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleLoginButtonAction" text="Log In" />
-      <Button layoutX="423.0" layoutY="469.0" mnemonicParsing="false" text="Sign Up" />
+      <Button fx:id="signupButton" layoutX="423.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleSignUpButtonAction" text="Sign Up" />
       <Pane layoutX="96.0" layoutY="187.0" opacity="0.65" prefHeight="262.0" prefWidth="498.0" style="-fx-background-color: pink; -fx-border-color: red; -fx-border-width: 5px;">
          <children>
             <TextField fx:id="invalidCredential" layoutX="152.0" layoutY="202.0" style="-fx-background-color: pink;" />

@@ -15,9 +15,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Random;
 
 
 public class LoginController {
+
     @FXML
     private TextField usernameField;
 
@@ -28,19 +30,22 @@ public class LoginController {
     private Button loginButton;
 
     @FXML
+    private Button signupButton;
+
+    @FXML
     private TextField invalidCredential;
 
     @FXML
     private void handleLoginButtonAction() {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+        String usernameLog = usernameField.getText();
+        String passwordLog = passwordField.getText();
 
         // Realizar la conexión con la base de datos
         try (Connection connection = DBConnection.getConnection()) {
             String sql = "SELECT * FROM entrenador WHERE NOM_ENTRENADOR = ? AND PASS = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, username);
-            preparedStatement.setString(2, password);
+            preparedStatement.setString(1, usernameLog);
+            preparedStatement.setString(2, passwordLog);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
@@ -63,4 +68,32 @@ public class LoginController {
             e.printStackTrace();
         }
     }
+
+
+    @FXML
+    private void handleSignUpButtonAction() {
+        String usernameSign = usernameField.getText();
+        String passwordSign = passwordField.getText();
+        Random rd =  new Random();
+        int pokedollarsRandom = rd.nextInt(201)+800;
+
+        try(Connection connection = DBConnection.getConnection()) {
+            String sql = "INSERT INTO entrenador (nom_entrenador, pass, pokedollars) VALUES (?, ?, ?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, usernameSign);
+            statement.setString(2, passwordSign);
+            statement.setInt(3, pokedollarsRandom);
+            statement.executeUpdate();
+            invalidCredential.appendText("Usuario registrado \n");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            invalidCredential.appendText("Error al registrar usuario en la base de datos \n");
+        }
+    }
 }
+
+
+
+
+
+

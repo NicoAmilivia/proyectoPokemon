@@ -1,0 +1,356 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_23_28__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_23_28__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_23_28__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_23_28__Changes_.xml	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
++++ /dev/null	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_09_04_2024_23_28_[Changes]" date="1712698106345" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_23_28_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 09/04/2024 23:28 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_13_13__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_13_13__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_13_13__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_13_13__Changes_.xml	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
++++ /dev/null	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_09_04_2024_13_13_[Changes]" date="1712661225985" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_13_13_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 09/04/2024 13:13 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_12_10__Changes_1.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_12_10__Changes_1.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_12_10__Changes_1.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_12_10__Changes_1.xml	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
++++ /dev/null	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_09_04_2024_12_10_[Changes]1" date="1712657431209" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_12_10_[Changes]1/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 09/04/2024 12:10 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_13_13_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_13_13_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_13_13_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_13_13_[Changes]/shelved.patch	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
++++ /dev/null	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
+@@ -1,80 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e07ae385-9630-470c-a22c-fecfb725187e\" name=\"Changes\" comment=\"Base del proyecto + menu de login.\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/SplashApplication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/SplashApplication.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/SplashController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/SplashController.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CodeStyleSettingsInfer\">\r\n    <option name=\"done\" value=\"true\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectCodeStyleSettingsMigration\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2eoUk8pKkNpz97mLMPf1oL3fs3x\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showMembers\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/nicoa/Desktop/PROG-PROJECT-POK\",\r\n    \"settings.editor.selected.configurable\": \"shared-indexes\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\nicoa\\Desktop\\PROG-PROJECT-POK\\src\\main\\resources\\es\\cesur\\progprojectpok\\images\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.SplashApplication\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"es.cesur.progprojectpok.HelloApplication\" />\r\n      <module name=\"PROG-PROJECT-POK\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"es.cesur.progprojectpok.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SplashApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"es.cesur.progprojectpok.SplashApplication\" />\r\n      <module name=\"PROG-PROJECT-POK\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"es.cesur.progprojectpok.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.SplashApplication\" />\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e07ae385-9630-470c-a22c-fecfb725187e\" name=\"Changes\" comment=\"\" />\r\n      <created>1712570567542</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1712570567542</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Base del proyecto + menu de login.\">\r\n      <created>1712647307928</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712647307928</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Base del proyecto + menu de login.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Base del proyecto + menu de login.\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 7c936684315fbe27c102ce15f2e66a06c56a4bcb)
+-+++ b/.idea/workspace.xml	(date 1712657884925)
+-@@ -4,10 +4,8 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Base del proyecto + menu de login.">
+-+    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Musica de carga.">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/SplashApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/SplashApplication.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/SplashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/SplashController.java" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -46,15 +44,15 @@
+-     <option name="showLibraryContents" value="true" />
+-     <option name="showMembers" value="true" />
+-   </component>
+--  <component name="PropertiesComponent"><![CDATA[{
+--  "keyToString": {
+--    "RunOnceActivity.OpenProjectViewOnStart": "true",
+--    "RunOnceActivity.ShowReadmeOnStart": "true",
+--    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+--    "last_opened_file_path": "C:/Users/nicoa/Desktop/PROG-PROJECT-POK",
+--    "settings.editor.selected.configurable": "shared-indexes"
+-+  <component name="PropertiesComponent">{
+-+  &quot;keyToString&quot;: {
+-+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicoa/Desktop/PROG-PROJECT-POK&quot;,
+-+    &quot;settings.editor.selected.configurable&quot;: &quot;shared-indexes&quot;
+-   }
+--}]]></component>
+-+}</component>
+-   <component name="RecentsManager">
+-     <key name="MoveFile.RECENT_KEYS">
+-       <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\images" />
+-@@ -110,7 +108,21 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1712647307928</updated>
+-     </task>
+--    <option name="localTasksCounter" value="2" />
+-+    <task id="LOCAL-00002" summary="Cambio de musica en la pantalla de carga y login">
+-+      <created>1712657264856</created>
+-+      <option name="number" value="00002" />
+-+      <option name="presentableId" value="LOCAL-00002" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1712657264856</updated>
+-+    </task>
+-+    <task id="LOCAL-00003" summary="Musica de carga.">
+-+      <created>1712657771126</created>
+-+      <option name="number" value="00003" />
+-+      <option name="presentableId" value="LOCAL-00003" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1712657771126</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="4" />
+-     <servers />
+-   </component>
+-   <component name="Vcs.Log.Tabs.Properties">
+-@@ -138,6 +150,8 @@
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-     <MESSAGE value="Base del proyecto + menu de login." />
+--    <option name="LAST_COMMIT_MESSAGE" value="Base del proyecto + menu de login." />
+-+    <MESSAGE value="Cambio de musica en la pantalla de carga y login" />
+-+    <MESSAGE value="Musica de carga." />
+-+    <option name="LAST_COMMIT_MESSAGE" value="Musica de carga." />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_23_28_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_23_28_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_23_28_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_23_28_[Changes]/shelved.patch	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
++++ /dev/null	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
+@@ -1,107 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e07ae385-9630-470c-a22c-fecfb725187e\" name=\"Changes\" comment=\"Base del proyecto + menu de login.\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/MenuController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/HelloApplication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/HelloApplication.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CodeStyleSettingsInfer\">\r\n    <option name=\"done\" value=\"true\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectCodeStyleSettingsMigration\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2eoUk8pKkNpz97mLMPf1oL3fs3x\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showMembers\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicoa/Desktop/PROG-PROJECT-POK&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;shared-indexes&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\nicoa\\Desktop\\PROG-PROJECT-POK\\src\\main\\resources\\es\\cesur\\progprojectpok\\images\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.HelloApplication\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"es.cesur.progprojectpok.HelloApplication\" />\r\n      <module name=\"PROG-PROJECT-POK\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"es.cesur.progprojectpok.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SplashApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"es.cesur.progprojectpok.SplashApplication\" />\r\n      <module name=\"PROG-PROJECT-POK\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"es.cesur.progprojectpok.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n        <item itemvalue=\"Application.SplashApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e07ae385-9630-470c-a22c-fecfb725187e\" name=\"Changes\" comment=\"\" />\r\n      <created>1712570567542</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1712570567542</updated>\r\n      <workItem from=\"1712657495884\" duration=\"1920000\" />\r\n      <workItem from=\"1712660360273\" duration=\"247000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Base del proyecto + menu de login.\">\r\n      <created>1712647307928</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712647307928</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Base del proyecto + menu de login.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Base del proyecto + menu de login.\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 0478ad7460500e5fe374f6a0f13fca1319acd5de)
+-+++ b/.idea/workspace.xml	(date 1712662193088)
+-@@ -4,11 +4,8 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Base del proyecto + menu de login.">
+--      <change afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/MenuController.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-+    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Menu de Equipo.">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/HelloApplication.java" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -30,13 +27,17 @@
+-   </component>
+-   <component name="MarkdownSettingsMigration">
+-     <option name="stateVersion" value="1" />
+-+  </component>
+-+  <component name="MavenImportPreferences">
+-+    <option name="generalSettings">
+-+      <MavenGeneralSettings>
+-+        <option name="useMavenConfig" value="true" />
+-+      </MavenGeneralSettings>
+-+    </option>
+-   </component>
+-   <component name="ProjectCodeStyleSettingsMigration">
+-     <option name="version" value="2" />
+-   </component>
+--  <component name="ProjectColorInfo">{
+--  &quot;associatedIndex&quot;: 0
+--}</component>
+-   <component name="ProjectId" id="2eoUk8pKkNpz97mLMPf1oL3fs3x" />
+-   <component name="ProjectViewState">
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-@@ -48,20 +49,14 @@
+-     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+--    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+--    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+-     &quot;last_opened_file_path&quot;: &quot;C:/Users/nicoa/Desktop/PROG-PROJECT-POK&quot;,
+--    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+--    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+--    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+--    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+--    &quot;settings.editor.selected.configurable&quot;: &quot;shared-indexes&quot;,
+--    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+-+    &quot;settings.editor.selected.configurable&quot;: &quot;shared-indexes&quot;
+-   }
+- }</component>
+-   <component name="RecentsManager">
+-     <key name="MoveFile.RECENT_KEYS">
+-       <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\images" />
+-+      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\view" />
+-     </key>
+-   </component>
+-   <component name="RunManager" selected="Application.HelloApplication">
+-@@ -106,8 +101,6 @@
+-       <option name="number" value="Default" />
+-       <option name="presentableId" value="Default" />
+-       <updated>1712570567542</updated>
+--      <workItem from="1712657495884" duration="1920000" />
+--      <workItem from="1712660360273" duration="247000" />
+-     </task>
+-     <task id="LOCAL-00001" summary="Base del proyecto + menu de login.">
+-       <created>1712647307928</created>
+-@@ -116,12 +109,16 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1712647307928</updated>
+-     </task>
+--    <option name="localTasksCounter" value="2" />
+-+    <task id="LOCAL-00002" summary="Menu de Equipo.">
+-+      <created>1712661765825</created>
+-+      <option name="number" value="00002" />
+-+      <option name="presentableId" value="LOCAL-00002" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1712661765825</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="3" />
+-     <servers />
+-   </component>
+--  <component name="TypeScriptGeneratedFilesManager">
+--    <option name="version" value="3" />
+--  </component>
+-   <component name="Vcs.Log.Tabs.Properties">
+-     <option name="TAB_STATES">
+-       <map>
+-@@ -147,6 +144,7 @@
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-     <MESSAGE value="Base del proyecto + menu de login." />
+--    <option name="LAST_COMMIT_MESSAGE" value="Base del proyecto + menu de login." />
+-+    <MESSAGE value="Menu de Equipo." />
+-+    <option name="LAST_COMMIT_MESSAGE" value="Menu de Equipo." />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_12_10_[Changes]1/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_12_10_[Changes]1/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_12_10_[Changes]1/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_12_10_[Changes]1/shelved.patch	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
++++ /dev/null	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
+@@ -1,15 +0,0 @@
+-Index: .idea/misc.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_18\" default=\"true\" project-jdk-name=\"18\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/misc.xml b/.idea/misc.xml
+---- a/.idea/misc.xml	
+-+++ b/.idea/misc.xml	
+-@@ -1,4 +1,3 @@
+--<?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+-   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-   <component name="MavenProjectsManager">
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e07ae385-9630-470c-a22c-fecfb725187e\" name=\"Changes\" comment=\"Lógica botones de vuelta al menu\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondo-captura.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondo-equipo.jpeg\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_13_17__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_13_17__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_07__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_07__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/MenuController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/MenuController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondoCaptura.jpg\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondoPantallaEquipo.jpeg\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/capturar-view.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/capturar-view.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/equipo-view.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/equipo-view.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CodeStyleSettingsInfer\">\r\n    <option name=\"done\" value=\"true\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectCodeStyleSettingsMigration\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2eoUk8pKkNpz97mLMPf1oL3fs3x\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showMembers\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicoa/Desktop/PROG-PROJECT-POK&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\ferna\\OneDrive\\Escritorio\\proyectoPokemon\\src\\main\\resources\\es\\cesur\\progprojectpok\\images\" />\r\n      <recent name=\"C:\\Users\\nicoa\\Desktop\\PROG-PROJECT-POK\\src\\main\\resources\\es\\cesur\\progprojectpok\\images\" />\r\n      <recent name=\"C:\\Users\\nicoa\\Desktop\\PROG-PROJECT-POK\\src\\main\\resources\\es\\cesur\\progprojectpok\\view\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.SplashApplication\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"es.cesur.progprojectpok.HelloApplication\" />\r\n      <module name=\"PROG-PROJECT-POK\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"es.cesur.progprojectpok.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SplashApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"es.cesur.progprojectpok.SplashApplication\" />\r\n      <module name=\"PROG-PROJECT-POK\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"es.cesur.progprojectpok.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.SplashApplication\" />\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e07ae385-9630-470c-a22c-fecfb725187e\" name=\"Changes\" comment=\"\" />\r\n      <created>1712570567542</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1712570567542</updated>\r\n      <workItem from=\"1712657495884\" duration=\"1920000\" />\r\n      <workItem from=\"1712660360273\" duration=\"247000\" />\r\n      <workItem from=\"1713168898748\" duration=\"540000\" />\r\n      <workItem from=\"1713169481474\" duration=\"1044000\" />\r\n      <workItem from=\"1713174701839\" duration=\"1290000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Base del proyecto + menu de login.\">\r\n      <created>1712647307928</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712647307928</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Lógica botones de vuelta al menu\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713179801822</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713179801822</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Base del proyecto + menu de login.\" />\r\n    <MESSAGE value=\"Lógica botones de vuelta al menu\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Lógica botones de vuelta al menu\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 108ca7f6b42ba920a7c50cbed9723c16f2b0a228)
++++ b/.idea/workspace.xml	(date 1713269912696)
+@@ -4,18 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Lógica botones de vuelta al menu">
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondo-captura.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondo-equipo.jpeg" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_13_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_13_17__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_07__Changes_.xml" afterDir="false" />
++    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Ajuste resolución pantallas II">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_12_10_[Changes]1/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_04_2024_12_10__Changes_1.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/MenuController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondoCaptura.jpg" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/fondoPantallaEquipo.jpeg" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/capturar-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/capturar-view.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/equipo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/equipo-view.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -76,7 +68,20 @@
+       <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\view" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.SplashApplication">
++  <component name="RunManager" selected="Application.ConexionPokemonDB">
++    <configuration name="ConexionPokemonDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="es.cesur.progprojectpok.database.ConexionPokemonDB" />
++      <module name="PROG-PROJECT-POK" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="es.cesur.progprojectpok.database.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
+     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="es.cesur.progprojectpok.HelloApplication" />
+       <module name="PROG-PROJECT-POK" />
+@@ -105,6 +110,7 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.ConexionPokemonDB" />
+         <item itemvalue="Application.SplashApplication" />
+         <item itemvalue="Application.HelloApplication" />
+       </list>
+@@ -123,6 +129,7 @@
+       <workItem from="1713168898748" duration="540000" />
+       <workItem from="1713169481474" duration="1044000" />
+       <workItem from="1713174701839" duration="1290000" />
++      <workItem from="1713264430201" duration="1957000" />
+     </task>
+     <task id="LOCAL-00001" summary="Base del proyecto + menu de login.">
+       <created>1712647307928</created>
+@@ -139,7 +146,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1713179801822</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Ajuste resolución pantallas II">
++      <option name="closed" value="true" />
++      <created>1713264315355</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1713264315355</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -171,6 +186,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Base del proyecto + menu de login." />
+     <MESSAGE value="Lógica botones de vuelta al menu" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Lógica botones de vuelta al menu" />
++    <MESSAGE value="Ajuste resolución pantallas II" />
++    <option name="LAST_COMMIT_MESSAGE" value="Ajuste resolución pantallas II" />
+   </component>
+ </project>
+\ No newline at end of file
