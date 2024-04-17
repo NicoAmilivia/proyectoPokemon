@@ -28,38 +28,6 @@ public class SplashApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-
-        //Conexion con MySQL
-        Connection connection = DBConnection.getConnection();
-
-
-        //Preparar una consulta
-        String sql = "SELECT * FROM ENTRENADOR";
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            //Ejecutar consulta
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()){ //Mientras que haya siguiente fila, recorre las filas
-                int idEntrenador = resultSet.getInt("ID_ENTRENADOR");
-
-                System.out.println(idEntrenador);
-            }
-
-        } catch (SQLException e) {
-            System.err.println("SplashApliccation - start - Error al preparar la sentencia sql");
-        }
-
-        //Ejecutar la consulta
-
-        //Cerrar conexiones
-
-
-
-
-
-
-
-
         FXMLLoader fxmlLoader = new FXMLLoader(SplashApplication.class.getResource("view/splash-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 760, 750);
         scene.getStylesheets().add(getClass().getResource("styles/styles.css").toExternalForm());

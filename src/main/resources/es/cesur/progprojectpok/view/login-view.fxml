@@ -16,9 +16,11 @@
       </ImageView>
       <Button fx:id="loginButton" layoutX="226.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleLoginButtonAction" text="Log In" />
       <Button layoutX="423.0" layoutY="469.0" mnemonicParsing="false" text="Sign Up" />
-      <Pane layoutX="96.0" layoutY="187.0" opacity="0.58" prefHeight="230.0" prefWidth="498.0" style="-fx-background-color: pink; -fx-border-color: red; -fx-border-width: 5px;" />
-      <TextField layoutX="249.0" layoutY="235.0" />
-      <TextField layoutX="249.0" layoutY="320.0" />
+      <Pane layoutX="96.0" layoutY="187.0" opacity="0.65" prefHeight="262.0" prefWidth="498.0" style="-fx-background-color: pink; -fx-border-color: red; -fx-border-width: 5px;">
+         <children>
+            <TextField fx:id="invalidCredential" layoutX="152.0" layoutY="202.0" style="-fx-background-color: pink;" />
+         </children></Pane>
+      <TextField fx:id="usernameField" layoutX="249.0" layoutY="243.0" />
       <Text layoutX="119.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -34,5 +36,6 @@
          </image>
       </ImageView>
       <CheckBox layoutX="21.0" layoutY="475.0" mnemonicParsing="false" style="-fx-background-color: pink; -fx-border-color: red; -fx-border-radius: 5px;" text="Remember me" />
+      <PasswordField fx:id="passwordField" layoutX="249.0" layoutY="330.0" style="-fx-background-color: white;" />
    </children>
 </AnchorPane>
