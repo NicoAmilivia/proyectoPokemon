@@ -35,7 +35,6 @@
             <Image url="@../images/pokemon_logo.png" />
          </image>
       </ImageView>
-      <CheckBox layoutX="21.0" layoutY="475.0" mnemonicParsing="false" style="-fx-background-color: pink; -fx-border-color: red; -fx-border-radius: 5px;" text="Remember me" />
       <PasswordField fx:id="passwordField" layoutX="249.0" layoutY="330.0" style="-fx-background-color: white;" />
    </children>
 </AnchorPane>
