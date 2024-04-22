@@ -18,13 +18,16 @@ public class CapturaController {
     @FXML
     private Button irMenuFromCapturarButton;
 
+    @FXML
+    private Button capturarNuevo;
+
     public void initialize() {
-        // Generar un número aleatorio para el ID del Pokémon (en este caso, entre 1 y 151)
+        //Generar un número aleatorio para el ID del Pokémon
         Random random = new Random();
-        int pokemonId = random.nextInt(151) + 1; // Sumamos 1 para evitar el ID 0
+        int pokemonId = random.nextInt(151) + 1;
 
         // Cargar la imagen del Pokémon según el ID generado
-        String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId); // Asumiendo que las imágenes tienen nombres como "001.png", "002.png", etc.
+        String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
         Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
         pokemonImageView.setImage(image);
     }
@@ -45,5 +48,15 @@ public class CapturaController {
         } catch (IOException e) {
             e.printStackTrace(); // Maneja el error apropiadamente
         }
+    }
+
+    @FXML
+    private void capturarNuevoOnAction(){
+        Random random = new Random();
+        int pokemonId = random.nextInt(151) + 1;
+
+        String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
+        Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
+        pokemonImageView.setImage(image);
     }
 }
