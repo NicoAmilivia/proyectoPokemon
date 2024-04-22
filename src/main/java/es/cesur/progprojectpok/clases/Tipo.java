@@ -15,5 +15,6 @@ public enum Tipo {
     ROCA,
     TIERRA,
     VENENO,
-    VOLADOR
+    VOLADOR,
+    NULL
 }

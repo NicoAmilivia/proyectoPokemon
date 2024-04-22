@@ -11,20 +11,18 @@ public class CambioEstado {
 
     private int defensaEspecial;
 
-    private Sexo sexo;
 
     private int probNoAtacar;
 
 
     //CONSTRUCTOR CON PARAMETROS
-    public CambioEstado(int vitalidad, int velocidad, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, Sexo sexo, int probNoAtacar) {
+    public CambioEstado(int vitalidad, int velocidad, int ataque, int defensa, int ataqueEspecial, int defensaEspecial,int probNoAtacar) {
         this.vitalidad = vitalidad;
         this.velocidad = velocidad;
         this.ataque = ataque;
         this.defensa = defensa;
         this.ataqueEspecial = ataqueEspecial;
         this.defensaEspecial = defensaEspecial;
-        this.sexo = sexo;
         this.probNoAtacar = probNoAtacar;
     }
 
@@ -79,13 +77,6 @@ public class CambioEstado {
         this.defensaEspecial = defensaEspecial;
     }
 
-    public Sexo getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(Sexo sexo) {
-        this.sexo = sexo;
-    }
 
     public int getProbNoAtacar() {
         return probNoAtacar;
