@@ -1,5 +1,7 @@
 package es.cesur.progprojectpok.clases;
 
+import javax.swing.text.Element;
+
 public class Pokemon {
 
 
@@ -19,24 +21,26 @@ public class Pokemon {
     private Tipo tipo2;
     private String rutaImagen;
     private String rutaSonidoCombate;
-    public static final int TOTAL_MOVIMIENTOS=4;
-    public static final int FACTOR_SUBIDA_NVL=1;
+    public static final int TOTAL_MOVIMIENTOS = 4;
+    public static final int FACTOR_SUBIDA_NVL = 1;
     private int ataqueEspecial;
     private int defensaEspecial;
-    private static final int VALOR_INICIAL_FERT =5;
-    public static final int CRIANZA_ATTR_MIN_ALEATORIO =1;
-    private static final int CRIANZA_ATTR_MAX_ALEATORIO =10;
+    private static final int VALOR_INICIAL_FERT = 5;
+    public static final int CRIANZA_ATTR_MIN_ALEATORIO = 1;
+    private static final int CRIANZA_ATTR_MAX_ALEATORIO = 10;
+
+    private String imagePath;
 
 
     //CONSTRUCTOR CON PARAMETROS
     public Pokemon(String nombre, int numPokedex) {
         this.nombre = nombre;
-        this.vitalidad = (int) (Math.random()*10 + 1);
-        this.ataque = (int) (Math.random()*10 + 1);
-        this.defensa = (int) (Math.random()*10 + 1);
-        this.ataqueEspecial = (int) (Math.random()*10 + 1);
-        this.defensaEspecial = (int) (Math.random()*10 + 1);
-        this.velocidad = (int) (Math.random()*10 + 1);
+        this.vitalidad = (int) (Math.random() * 10 + 1);
+        this.ataque = (int) (Math.random() * 10 + 1);
+        this.defensa = (int) (Math.random() * 10 + 1);
+        this.ataqueEspecial = (int) (Math.random() * 10 + 1);
+        this.defensaEspecial = (int) (Math.random() * 10 + 1);
+        this.velocidad = (int) (Math.random() * 10 + 1);
         this.nivel = 1;
         this.experiencia = 0;
         this.sexo = randomSex();
@@ -44,9 +48,9 @@ public class Pokemon {
         this.fertilidad = VALOR_INICIAL_FERT;
     }
 
-    public char randomSex(){
+    public char randomSex() {
         char sexo;
-        int sexoBinario = (int) (Math.random()*2);
+        int sexoBinario = (int) (Math.random() * 2);
         if (sexoBinario == 0) sexo = 'H';
         else sexo = 'M';
         return sexo;
@@ -60,21 +64,21 @@ public class Pokemon {
 
     //METODOS
 
-    public void subirNivel(int experienciaGanada){
+    public void subirNivel(int experienciaGanada) {
 
     }
 
 
-    public void atacarPokemon(Movimiento movimientoAtaque){
+    public void atacarPokemon(Movimiento movimientoAtaque) {
 
     }
 
-    public void comprobarVentajaRival(Pokemon pokemonRival){
+    public void comprobarVentajaRival(Pokemon pokemonRival) {
 
 
     }
 
-    public void aprenderMovimiento(Movimiento movActualASustituir,Movimiento movNuevoPosible){
+    public void aprenderMovimiento(Movimiento movActualASustituir, Movimiento movNuevoPosible) {
 
     }
 
@@ -217,7 +221,7 @@ public class Pokemon {
         this.tipo2 = tipo2;
     }
 
-    public static Tipo TipoStringToEnum(String tipoString){
+    public static Tipo TipoStringToEnum(String tipoString) {
         return switch (tipoString.toUpperCase()) {
             case "AGUA" -> Tipo.AGUA;
             case "BICHO" -> Tipo.BICHO;
@@ -261,6 +265,8 @@ public class Pokemon {
                 ", defensaEspecial=" + defensaEspecial +
                 '}';
     }
+
+    // Constructor que acepta la ruta de la imagen del Pokémon
+
+
 }
-
-

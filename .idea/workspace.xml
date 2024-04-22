@@ -4,171 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Creacion tabla combate y turno">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/004.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/005.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/006.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/007.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/008.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/009.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/010.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/011.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/012.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/013.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/014.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/015.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/016.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/017.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/018.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/019.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/020.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/021.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/022.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/023.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/024.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/025.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/026.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/027.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/028.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/029.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/030.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/031.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/032.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/033.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/034.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/035.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/036.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/037.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/038.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/039.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/040.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/041.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/042.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/043.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/044.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/045.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/046.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/047.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/048.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/049.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/050.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/051.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/052.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/053.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/054.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/055.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/056.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/057.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/058.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/059.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/060.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/061.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/062.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/063.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/064.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/065.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/066.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/067.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/068.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/069.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/070.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/071.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/072.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/073.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/074.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/075.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/076.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/077.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/078.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/079.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/080.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/081.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/082.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/083.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/084.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/085.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/086.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/087.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/088.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/089.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/090.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/091.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/092.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/093.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/094.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/095.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/096.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/097.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/098.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/099.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/101.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/102.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/103.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/104.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/105.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/106.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/107.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/108.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/109.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/110.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/111.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/112.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/113.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/114.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/115.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/116.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/117.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/118.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/119.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/120.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/121.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/122.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/123.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/124.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/125.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/126.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/127.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/128.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/129.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/130.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/131.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/132.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/133.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/134.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/135.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/136.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/137.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/138.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/139.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/140.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/141.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/142.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/143.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/145.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/146.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/147.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/148.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/149.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/images/pokemon/151.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2024_12_39_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2024_12_39__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2024_12_52_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2024_12_52__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_04_2024_10_21_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_04_2024_10_21__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_13_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_13_22__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_04_2024_10_20__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_04_2024_10_20__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_04_2024_9_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_04_2024_9_37__Changes_.xml" afterDir="false" />
+    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Creacion de clases">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_10_44_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_10_44__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_10_54_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_10_54__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_12_14_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_12_14__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_12_21_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_12_21__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_13_17_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_13_17__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_07_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_07__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_9_36_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_9_36__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/CapturaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/CapturaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/tablasbd/Tablas_BD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/tablasbd/Tablas_BD.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/capturar-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/capturar-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/CentroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/CentroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/centro-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/centro-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +36,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -206,31 +61,28 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/nicoa/Desktop/PROG-PROJECT-POK/src/main/resources/es/cesur/progprojectpok/images/pokemon",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicoa/Desktop/PROG-PROJECT-POK&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\images\pokemon" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\images" />
-      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\java\es\cesur\progprojectpok\tablasbd" />
+      <recent name="C:\Users\ferna\OneDrive\Escritorio\proyectoPokemon\src\main\resources\es\cesur\progprojectpok\images" />
       <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\java\es\cesur\progprojectpok\daos" />
       <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\java\es\cesur\progprojectpok\database" />
+      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\images" />
       <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\view" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
@@ -284,6 +136,11 @@
       <workItem from="1713168898748" duration="540000" />
       <workItem from="1713169481474" duration="1044000" />
       <workItem from="1713174701839" duration="1290000" />
+      <workItem from="1713434426982" duration="724000" />
+      <workItem from="1713436580219" duration="3256000" />
+      <workItem from="1713779834408" duration="6976000" />
+      <workItem from="1713803002481" duration="4500000" />
+      <workItem from="1713807596140" duration="1439000" />
     </task>
     <task id="LOCAL-00001" summary="Base del proyecto + menu de login.">
       <created>1712647307928</created>
@@ -306,21 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713270144884</updated>
     </task>
-    <task id="LOCAL-00004" summary="Arreglo de error en el sistema de registro.">
-      <created>1713352892368</created>
+    <task id="LOCAL-00004" summary="Creacion de clases">
+      <option name="closed" value="true" />
+      <created>1713776398551</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1713352892368</updated>
+      <updated>1713776398551</updated>
     </task>
-    <task id="LOCAL-00005" summary="Creacion tabla combate y turno">
-      <created>1713517204072</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1713517204072</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,8 +204,7 @@
     <MESSAGE value="Base del proyecto + menu de login." />
     <MESSAGE value="Conexion a la base de datos" />
     <MESSAGE value="Solucion de error en la conexion a base de datos." />
-    <MESSAGE value="Arreglo de error en el sistema de registro." />
-    <MESSAGE value="Creacion tabla combate y turno" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion tabla combate y turno" />
+    <MESSAGE value="Creacion de clases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creacion de clases" />
   </component>
 </project>
