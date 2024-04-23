@@ -69,63 +69,59 @@ public class CentroController {
     private boolean mensajeMostrado = false;
 
 
-    public void initialize(){
-        try{
-
+    public void initialize() {
+        try {
             Connection connection = DBConnection.getConnection();
-            String sql = "SELECT pd.IMAGEN " +
+            String sql = "SELECT pd.IMAGEN, p.VIDA_ACTUAL, p.VITALIDAD " +
                     "FROM POKEMON p " +
                     "INNER JOIN POKEDEX pd ON p.NUM_POKEDEX = pd.NUM_POKEDEX " +
-                    "WHERE p.CAJA = 0;";
+                    "WHERE p.CAJA = 0";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
-
-
-
-
 
             int i = 1;
 
             while (resultSet.next()) {
-
-                //Obtener la imagen del resultado de la consulta
                 String imageUrl = resultSet.getString("IMAGEN");
-
-
-                //Crear un objeto Image a partir de la URL obtenida
-
-
+                int vidaActual = resultSet.getInt("VIDA_ACTUAL");
+                int vidaMaxima = resultSet.getInt("VITALIDAD");
                 Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
 
-                if (i == 1) {
-                    pokemon1.setImage(image);
-                } else if (i == 2) {
-                    pokemon2.setImage(image);
-                } else if (i == 3) {
-                    pokemon3.setImage(image);
-                } else if (i == 4) {
-                    pokemon4.setImage(image);
-                } else if (i == 5) {
-                    pokemon5.setImage(image);
-                } else if (i == 6) {
-                    pokemon6.setImage(image);
+                // Establecer la imagen del Pokémon
+                switch (i) {
+                    case 1:
+                        pokemon1.setImage(image);
+                        progressPK1.setProgress((double) vidaActual / vidaMaxima);
+                        break;
+                    case 2:
+                        pokemon2.setImage(image);
+                        progressPK2.setProgress((double) vidaActual / vidaMaxima);
+                        break;
+                    case 3:
+                        pokemon3.setImage(image);
+                        progressPK3.setProgress((double) vidaActual / vidaMaxima);
+                        break;
+                    case 4:
+                        pokemon4.setImage(image);
+                        progressPK4.setProgress((double) vidaActual / vidaMaxima);
+                        break;
+                    case 5:
+                        pokemon5.setImage(image);
+                        progressPK5.setProgress((double) vidaActual / vidaMaxima);
+                        break;
+                    case 6:
+                        pokemon6.setImage(image);
+                        progressPK6.setProgress((double) vidaActual / vidaMaxima);
+                        break;
                 }
 
-
-
                 i++;
-
-
             }
 
-
-        } catch(SQLException e){
-
+            connection.close(); // Cerrar la conexión
+        } catch (SQLException e) {
             e.printStackTrace();
-
         }
-
-
     }
 
 
@@ -163,7 +159,7 @@ public class CentroController {
             // Obtener la conexión a la base de datos
             Connection connection = DBConnection.getConnection();
 
-            // Consulta SQL para obtener la vida máxima de cada Pokémon
+            // Consulta SQL para obtener la vida actual de cada Pokémon
             String sql = "SELECT ID_POKEMON, VIDA_ACTUAL FROM POKEMON WHERE CAJA = 0";
 
             // Preparar la declaración SQL
@@ -174,11 +170,11 @@ public class CentroController {
 
             // Actualizar la vida de cada Pokémon
             while (resultSet.next()) {
-                int numPokedex = resultSet.getInt("ID_POKEMON");
+                int id_pokemon = resultSet.getInt("ID_POKEMON");
                 int vidaActual = resultSet.getInt("VIDA_ACTUAL");
 
                 // Actualizar la vida del Pokémon en la base de datos
-                actualizarVidaActual(numPokedex);
+                actualizarVidaActual(id_pokemon);
             }
 
             // Cerrar la conexión y liberar recursos
@@ -251,7 +247,7 @@ public class CentroController {
 
     }
 
-    // Método para actualizar la vida máxima de un Pokémon en la base de datos
+    // Método para actualizar la vida actual de un Pokémon en la base de datos
     private void actualizarVidaActual(int id_Pokemon) {
         try {
             // Obtener la conexión a la base de datos
@@ -263,15 +259,15 @@ public class CentroController {
             statementSelect.setInt(1, id_Pokemon);
             ResultSet resultSet = statementSelect.executeQuery();
 
-            int vidaActual = 0;
+            int vidaMaxima = 0;
             if (resultSet.next()) {
-                vidaActual = resultSet.getInt("VITALIDAD");
+                vidaMaxima = resultSet.getInt("VITALIDAD");
             }
 
             // Consulta SQL para actualizar la vida actual del Pokémon
             String sqlUpdate = "UPDATE POKEMON SET VIDA_ACTUAL = ? WHERE ID_POKEMON = ?";
             PreparedStatement statementUpdate = connection.prepareStatement(sqlUpdate);
-            statementUpdate.setInt(1, vidaActual);
+            statementUpdate.setInt(1, vidaMaxima);
             statementUpdate.setInt(2, id_Pokemon);
 
             // Ejecutar la actualización
@@ -289,6 +285,10 @@ public class CentroController {
             e.printStackTrace();
         }
     }
+
+
+
+
 
 
 
