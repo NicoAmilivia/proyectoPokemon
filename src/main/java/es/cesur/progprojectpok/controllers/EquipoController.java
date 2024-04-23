@@ -55,14 +55,18 @@ public class EquipoController {
 
     @FXML
     private void transferirAEquipo() {
-        Pokemon seleccionado = cajaListView.getSelectionModel().getSelectedItem();
-        if (seleccionado != null) {
-            caja.remove(seleccionado);
-            equipo.add(seleccionado);
-            int idPokemon = seleccionado.getIdPokemon();
-            actualizarBD(0, idPokemon);
-            equipoListView.setItems(FXCollections.observableArrayList(equipo));
-            cajaListView.setItems(FXCollections.observableArrayList(caja));
+        if (equipo.size() < 6) {
+            Pokemon seleccionado = cajaListView.getSelectionModel().getSelectedItem();
+            if (seleccionado != null) {
+                caja.remove(seleccionado);
+                equipo.add(seleccionado);
+                int idPokemon = seleccionado.getIdPokemon();
+                actualizarBD(0, idPokemon);
+                equipoListView.setItems(FXCollections.observableArrayList(equipo));
+                cajaListView.setItems(FXCollections.observableArrayList(caja));
+            }
+        }else {
+
         }
     }
 
