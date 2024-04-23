@@ -48,6 +48,19 @@ public class Pokemon {
         this.fertilidad = VALOR_INICIAL_FERT;
     }
 
+    public Pokemon(String nombre, int numPokedex, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad, int nivel, int experiencia, int vitalidad){
+        this.nombre = nombre;
+        this.numPokedex = numPokedex;
+        this.ataque = ataque;
+        this.defensa = defensa;
+        this.ataqueEspecial = ataqueEspecial;
+        this.defensaEspecial = defensaEspecial;
+        this.velocidad = velocidad;
+        this.nivel = nivel;
+        this.experiencia = experiencia;
+        this.vitalidad = vitalidad;
+    }
+
     public char randomSex() {
         char sexo;
         int sexoBinario = (int) (Math.random() * 2);
@@ -251,16 +264,8 @@ public class Pokemon {
                 ", ataque=" + ataque +
                 ", defensa=" + defensa +
                 ", nivel=" + nivel +
-                ", fertilidad=" + fertilidad +
                 ", velocidad=" + velocidad +
                 ", experiencia=" + experiencia +
-                ", sexo=" + sexo +
-                ", numPokedex=" + numPokedex +
-                ", estado=" + estado +
-                ", tipo1=" + tipo1 +
-                ", tipo2=" + tipo2 +
-                ", rutaImagen='" + rutaImagen + '\'' +
-                ", rutaSonidoCombate='" + rutaSonidoCombate + '\'' +
                 ", ataqueEspecial=" + ataqueEspecial +
                 ", defensaEspecial=" + defensaEspecial +
                 '}';
