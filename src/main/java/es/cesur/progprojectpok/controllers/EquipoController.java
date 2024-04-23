@@ -46,7 +46,8 @@ public class EquipoController {
         if (seleccionado != null) {
             equipo.remove(seleccionado);
             caja.add(seleccionado);
-            actualizarBD(seleccionado);
+            int idPokemon = seleccionado.getIdPokemon();
+            actualizarBD(1, idPokemon);
             equipoListView.setItems(FXCollections.observableArrayList(equipo));
             cajaListView.setItems(FXCollections.observableArrayList(caja));
         }
@@ -58,7 +59,8 @@ public class EquipoController {
         if (seleccionado != null) {
             caja.remove(seleccionado);
             equipo.add(seleccionado);
-            actualizarBD(seleccionado);
+            int idPokemon = seleccionado.getIdPokemon();
+            actualizarBD(0, idPokemon);
             equipoListView.setItems(FXCollections.observableArrayList(equipo));
             cajaListView.setItems(FXCollections.observableArrayList(caja));
         }
@@ -88,7 +90,8 @@ public class EquipoController {
                 int nivel = resultSet.getInt("NIVEL");
                 int experiencia = resultSet.getInt("EXPERIENCIA");
                 int vitalidad = resultSet.getInt("VITALIDAD");
-                Pokemon pokemon = new Pokemon(nombre, numPokedex, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad, nivel, experiencia, vitalidad);
+                int idPokemon = resultSet.getInt("ID_POKEMON");
+                Pokemon pokemon = new Pokemon(nombre, numPokedex, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad, nivel, experiencia, vitalidad, idPokemon);
                 pokemones.add(pokemon);
             }
         } catch (SQLException e) {
@@ -103,8 +106,23 @@ public class EquipoController {
         caja = cargarPokemonesDesdeBD(1);
     }
 
-    private void actualizarBD(Pokemon pokemon) {
-        // Lógica para actualizar el estado del Pokémon en la base de datos
+    private void actualizarBD(int caja, int idPokemon) {
+        try (Connection connection = DBConnection.getConnection()) {
+            String sql = "UPDATE POKEMON SET CAJA = ? WHERE ID_POKEMON = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, caja);
+            statement.setInt(2, idPokemon);
+
+            int filasActualizadas = statement.executeUpdate();
+
+            if (filasActualizadas > 0) {
+                System.out.println("Pokémon actualizado en la base de datos correctamente.");
+            } else {
+                System.out.println("No se pudo actualizar el Pokémon en la base de datos.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar el Pokémon en la base de datos: " + e.getMessage());
+        }
     }
 
     @FXML
@@ -120,7 +138,7 @@ public class EquipoController {
             menuStage.setScene(scene);
             menuStage.show();
         } catch (IOException e) {
-            e.printStackTrace(); // Maneja el error apropiadamente
+            e.printStackTrace();
         }
     }
 }

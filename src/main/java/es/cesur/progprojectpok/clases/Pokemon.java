@@ -31,6 +31,8 @@ public class Pokemon {
 
     private String imagePath;
 
+    private int idPokemon;
+
 
     //CONSTRUCTOR CON PARAMETROS
     public Pokemon(String nombre, int numPokedex) {
@@ -48,7 +50,7 @@ public class Pokemon {
         this.fertilidad = VALOR_INICIAL_FERT;
     }
 
-    public Pokemon(String nombre, int numPokedex, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad, int nivel, int experiencia, int vitalidad){
+    public Pokemon(String nombre, int numPokedex, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad, int nivel, int experiencia, int vitalidad, int idPokemon){
         this.nombre = nombre;
         this.numPokedex = numPokedex;
         this.ataque = ataque;
@@ -59,6 +61,7 @@ public class Pokemon {
         this.nivel = nivel;
         this.experiencia = experiencia;
         this.vitalidad = vitalidad;
+        this.idPokemon = idPokemon;
     }
 
     public char randomSex() {
@@ -100,6 +103,10 @@ public class Pokemon {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public int getIdPokemon() {
+        return idPokemon;
     }
 
     public void setNombre(String nombre) {
