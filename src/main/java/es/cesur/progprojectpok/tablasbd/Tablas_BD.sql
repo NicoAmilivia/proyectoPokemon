@@ -275,6 +275,316 @@ ALTER TABLE MOCHILA ADD CONSTRAINT FK_ID_OBJETO FOREIGN KEY (ID_OBJETO) REFERENC
 ALTER TABLE POKEDEX ADD CONSTRAINT FK_NUM_POKEDEX_EVO FOREIGN KEY (NUM_POKEDEX_EVO) REFERENCES POKEDEX (NUM_POKEDEX);
 
 
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/001.png' WHERE num_pokedex = 1;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/002.png' WHERE num_pokedex = 2;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/003.png' WHERE num_pokedex = 3;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/004.png' WHERE num_pokedex = 4;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/005.png' WHERE num_pokedex = 5;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/006.png' WHERE num_pokedex = 6;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/007.png' WHERE num_pokedex = 7;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/008.png' WHERE num_pokedex = 8;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/009.png' WHERE num_pokedex = 9;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/010.png' WHERE num_pokedex = 10;
+
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/011.png' WHERE num_pokedex = 11;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/012.png' WHERE num_pokedex = 12;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/013.png' WHERE num_pokedex = 13;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/014.png' WHERE num_pokedex = 14;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/015.png' WHERE num_pokedex = 15;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/016.png' WHERE num_pokedex = 16;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/017.png' WHERE num_pokedex = 17;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/018.png' WHERE num_pokedex = 18;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/019.png' WHERE num_pokedex = 19;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/020.png' WHERE num_pokedex = 20;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/021.png' WHERE num_pokedex = 21;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/022.png' WHERE num_pokedex = 22;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/023.png' WHERE num_pokedex = 23;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/024.png' WHERE num_pokedex = 24;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/025.png' WHERE num_pokedex = 25;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/026.png' WHERE num_pokedex = 26;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/027.png' WHERE num_pokedex = 27;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/028.png' WHERE num_pokedex = 28;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/029.png' WHERE num_pokedex = 29;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/030.png' WHERE num_pokedex = 30;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/031.png' WHERE num_pokedex = 31;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/032.png' WHERE num_pokedex = 32;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/033.png' WHERE num_pokedex = 33;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/034.png' WHERE num_pokedex = 34;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/035.png' WHERE num_pokedex = 35;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/036.png' WHERE num_pokedex = 36;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/037.png' WHERE num_pokedex = 37;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/038.png' WHERE num_pokedex = 38;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/039.png' WHERE num_pokedex = 39;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/040.png' WHERE num_pokedex = 40;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/041.png' WHERE num_pokedex = 41;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/042.png' WHERE num_pokedex = 42;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/043.png' WHERE num_pokedex = 43;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/044.png' WHERE num_pokedex = 44;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/045.png' WHERE num_pokedex = 45;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/046.png' WHERE num_pokedex = 46;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/047.png' WHERE num_pokedex = 47;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/048.png' WHERE num_pokedex = 48;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/049.png' WHERE num_pokedex = 49;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/050.png' WHERE num_pokedex = 50;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/051.png' WHERE num_pokedex = 51;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/052.png' WHERE num_pokedex = 52;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/053.png' WHERE num_pokedex = 53;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/054.png' WHERE num_pokedex = 54;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/055.png' WHERE num_pokedex = 55;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/056.png' WHERE num_pokedex = 56;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/057.png' WHERE num_pokedex = 57;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/058.png' WHERE num_pokedex = 58;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/059.png' WHERE num_pokedex = 59;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/060.png' WHERE num_pokedex = 60;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/061.png' WHERE num_pokedex = 61;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/062.png' WHERE num_pokedex = 62;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/063.png' WHERE num_pokedex = 63;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/064.png' WHERE num_pokedex = 64;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/065.png' WHERE num_pokedex = 65;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/066.png' WHERE num_pokedex = 66;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/067.png' WHERE num_pokedex = 67;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/068.png' WHERE num_pokedex = 68;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/069.png' WHERE num_pokedex = 69;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/070.png' WHERE num_pokedex = 70;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/071.png' WHERE num_pokedex = 71;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/072.png' WHERE num_pokedex = 72;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/073.png' WHERE num_pokedex = 73;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/074.png' WHERE num_pokedex = 74;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/075.png' WHERE num_pokedex = 75;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/076.png' WHERE num_pokedex = 76;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/077.png' WHERE num_pokedex = 77;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/078.png' WHERE num_pokedex = 78;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/079.png' WHERE num_pokedex = 79;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/080.png' WHERE num_pokedex = 80;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/081.png' WHERE num_pokedex = 81;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/082.png' WHERE num_pokedex = 82;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/083.png' WHERE num_pokedex = 83;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/084.png' WHERE num_pokedex = 84;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/085.png' WHERE num_pokedex = 85;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/086.png' WHERE num_pokedex = 86;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/087.png' WHERE num_pokedex = 87;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/088.png' WHERE num_pokedex = 88;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/089.png' WHERE num_pokedex = 89;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/090.png' WHERE num_pokedex = 90;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/091.png' WHERE num_pokedex = 91;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/092.png' WHERE num_pokedex = 92;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/093.png' WHERE num_pokedex = 93;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/094.png' WHERE num_pokedex = 94;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/095.png' WHERE num_pokedex = 95;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/096.png' WHERE num_pokedex = 96;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/097.png' WHERE num_pokedex = 97;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/098.png' WHERE num_pokedex = 98;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/099.png' WHERE num_pokedex = 99;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/100.png' WHERE num_pokedex = 100;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/101.png' WHERE num_pokedex = 101;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/102.png' WHERE num_pokedex = 102;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/103.png' WHERE num_pokedex = 103;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/104.png' WHERE num_pokedex = 104;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/105.png' WHERE num_pokedex = 105;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/106.png' WHERE num_pokedex = 106;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/107.png' WHERE num_pokedex = 107;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/108.png' WHERE num_pokedex = 108;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/109.png' WHERE num_pokedex = 109;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/110.png' WHERE num_pokedex = 110;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/111.png' WHERE num_pokedex = 111;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/112.png' WHERE num_pokedex = 112;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/113.png' WHERE num_pokedex = 113;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/114.png' WHERE num_pokedex = 114;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/115.png' WHERE num_pokedex = 115;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/116.png' WHERE num_pokedex = 116;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/117.png' WHERE num_pokedex = 117;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/118.png' WHERE num_pokedex = 118;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/119.png' WHERE num_pokedex = 119;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/120.png' WHERE num_pokedex = 120;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/121.png' WHERE num_pokedex = 121;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/122.png' WHERE num_pokedex = 122;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/123.png' WHERE num_pokedex = 123;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/124.png' WHERE num_pokedex = 124;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/125.png' WHERE num_pokedex = 125;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/126.png' WHERE num_pokedex = 126;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/127.png' WHERE num_pokedex = 127;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/128.png' WHERE num_pokedex = 128;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/129.png' WHERE num_pokedex = 129;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/130.png' WHERE num_pokedex = 130;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/131.png' WHERE num_pokedex = 131;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/132.png' WHERE num_pokedex = 132;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/133.png' WHERE num_pokedex = 133;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/134.png' WHERE num_pokedex = 134;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/135.png' WHERE num_pokedex = 135;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/136.png' WHERE num_pokedex = 136;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/137.png' WHERE num_pokedex = 137;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/138.png' WHERE num_pokedex = 138;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/139.png' WHERE num_pokedex = 139;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/140.png' WHERE num_pokedex = 140;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/141.png' WHERE num_pokedex = 141;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/142.png' WHERE num_pokedex = 142;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/143.png' WHERE num_pokedex = 143;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/144.png' WHERE num_pokedex = 144;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/145.png' WHERE num_pokedex = 145;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/146.png' WHERE num_pokedex = 146;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/147.png' WHERE num_pokedex = 147;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/148.png' WHERE num_pokedex = 148;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/149.png' WHERE num_pokedex =149;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/150.png' WHERE num_pokedex =150;
+
+UPDATE pokedex SET imagen = '/es/cesur/progprojectpok/images/pokemon/151.png' WHERE num_pokedex =151;
+
+ALTER TABLE POKEMON ADD COLUMN VIDA_ACTUAL INT;
+
+ALTER TABLE entrenador
+MODIFY COLUMN ID_ENTRENADOR INT AUTO_INCREMENT;
+
+ALTER TABLE pokemon
+MODIFY COLUMN ID_POKEMON INT AUTO_INCREMENT;
 
 
 
