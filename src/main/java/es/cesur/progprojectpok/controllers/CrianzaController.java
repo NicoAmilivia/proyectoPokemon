@@ -1,37 +1,111 @@
 package es.cesur.progprojectpok.controllers;
 
+import es.cesur.progprojectpok.clases.Pokemon;
+import es.cesur.progprojectpok.database.DBConnection;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CrianzaController {
 
     @FXML
     private Button irMenuFromCrianzaButton;
 
+
     @FXML
-    private void irMenuFromCrianzaOnAction() {
+    private ListView<Pokemon> machoViewList;
 
-        Stage stage = (Stage) irMenuFromCrianzaButton.getScene().getWindow();
-        stage.close();
+    @FXML
+    private ListView<Pokemon> hembraViewList;
 
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/menu-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 590, 600);
-            Stage menuStage = new Stage();
-            menuStage.setTitle("Menu");
-            menuStage.setScene(scene);
-            menuStage.show();
-        } catch (IOException e) {
-            e.printStackTrace(); // Maneja el error apropiadamente
-        }
+    @FXML
+    private List<Pokemon> pokemonMacho;
+
+    @FXML
+    private List<Pokemon> pokemonHembra;
+
+
+    public void initialize() {
+        cargarMacho();
+        cargarHembra();
+
+        machoViewList.setItems(FXCollections.observableArrayList(pokemonMacho));
+        hembraViewList.setItems(FXCollections.observableArrayList(pokemonHembra));
     }
 
 
+    private List<Pokemon> cargarPokemonesDesdeBD(char sexo) {
+        List<Pokemon> pokemones = new ArrayList<>();
+
+        try (Connection connection = DBConnection.getConnection()) {
+            String sql = "SELECT * FROM POKEMON WHERE SEXO = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, String.valueOf(sexo));
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                String nombre = resultSet.getString("MOTE");
+                int numPokedex = resultSet.getInt("NUM_POKEDEX");
+                int ataque = resultSet.getInt("ATAQUE");
+                int defensa = resultSet.getInt("DEFENSA");
+                int ataqueEspecial = resultSet.getInt("AT_ESPECIAL");
+                int defensaEspecial = resultSet.getInt("DEF_ESPECIAL");
+                int velocidad = resultSet.getInt("VELOCIDAD");
+                int nivel = resultSet.getInt("NIVEL");
+                int experiencia = resultSet.getInt("EXPERIENCIA");
+                int vitalidad = resultSet.getInt("VITALIDAD");
+                int idPokemon = resultSet.getInt("ID_POKEMON");
+                Pokemon pokemon = new Pokemon(nombre, numPokedex, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad, nivel, experiencia, vitalidad, idPokemon);
+                pokemones.add(pokemon);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al cargar los Pokémon desde la base de datos: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        return pokemones;
+    }
+
+        private void cargarMacho () {
+            pokemonMacho = cargarPokemonesDesdeBD('M');
+        }
+
+    private void cargarHembra () {
+        pokemonHembra = cargarPokemonesDesdeBD('H');
+    }
 
 
-}
+        @FXML
+        private void irMenuFromCrianzaOnAction () {
+
+            Stage stage = (Stage) irMenuFromCrianzaButton.getScene().getWindow();
+            stage.close();
+
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/menu-view.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 590, 600);
+                Stage menuStage = new Stage();
+                menuStage.setTitle("Menu");
+                menuStage.setScene(scene);
+                menuStage.show();
+            } catch (IOException e) {
+                e.printStackTrace(); // Maneja el error apropiadamente
+            }
+        }
+
+
+    }
+
+
