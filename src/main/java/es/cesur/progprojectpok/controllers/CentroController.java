@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.Connection;
@@ -65,6 +66,27 @@ public class CentroController {
     @FXML
     private ProgressBar progressPK6;
 
+    @FXML
+    private Text mote1;
+
+    @FXML
+    private Text mote2;
+
+    @FXML
+    private Text mote3;
+
+    @FXML
+    private Text mote4;
+
+    @FXML
+    private Text mote5;
+
+    @FXML
+    private Text mote6;
+
+
+
+
 
     private boolean mensajeMostrado = false;
 
@@ -72,10 +94,11 @@ public class CentroController {
     public void initialize() {
         try {
             Connection connection = DBConnection.getConnection();
-            String sql = "SELECT pd.IMAGEN, p.VIDA_ACTUAL, p.VITALIDAD " +
+            String sql = "SELECT pd.IMAGEN, p.VIDA_ACTUAL, p.VITALIDAD, p.MOTE " +
                     "FROM POKEMON p " +
                     "INNER JOIN POKEDEX pd ON p.NUM_POKEDEX = pd.NUM_POKEDEX " +
-                    "WHERE p.CAJA = 0";
+                    "WHERE p.CAJA = 0 " +
+                    "ORDER BY p.NUM_POKEDEX";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
 
@@ -85,6 +108,7 @@ public class CentroController {
                 String imageUrl = resultSet.getString("IMAGEN");
                 int vidaActual = resultSet.getInt("VIDA_ACTUAL");
                 int vidaMaxima = resultSet.getInt("VITALIDAD");
+                String motePokemon = resultSet.getString("MOTE");
                 Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
 
                 // Establecer la imagen del Pokémon
@@ -92,26 +116,32 @@ public class CentroController {
                     case 1:
                         pokemon1.setImage(image);
                         progressPK1.setProgress((double) vidaActual / vidaMaxima);
+                        mote1.setText(motePokemon);
                         break;
                     case 2:
                         pokemon2.setImage(image);
                         progressPK2.setProgress((double) vidaActual / vidaMaxima);
+                        mote2.setText(motePokemon);
                         break;
                     case 3:
                         pokemon3.setImage(image);
                         progressPK3.setProgress((double) vidaActual / vidaMaxima);
+                        mote3.setText(motePokemon);
                         break;
                     case 4:
                         pokemon4.setImage(image);
                         progressPK4.setProgress((double) vidaActual / vidaMaxima);
+                        mote4.setText(motePokemon);
                         break;
                     case 5:
                         pokemon5.setImage(image);
                         progressPK5.setProgress((double) vidaActual / vidaMaxima);
+                        mote5.setText(motePokemon);
                         break;
                     case 6:
                         pokemon6.setImage(image);
                         progressPK6.setProgress((double) vidaActual / vidaMaxima);
+                        mote6.setText(motePokemon);
                         break;
                 }
 
