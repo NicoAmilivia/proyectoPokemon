@@ -8,60 +8,60 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.CentroController">
-   <children>
-      <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/fondo-centropokemon.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="268.0" fitWidth="99.0" layoutX="316.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/enfermeraJoy.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="irMenuFromCentroButton" layoutX="452.0" layoutY="32.0" mnemonicParsing="false" onAction="#irMenuFromCentroOnAction" prefHeight="37.0" prefWidth="112.0" text="Salir" />
-      <Button fx:id="recuperarButton" layoutX="452.0" layoutY="114.0" mnemonicParsing="false" onAction="#recuperarOnAction" prefHeight="37.0" prefWidth="112.0" text="Recuperar" />
-      <Pane layoutX="14.0" layoutY="29.0" opacity="0.9" prefHeight="67.0" prefWidth="338.0" style="-fx-background-color: white;">
-         <children>
-            <ImageView fx:id="pokemon1" fitHeight="60.0" fitWidth="112.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
-            <ProgressBar fx:id="progressPK1" layoutX="124.0" layoutY="48.0" minHeight="1.0" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
-            <Text fx:id="mote1" layoutX="141.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.0" />
-         </children>
-      </Pane>
-      <Pane layoutX="14.0" layoutY="114.0" opacity="0.9" prefHeight="67.0" prefWidth="338.0" style="-fx-background-color: white;">
-         <children>
-            <ImageView fx:id="pokemon2" fitHeight="60.0" fitWidth="112.0" layoutX="6.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
-            <ProgressBar fx:id="progressPK2" layoutX="124.0" layoutY="48.0" minHeight="1.0" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
-            <Text fx:id="mote2" layoutX="142.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.0" />
-         </children>
-      </Pane>
-      <Pane layoutX="14.0" layoutY="200.0" opacity="0.9" prefHeight="67.0" prefWidth="338.0" style="-fx-background-color: white;">
-         <children>
-            <ImageView fx:id="pokemon3" fitHeight="60.0" fitWidth="112.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
-            <ProgressBar fx:id="progressPK3" layoutX="120.0" layoutY="48.0" minHeight="1.0" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
-            <Text fx:id="mote3" layoutX="145.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.0" />
-         </children>
-      </Pane>
-      <Pane layoutX="14.0" layoutY="288.0" opacity="0.9" prefHeight="67.0" prefWidth="338.0" style="-fx-background-color: white;">
-         <children>
-            <ImageView fx:id="pokemon4" fitHeight="60.0" fitWidth="112.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
-            <ProgressBar fx:id="progressPK4" layoutX="120.0" layoutY="43.0" minHeight="1.0" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
-            <Text fx:id="mote4" layoutX="145.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.0" />
-         </children>
-      </Pane>
-      <Pane layoutX="14.0" layoutY="374.0" opacity="0.9" prefHeight="67.0" prefWidth="338.0" style="-fx-background-color: white;">
-         <children>
-            <ImageView fx:id="pokemon5" fitHeight="60.0" fitWidth="112.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
-            <ProgressBar fx:id="progressPK5" layoutX="124.0" layoutY="48.0" minHeight="1.0" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
-            <Text fx:id="mote5" layoutX="149.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.0" />
-         </children></Pane>
-      <Pane layoutX="14.0" layoutY="468.0" opacity="0.9" prefHeight="67.0" prefWidth="338.0" style="-fx-background-color: white;">
-         <children>
-            <ImageView fx:id="pokemon6" fitHeight="60.0" fitWidth="112.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
-            <ProgressBar fx:id="progressPK6" layoutX="124.0" layoutY="48.0" minHeight="1.0" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
-            <Text fx:id="mote6" layoutX="149.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.0" />
-         </children>
-      </Pane>
-      <TextField fx:id="logCentro" layoutX="385.0" layoutY="185.0" opacity="0.86" prefHeight="31.0" prefWidth="200.0" />
-   </children>
+    <children>
+        <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/fondo-centropokemon.jpg" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="268.0" fitWidth="99.0" layoutX="316.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/enfermeraJoy.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="irMenuFromCentroButton" layoutX="452.0" layoutY="32.0" mnemonicParsing="false" onAction="#irMenuFromCentroOnAction" prefHeight="37.0" prefWidth="112.0" text="Salir" />
+        <Button fx:id="recuperarButton" layoutX="452.0" layoutY="114.0" mnemonicParsing="false" onAction="#recuperarOnAction" prefHeight="37.0" prefWidth="112.0" text="Recuperar" />
+        <Pane layoutX="14.0" layoutY="29.0" opacity="0.9" prefHeight="67.0" prefWidth="338.0" style="-fx-background-color: white;">
+            <children>
+                <ImageView fx:id="pokemon1" fitHeight="60.0" fitWidth="112.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                <ProgressBar fx:id="progressPK1" layoutX="124.0" layoutY="48.0" minHeight="1.0" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                <Text fx:id="mote1" layoutX="141.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.0" />
+            </children>
+        </Pane>
+        <Pane layoutX="14.0" layoutY="114.0" opacity="0.9" prefHeight="67.0" prefWidth="338.0" style="-fx-background-color: white;">
+            <children>
+                <ImageView fx:id="pokemon2" fitHeight="60.0" fitWidth="112.0" layoutX="6.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                <ProgressBar fx:id="progressPK2" layoutX="124.0" layoutY="48.0" minHeight="1.0" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                <Text fx:id="mote2" layoutX="142.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.0" />
+            </children>
+        </Pane>
+        <Pane layoutX="14.0" layoutY="200.0" opacity="0.9" prefHeight="67.0" prefWidth="338.0" style="-fx-background-color: white;">
+            <children>
+                <ImageView fx:id="pokemon3" fitHeight="60.0" fitWidth="112.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                <ProgressBar fx:id="progressPK3" layoutX="120.0" layoutY="48.0" minHeight="1.0" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                <Text fx:id="mote3" layoutX="145.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.0" />
+            </children>
+        </Pane>
+        <Pane layoutX="14.0" layoutY="288.0" opacity="0.9" prefHeight="67.0" prefWidth="338.0" style="-fx-background-color: white;">
+            <children>
+                <ImageView fx:id="pokemon4" fitHeight="60.0" fitWidth="112.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                <ProgressBar fx:id="progressPK4" layoutX="120.0" layoutY="43.0" minHeight="1.0" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                <Text fx:id="mote4" layoutX="145.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.0" />
+            </children>
+        </Pane>
+        <Pane layoutX="14.0" layoutY="374.0" opacity="0.9" prefHeight="67.0" prefWidth="338.0" style="-fx-background-color: white;">
+            <children>
+                <ImageView fx:id="pokemon5" fitHeight="60.0" fitWidth="112.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                <ProgressBar fx:id="progressPK5" layoutX="124.0" layoutY="48.0" minHeight="1.0" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                <Text fx:id="mote5" layoutX="149.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.0" />
+            </children></Pane>
+        <Pane layoutX="14.0" layoutY="468.0" opacity="0.9" prefHeight="67.0" prefWidth="338.0" style="-fx-background-color: white;">
+            <children>
+                <ImageView fx:id="pokemon6" fitHeight="60.0" fitWidth="112.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                <ProgressBar fx:id="progressPK6" layoutX="124.0" layoutY="48.0" minHeight="1.0" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                <Text fx:id="mote6" layoutX="149.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.0" />
+            </children>
+        </Pane>
+        <TextField fx:id="logCentro" layoutX="385.0" layoutY="185.0" opacity="0.86" prefHeight="31.0" prefWidth="200.0" />
+    </children>
 </AnchorPane>

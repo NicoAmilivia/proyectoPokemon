@@ -146,28 +146,55 @@ public class CentroController {
 
     @FXML
     public void recuperarOnAction() {
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "UPDATE POKEMON SET VIDA_ACTUAL = VITALIDAD WHERE CAJA = 0";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            int rowsAffected = statement.executeUpdate();
 
-            if (rowsAffected > 0) {
-                progressPK1.setProgress(1.0);
-                progressPK2.setProgress(1.0);
-                progressPK3.setProgress(1.0);
-                progressPK4.setProgress(1.0);
-                progressPK5.setProgress(1.0);
-                progressPK6.setProgress(1.0);
+                try (Connection connection = DBConnection.getConnection()) {
+                    // Actualizar la vida de los Pokémon en la caja a su valor máximo en la base de datos
+                    String sqlUpdate = "UPDATE POKEMON SET VIDA_ACTUAL = VITALIDAD WHERE CAJA = 0";
+                    PreparedStatement updateStatement = connection.prepareStatement(sqlUpdate);
+                    int rowsAffected = updateStatement.executeUpdate();
 
-                if (!mensajeMostrado) {
-                    logCentro.appendText("¡Pokémons recuperados! ✔");
-                    mensajeMostrado = true;
+
+                        // Actualizar las barras de progreso solo para los Pokémon en la caja
+                        String sqlSelect = "SELECT VIDA_ACTUAL, VITALIDAD FROM POKEMON WHERE CAJA = 0 ORDER BY NUM_POKEDEX";
+                        PreparedStatement selectStatement = connection.prepareStatement(sqlSelect);
+                        ResultSet resultSet = selectStatement.executeQuery();
+
+                        int i = 1;
+                        while (resultSet.next() && i <= 6) {
+                            int vidaActual = resultSet.getInt("VIDA_ACTUAL");
+                            int vidaMaxima = resultSet.getInt("VITALIDAD");
+
+                            ProgressBar pokemonProgressBar = switch (i) {
+                                case 1 -> progressPK1;
+                                case 2 -> progressPK2;
+                                case 3 -> progressPK3;
+                                case 4 -> progressPK4;
+                                case 5 -> progressPK5;
+                                case 6 -> progressPK6;
+                                default -> null;
+                            };
+
+                            if (pokemonProgressBar != null) {
+                                pokemonProgressBar.setProgress((double) vidaActual / vidaMaxima);
+                            }
+
+                            i++;
+                        }
+
+                        // Mostrar el mensaje solo una vez
+                        if (!mensajeMostrado) {
+                            logCentro.appendText("¡Pokémons recuperados! ✔");
+                            mensajeMostrado = true;
+                        }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+
+
+
+
 
     @FXML
     private void irMenuFromCentroOnAction() {

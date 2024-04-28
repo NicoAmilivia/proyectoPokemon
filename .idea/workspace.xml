@@ -4,23 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Creacion de clases">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_10_44_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_10_44__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_10_54_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_10_54__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_12_14_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_12_14__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_12_21_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_12_21__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_13_17_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_13_17__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_07_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_07__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_9_36_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_9_36__Changes_.xml" beforeDir="false" />
+    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Correción del centroController">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_12_15_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_12_15__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_12_47_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_12_47__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_10_12_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_10_12__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_13_17_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_13_17__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_13_22_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_13_22__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_9_24_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_9_24__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_04_2024_10_20_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_04_2024_10_20__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_04_2024_9_37_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_04_2024_9_37__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2024_11_13_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2024_11_13__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Pokemon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/CentroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/CentroController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/centro-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/centro-view.fxml" afterDir="false" />
     </list>
@@ -68,7 +71,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicoa/Desktop/PROG-PROJECT-POK&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ferna/OneDrive/Escritorio/proyecto_PK&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -140,7 +143,30 @@
       <workItem from="1713436580219" duration="3256000" />
       <workItem from="1713779834408" duration="6976000" />
       <workItem from="1713803002481" duration="4500000" />
-      <workItem from="1713807596140" duration="1439000" />
+      <workItem from="1713807596140" duration="1668000" />
+      <workItem from="1713809278598" duration="46000" />
+      <workItem from="1713854513020" duration="3262000" />
+      <workItem from="1713866212540" duration="1517000" />
+      <workItem from="1713867750730" duration="103000" />
+      <workItem from="1713867888184" duration="3433000" />
+      <workItem from="1713872025313" duration="3125000" />
+      <workItem from="1713897923689" duration="3573000" />
+      <workItem from="1714030843447" duration="164000" />
+      <workItem from="1714038718957" duration="1669000" />
+      <workItem from="1714040862625" duration="1452000" />
+      <workItem from="1714114765990" duration="625000" />
+      <workItem from="1714115781840" duration="520000" />
+      <workItem from="1714116926378" duration="865000" />
+      <workItem from="1714117822549" duration="365000" />
+      <workItem from="1714118259577" duration="4000" />
+      <workItem from="1714118288683" duration="261000" />
+      <workItem from="1714118685673" duration="136000" />
+      <workItem from="1714119260078" duration="145000" />
+      <workItem from="1714119493757" duration="220000" />
+      <workItem from="1714120030921" duration="201000" />
+      <workItem from="1714120351673" duration="682000" />
+      <workItem from="1714121063743" duration="1431000" />
+      <workItem from="1714130108156" duration="3495000" />
     </task>
     <task id="LOCAL-00001" summary="Base del proyecto + menu de login.">
       <created>1712647307928</created>
@@ -171,7 +197,39 @@
       <option name="project" value="LOCAL" />
       <updated>1713776398551</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Logica de centro pokemon + retoques graficos">
+      <option name="closed" value="true" />
+      <created>1713809247194</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713809247194</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Logica de centro pokemon ii">
+      <option name="closed" value="true" />
+      <created>1713875148128</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713875148128</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Relacion vidaActual-ProgressBar en centro pokemon">
+      <option name="closed" value="true" />
+      <created>1713901466067</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713901466067</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Correción del centroController">
+      <option name="closed" value="true" />
+      <created>1714115365862</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714115365862</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +263,10 @@
     <MESSAGE value="Conexion a la base de datos" />
     <MESSAGE value="Solucion de error en la conexion a base de datos." />
     <MESSAGE value="Creacion de clases" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion de clases" />
+    <MESSAGE value="Logica de centro pokemon + retoques graficos" />
+    <MESSAGE value="Logica de centro pokemon ii" />
+    <MESSAGE value="Relacion vidaActual-ProgressBar en centro pokemon" />
+    <MESSAGE value="Correción del centroController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correción del centroController" />
   </component>
 </project>
