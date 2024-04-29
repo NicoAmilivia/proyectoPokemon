@@ -24,29 +24,21 @@
          </children>
       </Pane>
       <Button fx:id="huirBatallaButton" layoutX="479.0" layoutY="21.0" mnemonicParsing="false" onAction="#huirBatallaOnAction" prefHeight="31.0" prefWidth="89.0" text="Huir" />
-      <Pane layoutX="108.0" layoutY="362.0" prefHeight="101.0" prefWidth="122.0" style="-fx-background-color: black;">
-         <children>
-            <Text fill="WHITE" layoutX="14.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEMON 1" />
-         </children>
-      </Pane>
-      <Pane layoutX="381.0" layoutY="312.0" prefHeight="101.0" prefWidth="111.0" style="-fx-background-color: black;">
-         <children>
-            <Text fill="#fcfcfc" layoutX="5.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEMON 2" />
-         </children>
-      </Pane>
       <Pane layoutX="45.0" layoutY="540.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
          <children>
-            <Text fill="WHITE" layoutX="16.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Charizar" />
-            <Text fill="WHITE" layoutX="146.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 43" />
+            <Text fx:id="nomPokemonJugador" fill="WHITE" layoutX="16.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text fx:id="nivPokemonJugador" fill="WHITE" layoutX="146.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
             <ProgressBar layoutX="12.0" layoutY="41.0" minHeight="8.0" prefHeight="8.0" prefWidth="186.0" progress="0.0" />
          </children>
       </Pane>
       <Pane layoutX="332.0" layoutY="540.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
          <children>
-            <Text fill="WHITE" layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ratata" />
-            <Text fill="WHITE" layoutX="149.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 50" />
+            <Text fx:id="nomPokemonRival" fill="WHITE" layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text fx:id="nivPokemonRival" fill="WHITE" layoutX="149.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
             <ProgressBar layoutX="12.0" layoutY="41.0" minHeight="8.0" prefHeight="8.0" prefWidth="186.0" progress="0.0" />
          </children>
       </Pane>
+      <ImageView fx:id="pokemonJugador" fitHeight="123.0" fitWidth="140.0" layoutX="99.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="pokemonRival" fitHeight="136.0" fitWidth="155.0" layoutX="373.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

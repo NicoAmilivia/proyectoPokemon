@@ -106,6 +106,8 @@ public class EquipoController {
         return pokemones;
     }
 
+
+
     private void cargarCajaDesdeBD() {
         caja = cargarPokemonesDesdeBD(1);
     }
