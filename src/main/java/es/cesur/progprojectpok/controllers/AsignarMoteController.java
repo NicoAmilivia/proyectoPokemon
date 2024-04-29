@@ -29,8 +29,14 @@ public class AsignarMoteController {
 
     private Pokemon pokemonHijo;
 
-
     public void initialize(){
+        // Verifica si pokemonHijo no es nulo antes de llamar a mostrarImagenPokemon()
+        if (pokemonHijo != null) {
+            mostrarImagenPokemon();
+        }
+    }
+
+    public void mostrarImagenPokemon(){
         int pokemonId = pokemonHijo.getNumPokedex();
         String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
         Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
@@ -41,6 +47,7 @@ public class AsignarMoteController {
 
     public void setPokemonHijo(Pokemon pokemonHijo) {
         this.pokemonHijo = pokemonHijo;
+        mostrarImagenPokemon();
     }
 
 

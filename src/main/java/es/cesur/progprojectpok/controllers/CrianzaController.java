@@ -264,6 +264,7 @@ public class CrianzaController {
 
 
         try {
+            pokemonHijo= generarHijo(machoSeleccionado,hembraSeleccionada);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/asignar-mote.fxml"));
             Parent root = fxmlLoader.load();
             Stage menuStage = new Stage();
