@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="395.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.AsignarMoteController">
    <children>
-      <Text layoutX="37.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSERTA UN MOTE PARA TU NUEVO POKEMON" />
-      <TextField layoutX="80.0" layoutY="110.0" prefHeight="31.0" prefWidth="235.0" />
+      <ImageView fitHeight="615.0" fitWidth="602.0" layoutX="-3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/huevo.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="131.0" layoutY="451.0" opacity="0.85" prefHeight="142.0" prefWidth="336.0" style="-fx-background-color: white; -fx-background-color: white;">
+         <children>
+            <Text layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INTRODUCE EL MOTE DEl POKEMON:" wrappingWidth="326.6708984375">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Text>
+            <TextField fx:id="motePokemon" layoutX="75.0" layoutY="48.0" />
+            <Button fx:id="asignarMoteButton" layoutX="26.0" layoutY="97.0" mnemonicParsing="false" onAction="#asignarMoteOnAction" text="Asignar" />
+            <Button fx:id="omitirMoteButton" layoutX="236.0" layoutY="97.0" mnemonicParsing="false" onAction="#omitirMoteOnAction" prefHeight="31.0" prefWidth="70.0" text="Omitir" />
+         </children>
+      </Pane>
+      <Pane layoutX="141.0" layoutY="14.0" opacity="0.64" prefHeight="150.0" prefWidth="316.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="20.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESTE ES TU NUEVO POKEMON !" wrappingWidth="276.6708984375">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="imagenPokemonHijo" fitHeight="111.0" fitWidth="186.0" layoutX="65.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

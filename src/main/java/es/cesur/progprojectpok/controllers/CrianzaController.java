@@ -1,5 +1,4 @@
 package es.cesur.progprojectpok.controllers;
-
 import es.cesur.progprojectpok.clases.Pokemon;
 import es.cesur.progprojectpok.database.DBConnection;
 import javafx.collections.FXCollections;
@@ -10,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -46,11 +44,19 @@ public class CrianzaController {
     @FXML
     private TextField logOnAction;
 
+    @FXML
+    private Button abrirHuevoButton;
+
     private Pokemon machoSeleccionado;
 
     private Pokemon hembraSeleccionada;
 
     private Pokemon pokemonHijo;
+
+    private boolean redurcirFertilidad;
+
+    private int numPokedexHijo;
+
 
 
     public void initialize() {
@@ -84,7 +90,8 @@ public class CrianzaController {
                 int experiencia = resultSet.getInt("EXPERIENCIA");
                 int vitalidad = resultSet.getInt("VITALIDAD");
                 int idPokemon = resultSet.getInt("ID_POKEMON");
-                Pokemon pokemon = new Pokemon(nombre, numPokedex, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad, nivel, experiencia, vitalidad, idPokemon);
+                int fertilidad = resultSet.getInt("FERTILIDAD");
+                Pokemon pokemon = new Pokemon(nombre, numPokedex, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad, nivel, experiencia, vitalidad, idPokemon , fertilidad);
                 pokemones.add(pokemon);
             }
         } catch (SQLException e) {
@@ -118,7 +125,7 @@ public class CrianzaController {
             menuStage.setScene(scene);
             menuStage.show();
         } catch (IOException e) {
-            e.printStackTrace(); // Maneja el error apropiadamente
+            e.printStackTrace();
         }
     }
 
@@ -139,13 +146,6 @@ public class CrianzaController {
             return;
         }
 
-        if (machoSeleccionado.getSexo() != hembraSeleccionada.getSexo()) {
-            logCrianza.setText("Los Pokémon seleccionados deben tener sexos diferentes.");
-            return;
-        }
-
-
-
 
 
 
@@ -153,13 +153,15 @@ public class CrianzaController {
 
             pokemonHijo = generarHijo(machoSeleccionado, hembraSeleccionada);
 
+            redurcirFertilidad = true;
+
         } else {
             logCrianza.appendText("El pokemon no tiene suficiente fertilidad");
         }
 
 
 
-        if (pokemonHijo != null) {
+        if (redurcirFertilidad) {
             // Reducir la fertilidad de los padres en 1 punto
             reducirFertilidadPadres(machoSeleccionado);
             reducirFertilidadPadres(hembraSeleccionada);
@@ -168,41 +170,45 @@ public class CrianzaController {
             logCrianza.setText("¡Crianza realizada con éxito! Abra el huevo");
 
         } else {
-            logCrianza.setText("Error al generar el Pokémon hijo.");
+
         }
 
 
     }
 
     private Pokemon generarHijo(Pokemon machoSeleccionado, Pokemon hembraSeleccionada) {
-        // Crear un nuevo Pokémon hijo con las características de los padres
+
         pokemonHijo= new Pokemon();
-        pokemonHijo.setNombre(machoSeleccionado.getNombre()); // Tomar el nombre de cualquiera de los padres
-        pokemonHijo.setNumPokedex(machoSeleccionado.getNumPokedex()); // Mismo número de Pokédex que los padres
-        pokemonHijo.setSexo(randomSex()); // Sexo aleatorio para el hijo
-        pokemonHijo.setTipo1(machoSeleccionado.getTipo1()); // Mismo tipo que los padres
-        pokemonHijo.setTipo2(machoSeleccionado.getTipo2()); // Mismo tipo que los padres
-        pokemonHijo.setAtaque(Math.max(machoSeleccionado.getAtaque(), hembraSeleccionada.getAtaque())); // Mejor ataque de los padres
-        pokemonHijo.setDefensa(Math.max(machoSeleccionado.getDefensa(), hembraSeleccionada.getDefensa())); // Mejor defensa de los padres
-        pokemonHijo.setAtaqueEspecial(Math.max(machoSeleccionado.getAtaqueEspecial(), hembraSeleccionada.getAtaqueEspecial())); // Mejor ataque especial de los padres
-        pokemonHijo.setDefensaEspecial(Math.max(machoSeleccionado.getDefensaEspecial(), hembraSeleccionada.getDefensaEspecial())); // Mejor defensa especial de los padres
-        pokemonHijo.setVelocidad(Math.max(machoSeleccionado.getVelocidad(), hembraSeleccionada.getVelocidad())); // Mejor velocidad de los padres
-        pokemonHijo.setNivel(1); // Nivel inicial del hijo
-        pokemonHijo.setExperiencia(0); // Experiencia inicial del hijo
-        pokemonHijo.setVitalidad(Math.max(machoSeleccionado.getVitalidad(),hembraSeleccionada.getVitalidad())); // Vitalidad promedio de los padres
+        pokemonHijo.setNombre(machoSeleccionado.getNombre());
+        pokemonHijo.setNumPokedex(machoSeleccionado.getNumPokedex());
+        pokemonHijo.setSexo(randomSex());
+        pokemonHijo.setTipo1(machoSeleccionado.getTipo1());
+        pokemonHijo.setTipo2(machoSeleccionado.getTipo2());
+        pokemonHijo.setAtaque(Math.max(machoSeleccionado.getAtaque(), hembraSeleccionada.getAtaque()));
+        pokemonHijo.setDefensa(Math.max(machoSeleccionado.getDefensa(), hembraSeleccionada.getDefensa()));
+        pokemonHijo.setAtaqueEspecial(Math.max(machoSeleccionado.getAtaqueEspecial(), hembraSeleccionada.getAtaqueEspecial()));
+        pokemonHijo.setDefensaEspecial(Math.max(machoSeleccionado.getDefensaEspecial(), hembraSeleccionada.getDefensaEspecial()));
+        pokemonHijo.setVelocidad(Math.max(machoSeleccionado.getVelocidad(), hembraSeleccionada.getVelocidad()));
+        pokemonHijo.setNivel(1);
+        pokemonHijo.setExperiencia(0);
+        pokemonHijo.setVitalidad(Math.max(machoSeleccionado.getVitalidad(),hembraSeleccionada.getVitalidad()));
         return pokemonHijo;
-    }
+        }
+
+
+
+
 
 
 
     private void reducirFertilidadPadres(Pokemon pokemon) {
-        // Reducir la fertilidad del Pokémon en 1 punto
+
         int nuevaFertilidad = pokemon.getFertilidad() - 1;
-        pokemon.setFertilidad(Math.max(nuevaFertilidad, 0)); // La fertilidad no puede ser negativa
+        pokemon.setFertilidad(Math.max(nuevaFertilidad, 0));
     }
 
     private char randomSex() {
-        return Math.random() < 0.5 ? 'M' : 'H'; // Generar un sexo aleatorio ('M' o 'H')
+        return Math.random() < 0.5 ? 'M' : 'H';
     }
 
 
@@ -242,16 +248,32 @@ public class CrianzaController {
             return;
         }
 
+
+
         try {
             // Insertar el Pokémon hijo en la base de datos
             insertarPokemonEnBD(pokemonHijo);
 
             // Mostrar un mensaje indicando que se agregó el Pokémon a la base de datos
-            logCrianza.setText("¡Huevo abierto! Nuevo Pokémon agregado a la base de datos " + pokemonHijo.getNombre());
+            logCrianza.setText("¡Huevo abierto! Nuevo Pokémon agregado " + pokemonHijo.getNombre());
         } catch (SQLException e) {
             logCrianza.setText("Error al agregar el nuevo Pokémon a la base de datos: " + e.getMessage());
             e.printStackTrace();
         }
+
+
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/asignar-mote.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage menuStage = new Stage();
+            menuStage.setTitle("Asignar Mote");
+            menuStage.setScene(new Scene(root, 590, 600));
+            menuStage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Maneja el error apropiadamente
+        }
+
     }
 
 

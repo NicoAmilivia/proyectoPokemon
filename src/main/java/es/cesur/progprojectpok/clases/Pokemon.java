@@ -64,6 +64,23 @@ public class Pokemon {
         this.idPokemon = idPokemon;
     }
 
+
+    public Pokemon(String nombre, int numPokedex, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad, int nivel, int experiencia, int vitalidad, int idPokemon,int fertilidad){
+        this.nombre = nombre;
+        this.numPokedex = numPokedex;
+        this.ataque = ataque;
+        this.defensa = defensa;
+        this.ataqueEspecial = ataqueEspecial;
+        this.defensaEspecial = defensaEspecial;
+        this.velocidad = velocidad;
+        this.nivel = nivel;
+        this.experiencia = experiencia;
+        this.vitalidad = vitalidad;
+        this.idPokemon = idPokemon;
+        this.fertilidad=fertilidad;
+    }
+
+
     public char randomSex() {
         char sexo;
         int sexoBinario = (int) (Math.random() * 2);
@@ -240,6 +257,8 @@ public class Pokemon {
     public void setTipo2(Tipo tipo2) {
         this.tipo2 = tipo2;
     }
+
+
 
     public static Tipo TipoStringToEnum(String tipoString) {
         return switch (tipoString.toUpperCase()) {

@@ -15,7 +15,7 @@
          </image>
       </ImageView>
       <Button layoutX="233.0" layoutY="457.0" mnemonicParsing="false" onAction="#realizarCrianzaOnAction" text="Realizar Crianza" />
-      <Button layoutX="245.0" layoutY="514.0" mnemonicParsing="false" onAction="#abrirHuevoOnAction" text="Abrir Huevo" />
+      <Button fx:id="abrirHuevoButton" layoutX="245.0" layoutY="514.0" mnemonicParsing="false" onAction="#abrirHuevoOnAction" text="Abrir Huevo" />
       <Button fx:id="irMenuFromCrianzaButton" layoutX="528.0" layoutY="23.0" mnemonicParsing="false" onAction="#irMenuFromCrianzaOnAction" text="Salir" />
       <ImageView fitHeight="207.0" fitWidth="256.0" layoutX="-3.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 9;">
          <image>
