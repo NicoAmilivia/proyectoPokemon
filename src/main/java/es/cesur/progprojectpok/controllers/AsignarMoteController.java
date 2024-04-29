@@ -27,7 +27,7 @@ public class AsignarMoteController {
     private ImageView imagenPokemonHijo;
 
 
-
+    private Pokemon pokemonHijo;
 
 
     public void initialize(){
@@ -39,8 +39,9 @@ public class AsignarMoteController {
 
 
 
-
-
+    public void setPokemonHijo(Pokemon pokemonHijo) {
+        this.pokemonHijo = pokemonHijo;
+    }
 
 
 

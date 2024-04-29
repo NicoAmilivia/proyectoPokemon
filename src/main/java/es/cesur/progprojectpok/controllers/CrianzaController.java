@@ -267,6 +267,8 @@ public class CrianzaController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/asignar-mote.fxml"));
             Parent root = fxmlLoader.load();
             Stage menuStage = new Stage();
+            AsignarMoteController asignarMoteController = fxmlLoader.getController();
+            asignarMoteController.setPokemonHijo(pokemonHijo);
             menuStage.setTitle("Asignar Mote");
             menuStage.setScene(new Scene(root, 590, 600));
             menuStage.show();
