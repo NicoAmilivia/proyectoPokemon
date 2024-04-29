@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -62,6 +63,12 @@ public class BatallaController {
     @FXML
     private Text nivPokemonRival;
 
+    @FXML
+    private ProgressBar progressJugador;
+
+    @FXML
+    private ProgressBar progressRival;
+
 
 
     public void initialize() {
@@ -96,6 +103,22 @@ public class BatallaController {
 
         nivPokemon = primerPokemonRival.getNivel();
         nivPokemonRival.setText("LVL " + nivPokemon);
+
+        //Barra progreso jugador
+        double vidaActual = primerPokemon.getVidaActual();
+        double vidaTotal = primerPokemon.getVitalidad();
+
+        double porcentajeVida = vidaActual / vidaTotal;
+
+        progressJugador.setProgress(porcentajeVida);
+
+        //Barra progreso rival
+        double vidaActualRival = primerPokemonRival.getVidaActual();
+        double vidaTotalRival = primerPokemonRival.getVitalidad();
+
+        double porcentajeVidaRival = vidaActualRival / vidaTotalRival;
+
+        progressRival.setProgress(porcentajeVidaRival);
     }
 
 
@@ -120,7 +143,9 @@ public class BatallaController {
                 int experiencia = resultSet.getInt("EXPERIENCIA");
                 int vitalidad = resultSet.getInt("VITALIDAD");
                 int idPokemon = resultSet.getInt("ID_POKEMON");
-                Pokemon pokemon = new Pokemon(nombre, numPokedex, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad, nivel, experiencia, vitalidad, idPokemon);
+                int vidaActual = resultSet.getInt("VIDA_ACTUAL");
+
+                Pokemon pokemon = new Pokemon(nombre, numPokedex, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad, nivel, vitalidad, vidaActual);
                 pokemones.add(pokemon);
             }
         } catch (SQLException e) {
@@ -154,7 +179,8 @@ public class BatallaController {
 
                 if (resultSet.next()) {
                     String nombrePokemon = resultSet.getString("NOM_POKEMON");
-                    Pokemon pokemonAleatorio = new Pokemon(nombrePokemon, numPokedex, 0, 0, 0, 0, 0, 1, 0, 0, 0);
+                    Pokemon pokemonAleatorio = new Pokemon(nombrePokemon, numPokedex, 0, 0, 0, 0, 0, 1,  10, 0);
+                    pokemonAleatorio.setVidaActual(pokemonAleatorio.getVitalidad());
                     equipoRival.add(pokemonAleatorio);
                 } else {
                     System.out.println("No se encontró el Pokémon con el ID de Pokédex: " + numPokedex);

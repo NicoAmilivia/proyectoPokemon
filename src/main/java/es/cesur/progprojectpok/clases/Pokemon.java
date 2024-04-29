@@ -33,6 +33,8 @@ public class Pokemon {
 
     private int idPokemon;
 
+    private int vidaActual;
+
 
     //CONSTRUCTOR CON PARAMETROS
     public Pokemon(String nombre, int numPokedex) {
@@ -78,6 +80,19 @@ public class Pokemon {
         this.vitalidad = vitalidad;
         this.idPokemon = idPokemon;
         this.fertilidad=fertilidad;
+    }
+
+    public Pokemon(String nombre, int numPokedex, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad, int nivel, int vitalidad, int vidaActual){
+        this.nombre = nombre;
+        this.numPokedex = numPokedex;
+        this.ataque = ataque;
+        this.defensa = defensa;
+        this.ataqueEspecial = ataqueEspecial;
+        this.defensaEspecial = defensaEspecial;
+        this.velocidad = velocidad;
+        this.nivel = nivel;
+        this.vitalidad = vitalidad;
+        this.vidaActual = vidaActual;
     }
 
 
@@ -259,6 +274,13 @@ public class Pokemon {
     }
 
 
+    public int getVidaActual() {
+        return vidaActual;
+    }
+
+    public void setVidaActual(int vidaActual) {
+        this.vidaActual = vidaActual;
+    }
 
     public static Tipo TipoStringToEnum(String tipoString) {
         return switch (tipoString.toUpperCase()) {

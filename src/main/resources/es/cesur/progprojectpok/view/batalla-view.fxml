@@ -28,14 +28,14 @@
          <children>
             <Text fx:id="nomPokemonJugador" fill="WHITE" layoutX="16.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
             <Text fx:id="nivPokemonJugador" fill="WHITE" layoutX="146.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <ProgressBar layoutX="12.0" layoutY="41.0" minHeight="8.0" prefHeight="8.0" prefWidth="186.0" progress="0.0" />
+            <ProgressBar fx:id="progressJugador" layoutX="6.0" layoutY="34.0" minHeight="8.0" prefHeight="15.0" prefWidth="192.0" progress="0.0" />
          </children>
       </Pane>
       <Pane layoutX="332.0" layoutY="540.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
          <children>
             <Text fx:id="nomPokemonRival" fill="WHITE" layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
             <Text fx:id="nivPokemonRival" fill="WHITE" layoutX="149.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <ProgressBar layoutX="12.0" layoutY="41.0" minHeight="8.0" prefHeight="8.0" prefWidth="186.0" progress="0.0" />
+            <ProgressBar fx:id="progressRival" layoutX="14.0" layoutY="34.0" minHeight="8.0" prefHeight="15.0" prefWidth="184.0" progress="0.0" />
          </children>
       </Pane>
       <ImageView fx:id="pokemonJugador" fitHeight="123.0" fitWidth="140.0" layoutX="99.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true" />
