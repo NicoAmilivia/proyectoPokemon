@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -12,10 +14,30 @@
             <Image url="@../images/crianzaFondo.jpeg" />
          </image>
       </ImageView>
-      <Button layoutX="244.0" layoutY="458.0" mnemonicParsing="false" text="Realizar Crianza" />
-      <Button layoutX="259.0" layoutY="516.0" mnemonicParsing="false" text="Abrir Huevo" />
+      <Button layoutX="233.0" layoutY="457.0" mnemonicParsing="false" onAction="#realizarCrianzaOnAction" text="Realizar Crianza" />
+      <Button layoutX="245.0" layoutY="514.0" mnemonicParsing="false" onAction="#abrirHuevoOnAction" text="Abrir Huevo" />
       <Button fx:id="irMenuFromCrianzaButton" layoutX="528.0" layoutY="23.0" mnemonicParsing="false" onAction="#irMenuFromCrianzaOnAction" text="Salir" />
-      <ListView fx:id="machoViewList" layoutX="25.0" layoutY="200.0" prefHeight="200.0" prefWidth="200.0" />
-      <ListView fx:id="hembraViewList" layoutX="386.0" layoutY="200.0" prefHeight="200.0" prefWidth="200.0" />
+      <ImageView fitHeight="207.0" fitWidth="256.0" layoutX="-3.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 9;">
+         <image>
+            <Image url="@../images/pokemonMacho.png" />
+         </image>
+         <effect>
+            <ColorAdjust contrast="1.0" />
+         </effect>
+      </ImageView>
+      <ListView fx:id="machoViewList" layoutX="5.0" layoutY="102.0" opacity="0.85" prefHeight="346.0" prefWidth="235.0" />
+      <ImageView fitHeight="191.0" fitWidth="203.0" layoutX="365.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pokemonHembra.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="NE_RESIZE" />
+         </cursor>
+         <effect>
+            <ColorAdjust contrast="1.0" saturation="1.0" />
+         </effect>
+      </ImageView>
+      <ListView fx:id="hembraViewList" layoutX="343.0" layoutY="102.0" opacity="0.85" prefHeight="346.0" prefWidth="235.0" />
+      <TextField fx:id="logCrianza" layoutX="164.0" layoutY="4.0" prefHeight="69.0" prefWidth="285.0" />
    </children>
 </AnchorPane>
