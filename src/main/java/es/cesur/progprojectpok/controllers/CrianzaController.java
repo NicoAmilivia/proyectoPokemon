@@ -199,7 +199,7 @@ public class CrianzaController {
         pokemonHijo.setExperiencia(0);
         pokemonHijo.setVitalidad(Math.max(machoSeleccionado.getVitalidad(),hembraSeleccionada.getVitalidad()));
         return pokemonHijo;
-        }
+    }
 
 
 
@@ -306,5 +306,3 @@ public class CrianzaController {
 
 
 }
-
-

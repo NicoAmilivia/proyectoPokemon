@@ -82,7 +82,7 @@ public class Pokemon {
         this.fertilidad=fertilidad;
     }
 
-    public Pokemon(String nombre, int numPokedex, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad, int nivel, int vitalidad, int vidaActual){
+    public Pokemon(int numPokedex, String nombre, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad, int nivel, int vitalidad, int vidaActual, int idPokemon){
         this.nombre = nombre;
         this.numPokedex = numPokedex;
         this.ataque = ataque;
@@ -93,6 +93,7 @@ public class Pokemon {
         this.nivel = nivel;
         this.vitalidad = vitalidad;
         this.vidaActual = vidaActual;
+        this.idPokemon = idPokemon;
     }
 
 
@@ -286,6 +287,7 @@ public class Pokemon {
     public void setIdPokemon(int idPokemon) {
         this.idPokemon = idPokemon;
     }
+
 
 
 

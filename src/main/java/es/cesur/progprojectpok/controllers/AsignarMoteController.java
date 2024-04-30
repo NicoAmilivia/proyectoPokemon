@@ -66,20 +66,20 @@ public class AsignarMoteController {
         this.machoSeleccionado =machoSeleccionado;
     }
 
-@FXML
+    @FXML
     public void asignarMoteOnAction() throws SQLException {
 
-    String mote = motePokemon.getText();
+        String mote = motePokemon.getText();
 
 
-    if (mote.isEmpty()) {
-        mote = String.valueOf(machoSeleccionado.getNombre());
-    }
+        if (mote.isEmpty()) {
+            mote = String.valueOf(machoSeleccionado.getNombre());
+        }
 
-    pokemonHijo.setNombre(mote);
+        pokemonHijo.setNombre(mote);
 
 
-    try (Connection connection = DBConnection.getConnection()) {
+        try (Connection connection = DBConnection.getConnection()) {
             String sql = "SELECT MAX(ID_POKEMON) FROM POKEMON";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -95,9 +95,9 @@ public class AsignarMoteController {
 
             }
 
-        actualizarMoteEnBD(mote);
-        Stage stage = (Stage) asignarMoteButton.getScene().getWindow();
-        stage.close();
+            actualizarMoteEnBD(mote);
+            Stage stage = (Stage) asignarMoteButton.getScene().getWindow();
+            stage.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -125,14 +125,6 @@ public class AsignarMoteController {
 
 
     }
-
-
-
-    @FXML
-    public void omitirMoteOnAction(){
-
-    }
-
 
 
 }

@@ -33,4 +33,6 @@ public class MovimientoAtaque extends Movimiento {
     public void setPotenciaAtaque(int potenciaAtaque) {
         this.potenciaAtaque = potenciaAtaque;
     }
+
+
 }

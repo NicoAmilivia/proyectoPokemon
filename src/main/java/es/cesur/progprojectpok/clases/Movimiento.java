@@ -33,4 +33,12 @@ public class Movimiento {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    @Override
+    public String toString() {
+        return "Movimiento{" +
+                "numUsos=" + numUsos +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }
