@@ -32,6 +32,8 @@ public class AsignarMoteController {
 
     private Pokemon pokemonHijo;
 
+    private Pokemon machoSeleccionado;
+
     public void initialize() {
         // Verifica si pokemonHijo no es nulo antes de llamar a mostrarImagenPokemon()
         if (pokemonHijo != null) {
@@ -59,6 +61,11 @@ public class AsignarMoteController {
 
     }
 
+
+    public void setMachoSeleccionado(Pokemon machoSeleccionado) {
+        this.machoSeleccionado =machoSeleccionado;
+    }
+
 @FXML
     public void asignarMoteOnAction() throws SQLException {
 
@@ -66,7 +73,7 @@ public class AsignarMoteController {
 
 
     if (mote.isEmpty()) {
-        mote = String.valueOf(pokemonHijo.getNumPokedex());
+        mote = String.valueOf(machoSeleccionado.getNombre());
     }
 
     pokemonHijo.setNombre(mote);

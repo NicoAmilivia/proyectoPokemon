@@ -293,6 +293,7 @@ public class CrianzaController {
             Stage menuStage = new Stage();
             AsignarMoteController asignarMoteController = fxmlLoader.getController();
             asignarMoteController.setPokemonHijo(pokemonHijo);
+            asignarMoteController.setMachoSeleccionado(machoSeleccionado);
             menuStage.setTitle("Asignar Mote");
             menuStage.setScene(new Scene(root, 590, 600));
             menuStage.show();

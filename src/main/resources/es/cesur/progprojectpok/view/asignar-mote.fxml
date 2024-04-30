@@ -20,8 +20,7 @@
                   <Font name="System Bold" size="18.0" />
                </font></Text>
             <TextField fx:id="motePokemon" layoutX="75.0" layoutY="48.0" />
-            <Button fx:id="asignarMoteButton" layoutX="26.0" layoutY="97.0" mnemonicParsing="false" onAction="#asignarMoteOnAction" text="Asignar" />
-            <Button fx:id="omitirMoteButton" layoutX="236.0" layoutY="97.0" mnemonicParsing="false" onAction="#omitirMoteOnAction" prefHeight="31.0" prefWidth="70.0" text="Omitir" />
+            <Button fx:id="asignarMoteButton" layoutX="128.0" layoutY="97.0" mnemonicParsing="false" onAction="#asignarMoteOnAction" prefHeight="31.0" prefWidth="81.0" text="Asignar" />
          </children>
       </Pane>
       <Pane layoutX="141.0" layoutY="14.0" opacity="0.64" prefHeight="150.0" prefWidth="316.0" style="-fx-background-color: white;">
