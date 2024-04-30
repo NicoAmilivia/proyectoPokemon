@@ -99,6 +99,9 @@ public class CrianzaController {
             e.printStackTrace();
         }
 
+
+
+
         return pokemones;
     }
 
@@ -166,6 +169,9 @@ public class CrianzaController {
             reducirFertilidadPadres(machoSeleccionado);
             reducirFertilidadPadres(hembraSeleccionada);
 
+
+
+
             // Mostrar mensaje de éxito y agregar el hijo a la base de datos
             logCrianza.setText("¡Crianza realizada con éxito! Abra el huevo");
 
@@ -215,13 +221,11 @@ public class CrianzaController {
 
 
     private void insertarPokemonEnBD(Pokemon pokemon) throws SQLException {
-        // Conectar a la base de datos
+
         try (Connection connection = DBConnection.getConnection()) {
-            // Preparar la consulta SQL
             String sql = "INSERT INTO POKEMON (NUM_POKEDEX, MOTE, CAJA, ATAQUE, AT_ESPECIAL, DEFENSA, DEF_ESPECIAL, VELOCIDAD, NIVEL, FERTILIDAD, SEXO, ESTADO, EXPERIENCIA, VITALIDAD) " +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            // Establecer los valores de los parámetros
+            PreparedStatement statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             statement.setInt(1, pokemon.getNumPokedex());
             statement.setString(2, pokemon.getNombre());
             statement.setInt(3, 1); // Ajustar el valor de la caja según corresponda
@@ -236,9 +240,28 @@ public class CrianzaController {
             statement.setString(12, "Normal"); // Establecer el estado según corresponda
             statement.setInt(13, pokemon.getExperiencia());
             statement.setInt(14, pokemon.getVitalidad());
-            // Ejecutar la consulta
-            statement.executeUpdate();
+
+            int rowsAffected = statement.executeUpdate();
+            if (rowsAffected == 0) {
+                throw new SQLException("No se pudo insertar el Pokémon en la base de datos");
+            }
+
+            // Obtener el ID generado automáticamente
+            try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    int idPokemon = generatedKeys.getInt(1); // Obtener el valor del ID del Pokémon hijo
+                    pokemonHijo.setIdPokemon(idPokemon); // Establecer el ID del Pokémon hijo en el objeto Pokemon
+                } else {
+                    throw new SQLException("No se generó ningún ID para el Pokémon hijo");
+                }
+            }
+        } catch (SQLException e) {
+            // Manejar cualquier excepción que pueda ocurrir al ejecutar la consulta SQL
+            e.printStackTrace();
+            // Puedes mostrar un mensaje de error al usuario si lo deseas
         }
+
+
     }
 
     @FXML
@@ -278,11 +301,6 @@ public class CrianzaController {
         }
 
     }
-
-
-
-
-
 
 
 

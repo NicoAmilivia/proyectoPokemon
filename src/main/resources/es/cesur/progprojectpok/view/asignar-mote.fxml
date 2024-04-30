@@ -31,8 +31,8 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <ImageView fx:id="imagenPokemonHijo" fitHeight="111.0" fitWidth="186.0" layoutX="65.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>
+      <ImageView fx:id="imagenPokemonHijo" fitHeight="107.0" fitWidth="137.0" layoutX="230.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

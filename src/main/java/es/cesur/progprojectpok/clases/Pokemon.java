@@ -282,6 +282,14 @@ public class Pokemon {
         this.vidaActual = vidaActual;
     }
 
+
+    public void setIdPokemon(int idPokemon) {
+        this.idPokemon = idPokemon;
+    }
+
+
+
+
     public static Tipo TipoStringToEnum(String tipoString) {
         return switch (tipoString.toUpperCase()) {
             case "AGUA" -> Tipo.AGUA;
@@ -318,6 +326,8 @@ public class Pokemon {
                 ", defensaEspecial=" + defensaEspecial +
                 '}';
     }
+
+
 
     // Constructor que acepta la ruta de la imagen del Pokémon
 
