@@ -74,14 +74,23 @@ public class BatallaController {
 
     private List<Movimiento> movimientosPokemon;
 
+    @FXML
+    private Button cambiarPokemon;
+
+    private boolean turnoJugador;
+
+    private Pokemon pokemonRivalEnCombate; //variable para almacenar el pokemon rival actualmente en combate
+
 
 
     public void initialize() {
         cargarEquipoDesdeBD();
         crearEquipoRival();
+        comprobarInicio();
 
+        setPokemonRivalEnCombate(equipoRival.get(0));
         Pokemon primerPokemon = equipo.get(0);
-        Pokemon primerPokemonRival = equipoRival.get(0);
+
         int pokemonId = primerPokemon.getNumPokedex();
 
         //Cargar la imagen del primer Pokemon del jugador
@@ -90,7 +99,7 @@ public class BatallaController {
         pokemonJugador.setImage(image);
 
         //Cargar la imagen del primer Pokemon del rival
-        pokemonId = primerPokemonRival.getNumPokedex();
+        pokemonId = pokemonRivalEnCombate.getNumPokedex();
         String imageUrlRival = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
         Image imageRival = new Image(getClass().getResource(imageUrlRival).toExternalForm());
         pokemonRival.setImage(imageRival);
@@ -103,10 +112,10 @@ public class BatallaController {
         nivPokemonJugador.setText("LVL " + nivPokemon);
 
         //Cargar nombre y nivel del primer pokemon del rival
-        nomPokemon = primerPokemonRival.getNombre();
+        nomPokemon = pokemonRivalEnCombate.getNombre();
         nomPokemonRival.setText(nomPokemon);
 
-        nivPokemon = primerPokemonRival.getNivel();
+        nivPokemon = pokemonRivalEnCombate.getNivel();
         nivPokemonRival.setText("LVL " + nivPokemon);
 
         //Barra progreso jugador
@@ -118,8 +127,8 @@ public class BatallaController {
         progressJugador.setProgress(porcentajeVida);
 
         //Barra progreso rival
-        double vidaActualRival = primerPokemonRival.getVidaActual();
-        double vidaTotalRival = primerPokemonRival.getVitalidad();
+        double vidaActualRival = pokemonRivalEnCombate.getVidaActual();
+        double vidaTotalRival = pokemonRivalEnCombate.getVitalidad();
 
         double porcentajeVidaRival = vidaActualRival / vidaTotalRival;
 
@@ -130,12 +139,9 @@ public class BatallaController {
         pokemonId = primerPokemon.getIdPokemon();
         cargarMovimientosDesdeBD(pokemonId);
 
-        if (movimientosPokemon.size() >= 4) {
-            ataque1.setText(movimientosPokemon.get(0).getNombre());
-            ataque2.setText(movimientosPokemon.get(1).getNombre());
-            ataque3.setText(movimientosPokemon.get(2).getNombre());
-            ataque4.setText(movimientosPokemon.get(3).getNombre());
-        }
+        //Cargar movimientos en botones
+
+        actualizarBotonesAtaque();
     }
 
 
@@ -239,25 +245,123 @@ public class BatallaController {
         }
     }
 
+    private void actualizarBotonesAtaque() {
+        if (movimientosPokemon.size() >= 1) {
+            ataque1.setText(movimientosPokemon.get(0).getNombre());
+            ataque1.setDisable(false);
+        } else {
+            ataque1.setDisable(true);
+        }
+
+        if (movimientosPokemon.size() >= 2) {
+            ataque2.setText(movimientosPokemon.get(1).getNombre());
+            ataque2.setDisable(false);
+        } else {
+            ataque2.setDisable(true);
+        }
+
+        if (movimientosPokemon.size() >= 3) {
+            ataque3.setText(movimientosPokemon.get(2).getNombre());
+            ataque3.setDisable(false);
+        } else {
+            ataque3.setDisable(true);
+        }
+
+        if (movimientosPokemon.size() >= 4) {
+            ataque4.setText(movimientosPokemon.get(3).getNombre());
+            ataque4.setDisable(false);
+        } else {
+            ataque4.setDisable(true);
+        }
+    }
+
+
 
     @FXML
     private void ataqueOnAction1(ActionEvent event) {
-        log.appendText("Se ha utilizado ataque1\n");
+        if (turnoJugador) {
+            log.appendText("Se ha utilizado " + movimientosPokemon.get(0).getNombre() + "\n");
+            turnoJugador = false;
+
+            actualizarBarraProgresoRival();
+
+            realizarAccionRival();
+        }else
+            log.appendText("No es tu turno \n");
     }
 
     @FXML
     private void ataqueOnAction2(ActionEvent event) {
-        log.appendText("Se ha utilizado ataque2\n");
+        if (turnoJugador) {
+            log.appendText("Se ha utilizado " + movimientosPokemon.get(1).getNombre() + "\n");
+            turnoJugador = false;
+
+            actualizarBarraProgresoRival();
+
+            realizarAccionRival();
+        }else
+            log.appendText("No es tu turno \n");
     }
 
     @FXML
     private void ataqueOnAction3(ActionEvent event) {
-        log.appendText("Se ha utilizado ataque3\n");
+        if (turnoJugador) {
+            log.appendText("Se ha utilizado " + movimientosPokemon.get(2).getNombre() + "\n");
+            turnoJugador = false;
+
+            actualizarBarraProgresoRival();
+
+            realizarAccionRival();
+        }else
+            log.appendText("No es tu turno \n");
     }
 
     @FXML
     private void ataqueOnAction4(ActionEvent event) {
-        log.appendText("Se ha utilizado ataque4\n");
+        if (turnoJugador) {
+            log.appendText("Se ha utilizado " + movimientosPokemon.get(3).getNombre() + "\n");
+            turnoJugador = false;
+
+            actualizarBarraProgresoRival();
+
+            realizarAccionRival();
+        }else
+            log.appendText("No es tu turno \n");
+    }
+
+
+    private void realizarAccionRival() {
+
+        //Logica del ataque rival
+
+        turnoJugador = true;
+    }
+
+    private void comprobarInicio(){
+        if (equipo.get(0).getVelocidad() > equipoRival.get(0).getVelocidad()){
+            turnoJugador = true;
+        }else
+            turnoJugador = false;
+    }
+
+    private void setPokemonRivalEnCombate(Pokemon pokemon) {
+        this.pokemonRivalEnCombate = pokemon;
+    }
+
+    private void actualizarBarraProgresoRival() {
+        if (pokemonRivalEnCombate != null) {
+            double vidaActualRival = pokemonRivalEnCombate.getVidaActual();
+            double vidaTotalRival = pokemonRivalEnCombate.getVitalidad();
+
+            double porcentajeVidaRival = vidaActualRival / vidaTotalRival;
+
+            progressRival.setProgress(porcentajeVidaRival);
+        }
+    }
+
+    @FXML
+    private void cambiarPokemonOnAction(){
+
     }
 
 
