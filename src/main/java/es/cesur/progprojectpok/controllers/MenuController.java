@@ -1,5 +1,6 @@
 package es.cesur.progprojectpok.controllers;
 
+import es.cesur.progprojectpok.clases.Entrenador;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -27,6 +28,14 @@ public class MenuController {
 
     @FXML
     private Button irEntrenamientoButton;
+
+    @FXML
+    private Button irTiendaButton;
+
+
+    private Entrenador entrenador;
+
+
 
 
     @FXML
@@ -140,6 +149,35 @@ public class MenuController {
             e.printStackTrace(); // Maneja el error apropiadamente
         }
     }
+
+    @FXML
+    private void irTiendaOnAction(){
+
+        Stage stage = (Stage) irTiendaButton.getScene().getWindow();
+        stage.close();
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/tienda-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 590, 600);
+            Stage menuStage = new Stage();
+            menuStage.setTitle("Menu");
+            menuStage.setScene(scene);
+            TiendaController tiendaController = fxmlLoader.getController();
+            tiendaController.setEntrenador(entrenador);
+            menuStage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Maneja el error apropiadamente
+        }
+
+
+
+    }
+
+    public void setEntrenador(Entrenador entrenador){
+        this.entrenador=entrenador;
+        System.out.println(entrenador.getNumPokeDollars());
+    }
+
 
 }
 

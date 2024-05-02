@@ -11,16 +11,17 @@
          <image>
             <Image url="@../images/fondo-menu.jpeg" />
          </image></ImageView>
-      <Button fx:id="irCombateButton" layoutX="255.0" layoutY="159.0" mnemonicParsing="false" onAction="#irCombateOnAction" prefHeight="31.0" prefWidth="152.0" text="Combate" />
-      <Button fx:id="irEntrenamientoButton" layoutX="255.0" layoutY="223.0" mnemonicParsing="false" onAction="#irEntrenamientoOnAction" prefHeight="31.0" prefWidth="152.0" text="Entrenamiento" />
-      <Button fx:id="irEquipoButton" layoutX="255.0" layoutY="292.0" mnemonicParsing="false" onAction="#irEquipoOnAction" prefHeight="31.0" prefWidth="152.0" text="Equipo" />
-      <Button fx:id="irCapturaButton" layoutX="255.0" layoutY="361.0" mnemonicParsing="false" onAction="#irCapturaOnAction" prefHeight="31.0" prefWidth="152.0" text="Captura" />
-      <Button fx:id="irCentroButton" layoutX="255.0" layoutY="479.0" mnemonicParsing="false" onAction="#irCentroOnAction" prefHeight="31.0" prefWidth="152.0" text="Centro Pokémon" />
-      <Button fx:id="irCrianzaButton" layoutX="255.0" layoutY="420.0" mnemonicParsing="false" onAction="#irCrianzaOnAction" prefHeight="31.0" prefWidth="152.0" text="Crianza" />
+      <Button fx:id="irCombateButton" layoutX="255.0" layoutY="136.0" mnemonicParsing="false" onAction="#irCombateOnAction" prefHeight="31.0" prefWidth="152.0" text="Combate" />
+      <Button fx:id="irEntrenamientoButton" layoutX="255.0" layoutY="200.0" mnemonicParsing="false" onAction="#irEntrenamientoOnAction" prefHeight="31.0" prefWidth="152.0" text="Entrenamiento" />
+      <Button fx:id="irEquipoButton" layoutX="255.0" layoutY="264.0" mnemonicParsing="false" onAction="#irEquipoOnAction" prefHeight="31.0" prefWidth="152.0" text="Equipo" />
+      <Button fx:id="irCapturaButton" layoutX="255.0" layoutY="323.0" mnemonicParsing="false" onAction="#irCapturaOnAction" prefHeight="31.0" prefWidth="152.0" text="Captura" />
+      <Button fx:id="irCentroButton" layoutX="255.0" layoutY="447.0" mnemonicParsing="false" onAction="#irCentroOnAction" prefHeight="31.0" prefWidth="152.0" text="Centro Pokémon" />
+      <Button fx:id="irCrianzaButton" layoutX="255.0" layoutY="384.0" mnemonicParsing="false" onAction="#irCrianzaOnAction" prefHeight="31.0" prefWidth="152.0" text="Crianza" />
       <ImageView fitHeight="87.0" fitWidth="238.0" layoutX="212.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/pokemon_logo.png" />
          </image>
       </ImageView>
+      <Button fx:id="irTiendaButton" layoutX="256.0" layoutY="512.0" mnemonicParsing="false" onAction="#irTiendaOnAction" prefHeight="31.0" prefWidth="152.0" text="Tienda" />
    </children>
 </AnchorPane>

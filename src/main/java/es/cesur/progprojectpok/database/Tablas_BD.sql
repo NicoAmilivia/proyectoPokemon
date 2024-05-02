@@ -618,4 +618,12 @@ VALUES
 
 
 
-
+INSERT INTO OBJETO VALUES
+                       (1,'Pesa',NULL,NULL,NULL,NULL,NULL,80),
+                       (2,'Pluma',NULL,NULL,NULL,NULL,NULL,80),
+                       (3,'Chaleco',NULL,NULL,NULL,NULL,NULL,80),
+                       (4,'Baston',NULL,NULL,NULL,NULL,NULL,80),
+                       (5,'Pilas',NULL,NULL,NULL,NULL,NULL,80),
+                       (6,'Eter',NULL,NULL,NULL,NULL,NULL,90),
+                       (7,'anilloUnico',NULL,NULL,NULL,NULL,NULL,80),
+                       (8,'pokeball',NULL,NULL,NULL,NULL,NULL,80);

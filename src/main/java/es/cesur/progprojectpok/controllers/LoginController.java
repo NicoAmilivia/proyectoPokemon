@@ -1,5 +1,6 @@
 package es.cesur.progprojectpok.controllers;
 
+import es.cesur.progprojectpok.clases.Entrenador;
 import es.cesur.progprojectpok.database.DBConnection;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -35,6 +36,8 @@ public class LoginController {
     @FXML
     private TextField invalidCredential;
 
+    private Entrenador entrenador;
+
     @FXML
     private void handleLoginButtonAction() {
         String usernameLog = usernameField.getText();
@@ -48,17 +51,28 @@ public class LoginController {
             preparedStatement.setString(2, passwordLog);
             ResultSet resultSet = preparedStatement.executeQuery();
 
+
+
             if (resultSet.next()) {
+                entrenador = new Entrenador(
+                        resultSet.getInt("ID_ENTRENADOR"),
+                        resultSet.getString("NOM_ENTRENADOR"),
+                        resultSet.getInt("POKEDOLLARS")
+                        );
+                System.out.println(entrenador.getNumPokeDollars());
+
+
                 // Si el usuario y la contraseña son válidos, cerrar la ventana de inicio de sesión
                 Stage stage = (Stage) loginButton.getScene().getWindow();
                 stage.close();
-
                 // Ahora cargar la nueva vista del menú principal
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/menu-view.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 639, 645);
                 Stage menuStage = new Stage();
                 menuStage.setTitle("Menu");
                 menuStage.setScene(scene);
+                MenuController menuController = fxmlLoader.getController();
+                menuController.setEntrenador(entrenador);
                 menuStage.show();
             } else {
                 //Si las credenciales son incorrectas, mostrar un mensaje de error
@@ -89,6 +103,14 @@ public class LoginController {
             invalidCredential.appendText("Error al registrar usuario en la base de datos \n");
         }
     }
+
+
+
+
+
+
+
+
 }
 
 

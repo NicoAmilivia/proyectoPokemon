@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.TiendaController">
+   <children>
+      <ImageView fitHeight="610.0" fitWidth="604.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondo-tienda.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="irMenuFromTiendaButton" layoutX="18.0" layoutY="31.0" mnemonicParsing="false" onAction="#irMenuFromTiendaOnAction" prefHeight="40.0" prefWidth="93.0" text="Salir" />
+      <TextArea fx:id="logTienda" layoutX="147.0" layoutY="23.0" prefHeight="57.0" prefWidth="276.0" />
+      <Pane layoutX="31.0" layoutY="180.0" opacity="0.8" prefHeight="81.0" prefWidth="136.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="57.0" fitWidth="81.0" layoutX="58.0" layoutY="192.0" onMouseClicked="#mancuernaPush" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pokemons/mancuerna-objeto.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="31.0" layoutY="285.0" opacity="0.8" prefHeight="81.0" prefWidth="136.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="64.0" layoutY="291.0" onMouseClicked="#plumaPush" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pokemons/pluma-objeto.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="31.0" layoutY="395.0" opacity="0.8" prefHeight="81.0" prefWidth="136.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="81.0" fitWidth="73.0" layoutX="65.0" layoutY="395.0" onMouseClicked="#chalecoPush" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pokemons/chaleco-objeto.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="32.0" layoutY="494.0" opacity="0.8" prefHeight="81.0" prefWidth="136.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="81.0" fitWidth="64.0" layoutX="73.0" layoutY="494.0" onMouseClicked="#bastonPush" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pokemons/baston-objeto.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="423.0" layoutY="180.0" opacity="0.8" prefHeight="81.0" prefWidth="136.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="81.0" fitWidth="136.0" layoutX="451.0" layoutY="185.0" onMouseClicked="#pilaPush" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pokemons/pilas-objeto.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="424.0" layoutY="285.0" opacity="0.8" prefHeight="81.0" prefWidth="136.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="104.0" fitWidth="148.0" layoutX="438.0" layoutY="274.0" onMouseClicked="#EterPush" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pokemons/eter-objeto.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="424.0" layoutY="395.0" opacity="0.8" prefHeight="81.0" prefWidth="136.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="81.0" fitWidth="103.0" layoutX="458.0" layoutY="401.0" onMouseClicked="#anilloUnicoPush" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pokemons/anillo-objeto.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="423.0" layoutY="494.0" opacity="0.8" prefHeight="81.0" prefWidth="136.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="70.0" fitWidth="81.0" layoutX="452.0" layoutY="500.0" onMouseClicked="#pokeballPush" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pokemons/pokeball-objeto.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="455.0" layoutY="16.0" opacity="0.8" prefHeight="64.0" prefWidth="130.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="16.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEDOLLARS" />
+            <Text fx:id="pokedollarsText" layoutX="46.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="37.6708984375" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
