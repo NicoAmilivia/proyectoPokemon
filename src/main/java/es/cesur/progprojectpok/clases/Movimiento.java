@@ -34,6 +34,16 @@ public class Movimiento {
         this.nombre = nombre;
     }
 
+
+
+
+
+    //Metodo para atacar
+
+    public void usarMovimiento(Pokemon atacante, Pokemon objetivo){
+
+    }
+
     @Override
     public String toString() {
         return "Movimiento{" +

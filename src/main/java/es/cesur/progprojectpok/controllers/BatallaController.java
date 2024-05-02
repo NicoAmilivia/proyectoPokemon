@@ -80,7 +80,7 @@ public class BatallaController {
     private boolean turnoJugador;
 
     private Pokemon pokemonRivalEnCombate; //variable para almacenar el pokemon rival actualmente en combate
-
+    private  Pokemon pokemonJugadorEnCombate; //Variable para almacenar nuestro pokemon en combate
 
 
     public void initialize() {
@@ -89,6 +89,8 @@ public class BatallaController {
         comprobarInicio();
 
         setPokemonRivalEnCombate(equipoRival.get(0));
+        setPokemonJugadorEnCombate(equipo.get(0));
+
         Pokemon primerPokemon = equipo.get(0);
 
         int pokemonId = primerPokemon.getNumPokedex();
@@ -201,7 +203,7 @@ public class BatallaController {
 
                 if (resultSet.next()) {
                     String nombrePokemon = resultSet.getString("NOM_POKEMON");
-                    Pokemon pokemonAleatorio = new Pokemon(numPokedex,nombrePokemon,0, 0, 0, 0, 0, 0, 1,  10, 0);
+                    Pokemon pokemonAleatorio = new Pokemon(numPokedex,nombrePokemon,0, 0, 0, 0, 0, 0, 10,  10, 0);
                     pokemonAleatorio.setVidaActual(pokemonAleatorio.getVitalidad());
                     equipoRival.add(pokemonAleatorio);
                 } else {
@@ -279,54 +281,136 @@ public class BatallaController {
 
     @FXML
     private void ataqueOnAction1(ActionEvent event) {
-        if (turnoJugador) {
-            log.appendText("Se ha utilizado " + movimientosPokemon.get(0).getNombre() + "\n");
-            turnoJugador = false;
 
-            actualizarBarraProgresoRival();
+        equipoRivalSinPokemones();
 
-            realizarAccionRival();
-        }else
-            log.appendText("No es tu turno \n");
+        if (equipoRivalSinPokemones()){
+            log.appendText("El combate ha finalizado.\n");
+        } else if (!equipoRivalSinPokemones()) {
+
+            if (turnoJugador) {
+
+                Movimiento movimiento = movimientosPokemon.get(0);
+
+                if (movimiento instanceof MovimientoAtaque) {
+                    //Si es un MovimientoAtaque, llamar al método usarMovimiento
+                    ((MovimientoAtaque) movimiento).usarMovimiento(pokemonJugadorEnCombate, pokemonRivalEnCombate);
+                }
+
+                log.appendText("Se ha utilizado " + movimientosPokemon.get(0).getNombre() + "\n");
+                turnoJugador = false;
+
+                combrobarVidaPokemon();
+
+                verificarGanador();
+
+
+                actualizarBarraProgresoRival();
+
+                realizarAccionRival();
+            } else
+                log.appendText("No es tu turno \n");
+        }
     }
 
     @FXML
     private void ataqueOnAction2(ActionEvent event) {
-        if (turnoJugador) {
-            log.appendText("Se ha utilizado " + movimientosPokemon.get(1).getNombre() + "\n");
-            turnoJugador = false;
+        equipoRivalSinPokemones();
 
-            actualizarBarraProgresoRival();
+        if (equipoRivalSinPokemones()){
+            log.appendText("El combate ha finalizado.\n");
+        } else if (!equipoRivalSinPokemones()) {
 
-            realizarAccionRival();
-        }else
-            log.appendText("No es tu turno \n");
+            if (turnoJugador) {
+
+                Movimiento movimiento = movimientosPokemon.get(1);
+
+                if (movimiento instanceof MovimientoAtaque) {
+                    //Si es un MovimientoAtaque, llamar al método usarMovimiento
+                    ((MovimientoAtaque) movimiento).usarMovimiento(pokemonJugadorEnCombate, pokemonRivalEnCombate);
+                }
+
+                log.appendText("Se ha utilizado " + movimientosPokemon.get(1).getNombre() + "\n");
+                turnoJugador = false;
+
+                combrobarVidaPokemon();
+
+                verificarGanador();
+
+
+                actualizarBarraProgresoRival();
+
+                realizarAccionRival();
+            } else
+                log.appendText("No es tu turno \n");
+        }
     }
 
     @FXML
     private void ataqueOnAction3(ActionEvent event) {
-        if (turnoJugador) {
-            log.appendText("Se ha utilizado " + movimientosPokemon.get(2).getNombre() + "\n");
-            turnoJugador = false;
+        equipoRivalSinPokemones();
 
-            actualizarBarraProgresoRival();
+        if (equipoRivalSinPokemones()){
+            log.appendText("El combate ha finalizado.\n");
+        } else if (!equipoRivalSinPokemones()) {
 
-            realizarAccionRival();
-        }else
-            log.appendText("No es tu turno \n");
+            if (turnoJugador) {
+
+                Movimiento movimiento = movimientosPokemon.get(2);
+
+                if (movimiento instanceof MovimientoAtaque) {
+                    //Si es un MovimientoAtaque, llamar al método usarMovimiento
+                    ((MovimientoAtaque) movimiento).usarMovimiento(pokemonJugadorEnCombate, pokemonRivalEnCombate);
+                }
+
+                log.appendText("Se ha utilizado " + movimientosPokemon.get(2).getNombre() + "\n");
+                turnoJugador = false;
+
+                combrobarVidaPokemon();
+
+                verificarGanador();
+
+
+                actualizarBarraProgresoRival();
+
+                realizarAccionRival();
+            } else
+                log.appendText("No es tu turno \n");
+        }
     }
 
     @FXML
     private void ataqueOnAction4(ActionEvent event) {
-        if (turnoJugador) {
-            log.appendText("Se ha utilizado " + movimientosPokemon.get(3).getNombre() + "\n");
-            turnoJugador = false;
 
-            actualizarBarraProgresoRival();
+        equipoRivalSinPokemones();
 
-            realizarAccionRival();
-        }else
-            log.appendText("No es tu turno \n");
+        if (equipoRivalSinPokemones()){
+            log.appendText("El combate ha finalizado.\n");
+        } else if (!equipoRivalSinPokemones()) {
+
+            if (turnoJugador) {
+
+                Movimiento movimiento = movimientosPokemon.get(3);
+
+                if (movimiento instanceof MovimientoAtaque) {
+                    //Si es un MovimientoAtaque, llamar al método usarMovimiento
+                    ((MovimientoAtaque) movimiento).usarMovimiento(pokemonJugadorEnCombate, pokemonRivalEnCombate);
+                }
+
+                log.appendText("Se ha utilizado " + movimientosPokemon.get(3).getNombre() + "\n");
+                turnoJugador = false;
+
+                combrobarVidaPokemon();
+
+                verificarGanador();
+
+
+                actualizarBarraProgresoRival();
+
+                realizarAccionRival();
+            } else
+                log.appendText("No es tu turno \n");
+        }
     }
 
 
@@ -348,6 +432,18 @@ public class BatallaController {
         this.pokemonRivalEnCombate = pokemon;
     }
 
+    public Pokemon getPokemonRivalEnCombate() {
+        return pokemonRivalEnCombate;
+    }
+
+    public Pokemon getPokemonJugadorEnCombate() {
+        return pokemonJugadorEnCombate;
+    }
+
+    public void setPokemonJugadorEnCombate(Pokemon pokemonJugadorEnCombate) {
+        this.pokemonJugadorEnCombate = pokemonJugadorEnCombate;
+    }
+
     private void actualizarBarraProgresoRival() {
         if (pokemonRivalEnCombate != null) {
             double vidaActualRival = pokemonRivalEnCombate.getVidaActual();
@@ -356,6 +452,50 @@ public class BatallaController {
             double porcentajeVidaRival = vidaActualRival / vidaTotalRival;
 
             progressRival.setProgress(porcentajeVidaRival);
+        }
+    }
+
+    public void combrobarVidaPokemon(){
+
+        if (pokemonRivalEnCombate.getVidaActual() == 0){
+            int indiceActual = equipoRival.indexOf(pokemonRivalEnCombate);
+            if (indiceActual != -1 && indiceActual < equipoRival.size() - 1) {
+                Pokemon siguientePokemon = equipoRival.get(indiceActual + 1);
+                setPokemonRivalEnCombate(siguientePokemon);
+
+                cambiarInfoPokemonRival();
+            }
+        }
+
+    }
+
+
+    private  void cambiarInfoPokemonRival(){
+        int pokemonId = pokemonRivalEnCombate.getNumPokedex();
+        String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
+        Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
+        pokemonRival.setImage(image);
+
+        String nomPokemon = pokemonRivalEnCombate.getNombre();
+        nomPokemonRival.setText(nomPokemon);
+
+        int nivPokemon = pokemonRivalEnCombate.getNivel();
+        nivPokemonRival.setText("LVL " + nivPokemon);
+    }
+
+    private boolean equipoRivalSinPokemones() {
+        for (Pokemon pokemon : equipoRival) {
+            if (pokemon.getVidaActual() > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void verificarGanador() {
+        if (equipoRivalSinPokemones()) {
+
+            log.appendText("¡Felicidades! Has ganado la batalla.\n");
         }
     }
 

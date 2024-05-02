@@ -35,4 +35,15 @@ public class MovimientoAtaque extends Movimiento {
     }
 
 
+    //Metodo de ataque
+
+    @Override
+    public void usarMovimiento(Pokemon atacante, Pokemon objetivo) {
+        super.usarMovimiento(atacante, objetivo);
+
+        int danio = (int) Math.round(atacante.getAtaque() * ((double) potenciaAtaque / 100));
+
+        System.out.println(danio);
+        objetivo.setVidaActual(objetivo.getVidaActual() - danio);
+    }
 }
