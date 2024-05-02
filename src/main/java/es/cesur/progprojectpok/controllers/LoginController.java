@@ -59,7 +59,7 @@ public class LoginController {
                         resultSet.getString("NOM_ENTRENADOR"),
                         resultSet.getInt("POKEDOLLARS")
                         );
-                System.out.println(entrenador.getNumPokeDollars());
+
 
 
                 // Si el usuario y la contraseña son válidos, cerrar la ventana de inicio de sesión
