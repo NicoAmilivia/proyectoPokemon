@@ -282,6 +282,7 @@ public class BatallaController {
     @FXML
     private void ataqueOnAction1(ActionEvent event) {
 
+        System.out.println(pokemonJugadorEnCombate.getNombre());
         equipoRivalSinPokemones();
 
         if (equipoRivalSinPokemones()){
@@ -470,6 +471,21 @@ public class BatallaController {
     }
 
 
+    private  void cambiarInfoPokemon(){
+        int pokemonId = pokemonJugadorEnCombate.getNumPokedex();
+        String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
+        Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
+        pokemonJugador.setImage(image);
+
+        String nomPokemon = pokemonJugadorEnCombate.getNombre();
+        nomPokemonJugador.setText(nomPokemon);
+
+        int nivPokemon = pokemonJugadorEnCombate.getNivel();
+        nivPokemonJugador.setText("LVL " + nivPokemon);
+
+        actualizarBotonesAtaque();
+    }
+
     private  void cambiarInfoPokemonRival(){
         int pokemonId = pokemonRivalEnCombate.getNumPokedex();
         String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
@@ -501,7 +517,25 @@ public class BatallaController {
 
     @FXML
     private void cambiarPokemonOnAction(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/elegirPokemonCombate-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 590, 600);
+            ElegirPokemonCombateController elegirPokemonCombateController = fxmlLoader.getController();
+            elegirPokemonCombateController.setBatallaController(this);
+            Stage menuStage = new Stage();
+            menuStage.setTitle("Elegir Pokemon");
+            menuStage.setScene(scene);
 
+            menuStage.setOnHidden(event -> {
+                cambiarInfoPokemon(); //Llamada al método cambiarInfoPokemon() al volver de la otra pantalla
+                cargarMovimientosDesdeBD(pokemonJugadorEnCombate.getIdPokemon());
+                actualizarBotonesAtaque();
+            });
+
+            menuStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
