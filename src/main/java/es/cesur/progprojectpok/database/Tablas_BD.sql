@@ -603,10 +603,10 @@ VALUES
 -- Movimientos de estado
 INSERT INTO MOVIMIENTOS (ID_MOVIMIENTO, NOM_MOVIMIENTO, ESTADO, TURNOS, NIVEL_APRENDIZAJE)
 VALUES
-(11, 'Confusión', 'CONFUSIÓN', 2, 15),
-(12, 'Paralizador', 'PARÁLISIS', 1, 20),
-(13, 'Hipnosis', 'SUEÑO', 1, 25),
-(14, 'Canto', 'SUEÑO', 2, 15),
+(11, 'Confusión', 'CONFUSO', 2, 15),
+(12, 'Paralizador', 'PARALIZADO', 1, 20),
+(13, 'Hipnosis', 'SOMNIOLENTO', 1, 25),
+(14, 'Canto', 'SOMNIOLENTO', 2, 15),
 
 -- Movimientos de mejora
 INSERT INTO MOVIMIENTOS (ID_MOVIMIENTO, NOM_MOVIMIENTO, MEJORA, CANT_MEJORA, TURNOS, NIVEL_APRENDIZAJE)

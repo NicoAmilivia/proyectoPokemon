@@ -1,9 +1,6 @@
 package es.cesur.progprojectpok.controllers;
 
-import es.cesur.progprojectpok.clases.Movimiento;
-import es.cesur.progprojectpok.clases.MovimientoAtaque;
-import es.cesur.progprojectpok.clases.Pokemon;
-import es.cesur.progprojectpok.clases.Tipo;
+import es.cesur.progprojectpok.clases.*;
 import es.cesur.progprojectpok.database.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -232,16 +229,41 @@ public class BatallaController {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                // Leer los datos del movimiento desde la base de datos
-                // Crear un objeto Movimiento con los datos leídos
-                Movimiento movimiento = new MovimientoAtaque(
-                        resultSet.getInt("TURNOS"),
-                        resultSet.getString("NOM_MOVIMIENTO"),
-                        Tipo.TipoStringToEnum(resultSet.getString("TIPO")),
-                        resultSet.getInt("POTENCIA")
-                );
+                String tipoMovimiento = resultSet.getString("TIPO_MOVIMIENTO");
+                Movimiento movimiento;
+
+                switch (tipoMovimiento) {
+                    case "ATAQUE":
+                        movimiento = new MovimientoAtaque(
+                                resultSet.getInt("NUM_USOS"),
+                                resultSet.getString("NOM_MOVIMIENTO"),
+                                Tipo.TipoStringToEnum(resultSet.getString("TIPO")),
+                                resultSet.getInt("POTENCIA")
+                        );
+                        break;
+                    case "ESTADO":
+                        movimiento = new MovimientoEstado(
+                                resultSet.getInt("NUM_USOS"),
+                                resultSet.getString("NOM_MOVIMIENTO"),
+                                Estado.EstadoStringToEnum(resultSet.getString("ESTADO")),
+                                resultSet.getInt("TURNOS")
+                        );
+                        break;
+                    case "MEJORA":
+                        movimiento = new MovimientoMejora(
+                                resultSet.getInt("NUM_USOS"),
+                                resultSet.getString("NOM_MOVIMIENTO"),
+                                resultSet.getInt("TURNOS"),
+                                CambiosEstado.CambioEstadoStringToEnum(resultSet.getString("MEJORA"))
+                        );
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Tipo de movimiento desconocido: " + tipoMovimiento);
+                }
+
                 movimientosPokemon.add(movimiento);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -282,7 +304,6 @@ public class BatallaController {
     @FXML
     private void ataqueOnAction1(ActionEvent event) {
 
-        System.out.println(pokemonJugadorEnCombate.getNombre());
         equipoRivalSinPokemones();
 
         if (equipoRivalSinPokemones()){
@@ -298,7 +319,7 @@ public class BatallaController {
                     ((MovimientoAtaque) movimiento).usarMovimiento(pokemonJugadorEnCombate, pokemonRivalEnCombate);
                 }
 
-                log.appendText("Se ha utilizado " + movimientosPokemon.get(0).getNombre() + "\n");
+                log.appendText(pokemonJugadorEnCombate.getNombre() + " ha utilizado " + movimientosPokemon.get(0).getNombre() + "\n");
                 turnoJugador = false;
 
                 combrobarVidaPokemon();
@@ -331,7 +352,7 @@ public class BatallaController {
                     ((MovimientoAtaque) movimiento).usarMovimiento(pokemonJugadorEnCombate, pokemonRivalEnCombate);
                 }
 
-                log.appendText("Se ha utilizado " + movimientosPokemon.get(1).getNombre() + "\n");
+                log.appendText(pokemonJugadorEnCombate.getNombre() + " ha utilizado " + movimientosPokemon.get(1).getNombre() + "\n");
                 turnoJugador = false;
 
                 combrobarVidaPokemon();
@@ -364,7 +385,7 @@ public class BatallaController {
                     ((MovimientoAtaque) movimiento).usarMovimiento(pokemonJugadorEnCombate, pokemonRivalEnCombate);
                 }
 
-                log.appendText("Se ha utilizado " + movimientosPokemon.get(2).getNombre() + "\n");
+                log.appendText(pokemonJugadorEnCombate.getNombre() + " ha utilizado " + movimientosPokemon.get(2).getNombre() + "\n");
                 turnoJugador = false;
 
                 combrobarVidaPokemon();
@@ -398,7 +419,7 @@ public class BatallaController {
                     ((MovimientoAtaque) movimiento).usarMovimiento(pokemonJugadorEnCombate, pokemonRivalEnCombate);
                 }
 
-                log.appendText("Se ha utilizado " + movimientosPokemon.get(3).getNombre() + "\n");
+                log.appendText(pokemonJugadorEnCombate.getNombre() + " ha utilizado " + movimientosPokemon.get(3).getNombre() + "\n");
                 turnoJugador = false;
 
                 combrobarVidaPokemon();

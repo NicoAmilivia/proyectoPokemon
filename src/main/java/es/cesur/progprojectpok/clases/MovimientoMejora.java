@@ -5,12 +5,12 @@ public class MovimientoMejora extends Movimiento{
 
     //ATRIBUTOS
     private int numTurnosMejora;
-    private CambioEstado mejora;
+    private CambiosEstado mejora;
 
 
     //CONSTRUCTOR CON PARAMETROS
 
-    public MovimientoMejora(int numUsos, String nombre, int numTurnosMejora, CambioEstado mejora) {
+    public MovimientoMejora(int numUsos, String nombre, int numTurnosMejora, CambiosEstado mejora) {
         super(numUsos, nombre);
         this.numTurnosMejora=numTurnosMejora;
         this.mejora= mejora;
@@ -27,11 +27,11 @@ public class MovimientoMejora extends Movimiento{
         this.numTurnosMejora = numTurnosMejora;
     }
 
-    public CambioEstado getMejora() {
+    public CambiosEstado getMejora() {
         return mejora;
     }
 
-    public void setMejora(CambioEstado mejora) {
+    public void setMejora(CambiosEstado mejora) {
         this.mejora = mejora;
     }
 }

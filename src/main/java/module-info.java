@@ -19,4 +19,6 @@ module es.cesur.progprojectpok {
     exports es.cesur.progprojectpok.controllers;
 
     opens es.cesur.progprojectpok.model to org.hibernate.orm.core;
+    exports es.cesur.progprojectpok.clases;
+    opens es.cesur.progprojectpok.clases to javafx.fxml;
 }

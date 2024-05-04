@@ -30,11 +30,7 @@ public class Entrenador {
     }
 
 
-    public Pokemon ponerACriar(Pokemon pokemonA,Pokemon pokemonB){
 
-        Pokemon nuevoPokemon = new Pokemon();
-        return nuevoPokemon;
-    }
 
 
     //GET Y SET
