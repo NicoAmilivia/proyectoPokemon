@@ -1,6 +1,7 @@
 package es.cesur.progprojectpok.clases;
 
 import javax.swing.text.Element;
+import java.util.List;
 
 public class Pokemon {
 
@@ -34,6 +35,8 @@ public class Pokemon {
     private int idPokemon;
 
     private int vidaActual;
+
+    private List<Movimiento> movimientos;
 
 
     //CONSTRUCTOR CON PARAMETROS
@@ -288,9 +291,13 @@ public class Pokemon {
         this.idPokemon = idPokemon;
     }
 
+    public void setMovimientos(List<Movimiento> movimientos) {
+        this.movimientos = movimientos;
+    }
 
-
-
+    public List<Movimiento> getMovimientos() {
+        return movimientos;
+    }
 
     public static Tipo TipoStringToEnum(String tipoString) {
         return switch (tipoString.toUpperCase()) {

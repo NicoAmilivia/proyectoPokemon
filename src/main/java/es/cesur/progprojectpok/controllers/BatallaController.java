@@ -2,6 +2,7 @@ package es.cesur.progprojectpok.controllers;
 
 import es.cesur.progprojectpok.clases.*;
 import es.cesur.progprojectpok.database.DBConnection;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +24,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class BatallaController {
     @FXML
@@ -78,6 +81,8 @@ public class BatallaController {
 
     private Pokemon pokemonRivalEnCombate; //variable para almacenar el pokemon rival actualmente en combate
     private  Pokemon pokemonJugadorEnCombate; //Variable para almacenar nuestro pokemon en combate
+
+    private static final int TIEMPO_DE_ESPERA = 2000;
 
 
     public void initialize() {
@@ -200,8 +205,9 @@ public class BatallaController {
 
                 if (resultSet.next()) {
                     String nombrePokemon = resultSet.getString("NOM_POKEMON");
-                    Pokemon pokemonAleatorio = new Pokemon(numPokedex,nombrePokemon,0, 0, 0, 0, 0, 0, 10,  10, 0);
+                    Pokemon pokemonAleatorio = new Pokemon(numPokedex,nombrePokemon,5, 0, 0, 0, 0, 1, 10,  10, 0);
                     pokemonAleatorio.setVidaActual(pokemonAleatorio.getVitalidad());
+                    cargarMovimientosRival(pokemonAleatorio);
                     equipoRival.add(pokemonAleatorio);
                 } else {
                     System.out.println("No se encontró el Pokémon con el ID de Pokédex: " + numPokedex);
@@ -305,10 +311,11 @@ public class BatallaController {
     private void ataqueOnAction1(ActionEvent event) {
 
         equipoRivalSinPokemones();
+        equipoJugadorSinPokemones();
 
-        if (equipoRivalSinPokemones()){
+        if (equipoRivalSinPokemones() || equipoJugadorSinPokemones()){
             log.appendText("El combate ha finalizado.\n");
-        } else if (!equipoRivalSinPokemones()) {
+        } else if (!equipoRivalSinPokemones() && !equipoJugadorSinPokemones()) {
 
             if (turnoJugador) {
 
@@ -329,7 +336,8 @@ public class BatallaController {
 
                 actualizarBarraProgresoRival();
 
-                realizarAccionRival();
+                esperarTurnoRival();
+
             } else
                 log.appendText("No es tu turno \n");
         }
@@ -338,10 +346,11 @@ public class BatallaController {
     @FXML
     private void ataqueOnAction2(ActionEvent event) {
         equipoRivalSinPokemones();
+        equipoJugadorSinPokemones();
 
-        if (equipoRivalSinPokemones()){
+        if (equipoRivalSinPokemones() || equipoJugadorSinPokemones()){
             log.appendText("El combate ha finalizado.\n");
-        } else if (!equipoRivalSinPokemones()) {
+        } else if (!equipoRivalSinPokemones() && !equipoJugadorSinPokemones()) {
 
             if (turnoJugador) {
 
@@ -362,7 +371,7 @@ public class BatallaController {
 
                 actualizarBarraProgresoRival();
 
-                realizarAccionRival();
+                esperarTurnoRival();
             } else
                 log.appendText("No es tu turno \n");
         }
@@ -371,10 +380,11 @@ public class BatallaController {
     @FXML
     private void ataqueOnAction3(ActionEvent event) {
         equipoRivalSinPokemones();
+        equipoJugadorSinPokemones();
 
-        if (equipoRivalSinPokemones()){
+        if (equipoRivalSinPokemones() || equipoJugadorSinPokemones()){
             log.appendText("El combate ha finalizado.\n");
-        } else if (!equipoRivalSinPokemones()) {
+        } else if (!equipoRivalSinPokemones() && !equipoJugadorSinPokemones()) {
 
             if (turnoJugador) {
 
@@ -395,7 +405,7 @@ public class BatallaController {
 
                 actualizarBarraProgresoRival();
 
-                realizarAccionRival();
+                esperarTurnoRival();
             } else
                 log.appendText("No es tu turno \n");
         }
@@ -405,10 +415,11 @@ public class BatallaController {
     private void ataqueOnAction4(ActionEvent event) {
 
         equipoRivalSinPokemones();
+        equipoJugadorSinPokemones();
 
-        if (equipoRivalSinPokemones()){
+        if (equipoRivalSinPokemones() || equipoJugadorSinPokemones()){
             log.appendText("El combate ha finalizado.\n");
-        } else if (!equipoRivalSinPokemones()) {
+        } else if (!equipoRivalSinPokemones() && !equipoJugadorSinPokemones()) {
 
             if (turnoJugador) {
 
@@ -429,7 +440,7 @@ public class BatallaController {
 
                 actualizarBarraProgresoRival();
 
-                realizarAccionRival();
+                esperarTurnoRival();
             } else
                 log.appendText("No es tu turno \n");
         }
@@ -437,10 +448,25 @@ public class BatallaController {
 
 
     private void realizarAccionRival() {
+        Random random = new Random();
+        int indiceMovimientoAleatorio = random.nextInt(pokemonRivalEnCombate.getMovimientos().size());
 
-        //Logica del ataque rival
+        //Selecciona el movimiento aleatorio que va a usar el rival
+        Movimiento movimientoRival = pokemonRivalEnCombate.getMovimientos().get(indiceMovimientoAleatorio);
 
-        turnoJugador = true;
+        if (movimientoRival instanceof MovimientoAtaque) {
+            ((MovimientoAtaque) movimientoRival).usarMovimiento(pokemonRivalEnCombate, pokemonJugadorEnCombate);
+        }
+
+        log.appendText(pokemonRivalEnCombate.getNombre() + " ha utilizado " + movimientoRival.getNombre() + "\n");
+
+        combrobarVidaPokemonJugador();
+
+        verificarGanador();
+
+        actualizarBarraProgresoJugador();
+
+        turnoJugador = true; //Cambiar el turno al jugador después de que el rival haya realizado su movimiento
     }
 
     private void comprobarInicio(){
@@ -477,6 +503,17 @@ public class BatallaController {
         }
     }
 
+    private void actualizarBarraProgresoJugador() {
+        if (pokemonJugadorEnCombate != null) {
+            double vidaActual = pokemonJugadorEnCombate.getVidaActual();
+            double vidaTotal = pokemonJugadorEnCombate.getVitalidad();
+
+            double porcentajeVidaRival = vidaActual/ vidaTotal;
+
+            progressJugador.setProgress(porcentajeVidaRival);
+        }
+    }
+
     public void combrobarVidaPokemon(){
 
         if (pokemonRivalEnCombate.getVidaActual() == 0){
@@ -491,8 +528,23 @@ public class BatallaController {
 
     }
 
+    public void combrobarVidaPokemonJugador(){
 
-    private  void cambiarInfoPokemon(){
+        if (pokemonJugadorEnCombate.getVidaActual() <= 0){
+            int indiceActual = equipo.indexOf(pokemonJugadorEnCombate);
+            if (indiceActual != -1 && indiceActual < equipo.size() - 1) {
+                Pokemon siguientePokemon = equipo.get(indiceActual + 1);
+                setPokemonJugadorEnCombate(siguientePokemon);
+
+                cambiarInfoPokemon();
+            }
+        }
+
+    }
+
+
+    private void cambiarInfoPokemon() {
+
         int pokemonId = pokemonJugadorEnCombate.getNumPokedex();
         String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
         Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
@@ -504,7 +556,10 @@ public class BatallaController {
         int nivPokemon = pokemonJugadorEnCombate.getNivel();
         nivPokemonJugador.setText("LVL " + nivPokemon);
 
+        cargarMovimientosDesdeBD(pokemonJugadorEnCombate.getIdPokemon());
+
         actualizarBotonesAtaque();
+
     }
 
     private  void cambiarInfoPokemonRival(){
@@ -529,10 +584,22 @@ public class BatallaController {
         return true;
     }
 
+    private boolean equipoJugadorSinPokemones() {
+        for (Pokemon pokemon : equipo) {
+            if (pokemon.getVidaActual() > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private void verificarGanador() {
         if (equipoRivalSinPokemones()) {
 
             log.appendText("¡Felicidades! Has ganado la batalla.\n");
+        } else if (equipoJugadorSinPokemones()) {
+
+            log.appendText("¡Mala Suerte! Has perdido la batalla.\n");
         }
     }
 
@@ -559,6 +626,72 @@ public class BatallaController {
         }
     }
 
+
+    private void cargarMovimientosRival(Pokemon pokemon) {
+        List<Movimiento> movimientos = new ArrayList<>();
+        try (Connection connection = DBConnection.getConnection()) {
+            String sql = "SELECT * FROM MOVIMIENTOS ORDER BY RAND() LIMIT 4";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                String tipoMovimiento = resultSet.getString("TIPO_MOVIMIENTO");
+                Movimiento movimiento;
+
+                switch (tipoMovimiento) {
+                    case "ATAQUE":
+                        movimiento = new MovimientoAtaque(
+                                resultSet.getInt("NUM_USOS"),
+                                resultSet.getString("NOM_MOVIMIENTO"),
+                                Tipo.TipoStringToEnum(resultSet.getString("TIPO")),
+                                resultSet.getInt("POTENCIA")
+                        );
+                        break;
+                    case "ESTADO":
+                        movimiento = new MovimientoEstado(
+                                resultSet.getInt("NUM_USOS"),
+                                resultSet.getString("NOM_MOVIMIENTO"),
+                                Estado.EstadoStringToEnum(resultSet.getString("ESTADO")),
+                                resultSet.getInt("TURNOS")
+                        );
+                        break;
+                    case "MEJORA":
+                        movimiento = new MovimientoMejora(
+                                resultSet.getInt("NUM_USOS"),
+                                resultSet.getString("NOM_MOVIMIENTO"),
+                                resultSet.getInt("TURNOS"),
+                                CambiosEstado.CambioEstadoStringToEnum(resultSet.getString("MEJORA"))
+                        );
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Tipo de movimiento desconocido: " + tipoMovimiento);
+                }
+
+                movimientos.add(movimiento);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        pokemon.setMovimientos(movimientos);
+    }
+
+
+    private void esperarTurnoRival() {
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+
+                    realizarAccionRival();
+
+                    verificarGanador();
+
+                    turnoJugador = true;
+                });
+            }
+        }, TIEMPO_DE_ESPERA);
+    }
 
 
 

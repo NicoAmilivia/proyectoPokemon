@@ -7,7 +7,7 @@ public enum Estado {
     DORMIDO,
     CONGELADO,
     HELADO,
-    SOMNOLIENTO,
+    SOMNIOLENTO,
     DEBILITADO,
     CONFUSO;
 
@@ -22,7 +22,7 @@ public enum Estado {
             case "DORMIDO" -> DORMIDO;
             case "CONGELADO" ->CONGELADO;
             case "HELADO" -> HELADO;
-            case "SOMNOLIENTO" -> SOMNOLIENTO;
+            case "SOMNIOLENTO" -> SOMNIOLENTO;
             case "DEBILITADO" -> DEBILITADO;
             case "CONFUSO" -> CONFUSO;
             default -> throw new IllegalArgumentException("Estado desconocido: " + estadoString);

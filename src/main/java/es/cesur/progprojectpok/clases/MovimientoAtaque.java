@@ -43,7 +43,6 @@ public class MovimientoAtaque extends Movimiento {
 
         int danio = (int) Math.round(atacante.getAtaque() * ((double) potenciaAtaque / 100));
 
-        System.out.println(danio);
         objetivo.setVidaActual(objetivo.getVidaActual() - danio);
     }
 }

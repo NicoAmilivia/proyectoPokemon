@@ -175,7 +175,6 @@ public class MenuController {
 
     public void setEntrenador(Entrenador entrenador){
         this.entrenador=entrenador;
-        System.out.println(entrenador.getNumPokeDollars());
     }
 
 
