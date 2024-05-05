@@ -1,5 +1,6 @@
 package es.cesur.progprojectpok.controllers;
 
+import es.cesur.progprojectpok.clases.Entrenador;
 import es.cesur.progprojectpok.clases.Pokemon;
 import es.cesur.progprojectpok.database.DBConnection;
 import javafx.collections.FXCollections;
@@ -31,6 +32,8 @@ public class EquipoController {
 
     private List<Pokemon> equipo;
     private List<Pokemon> caja;
+
+    private Entrenador entrenador;
 
 
     public void initialize() {
@@ -142,9 +145,16 @@ public class EquipoController {
             Stage menuStage = new Stage();
             menuStage.setTitle("Menu");
             menuStage.setScene(scene);
+            MenuController menuController = fxmlLoader.getController();
+            menuController.setEntrenador(entrenador);
             menuStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void setEntrenador(Entrenador entrenador) {
+        this.entrenador = entrenador;
     }
 }

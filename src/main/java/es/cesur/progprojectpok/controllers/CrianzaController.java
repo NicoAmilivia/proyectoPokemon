@@ -1,4 +1,5 @@
 package es.cesur.progprojectpok.controllers;
+import es.cesur.progprojectpok.clases.Entrenador;
 import es.cesur.progprojectpok.clases.Pokemon;
 import es.cesur.progprojectpok.database.DBConnection;
 import javafx.collections.FXCollections;
@@ -56,6 +57,8 @@ public class CrianzaController {
     private boolean redurcirFertilidad;
 
     private int numPokedexHijo;
+
+    private Entrenador entrenador;
 
 
 
@@ -126,6 +129,8 @@ public class CrianzaController {
             Stage menuStage = new Stage();
             menuStage.setTitle("Menu");
             menuStage.setScene(scene);
+            MenuController menuController = fxmlLoader.getController();
+            menuController.setEntrenador(entrenador);
             menuStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -304,5 +309,7 @@ public class CrianzaController {
     }
 
 
-
+    public void setEntrenador(Entrenador entrenador) {
+        this.entrenador = entrenador;
+    }
 }

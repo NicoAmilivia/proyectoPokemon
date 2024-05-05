@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="602.0" style="-fx-background-color: #ededed;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.ConfirmarCompraController">
+   <children>
+      <Pane layoutX="52.0" layoutY="69.0" prefHeight="320.0" prefWidth="499.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="104.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONFIRMA TU COMPRA" wrappingWidth="304.744140625">
+               <font>
+                  <Font name="Book Antiqua" size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="textoConfirmacion" layoutX="54.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="431.0">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Text>
+            <Button fx:id="aceptarCompraButton" layoutX="81.0" layoutY="250.0" mnemonicParsing="false" onAction="#aceptarCompraOnAction" opacity="0.82" prefHeight="39.0" prefWidth="97.0" style="-fx-background-color: limegreen;" styleClass="boton-redondo" text="Aceptar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cancelarCompraButton" layoutX="333.0" layoutY="250.0" mnemonicParsing="false" onAction="#cancelarCompraOnAction" prefHeight="39.0" prefWidth="97.0" style="-fx-background-color: indianred;" text="Cancelar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <ImageView fitHeight="106.0" fitWidth="151.0" layoutX="203.0" layoutY="-39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/pokemons/logo-pokekoders.jpg" />
+               </image></ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

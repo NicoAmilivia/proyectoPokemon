@@ -84,6 +84,7 @@ public class BatallaController {
 
     private static final int TIEMPO_DE_ESPERA = 2000;
 
+    private Entrenador entrenador;
 
     public void initialize() {
         cargarEquipoDesdeBD();
@@ -707,10 +708,17 @@ public class BatallaController {
             Stage menuStage = new Stage();
             menuStage.setTitle("Menu");
             menuStage.setScene(scene);
+            MenuController menuController = fxmlLoader.getController();
+            menuController.setEntrenador(entrenador);
             menuStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void setEntrenador(Entrenador entrenador) {
+        this.entrenador = entrenador;
     }
 }
 

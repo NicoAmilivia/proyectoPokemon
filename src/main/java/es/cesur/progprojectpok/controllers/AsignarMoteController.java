@@ -24,8 +24,6 @@ public class AsignarMoteController {
     private Button asignarMoteButton;
 
     @FXML
-    private Button omitirMoteButton;
-    @FXML
     private ImageView imagenPokemonHijo;
 
     private CrianzaController crianzaController;

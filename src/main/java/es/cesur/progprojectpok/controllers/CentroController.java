@@ -1,5 +1,6 @@
 package es.cesur.progprojectpok.controllers;
 
+import es.cesur.progprojectpok.clases.Entrenador;
 import es.cesur.progprojectpok.database.DBConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -81,6 +82,8 @@ public class CentroController {
     private Text mote6;
 
     private boolean mensajeMostrado = false;
+
+    private Entrenador entrenador;
 
     public void initialize() {
         try (Connection connection = DBConnection.getConnection()) {
@@ -207,9 +210,16 @@ public class CentroController {
             Stage menuStage = new Stage();
             menuStage.setTitle("Menu");
             menuStage.setScene(scene);
+            MenuController menuController = fxmlLoader.getController();
+            menuController.setEntrenador(entrenador);
             menuStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void setEntrenador(Entrenador entrenador) {
+        this.entrenador = entrenador;
     }
 }

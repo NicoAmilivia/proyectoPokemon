@@ -50,6 +50,8 @@ public class MenuController {
             Stage menuStage = new Stage();
             menuStage.setTitle("Menu");
             menuStage.setScene(scene);
+            BatallaController batallaController = fxmlLoader.getController();
+            batallaController.setEntrenador(entrenador);
             menuStage.show();
         } catch (IOException e) {
             e.printStackTrace(); // Maneja el error apropiadamente
@@ -68,6 +70,8 @@ public class MenuController {
             Stage menuStage = new Stage();
             menuStage.setTitle("Menu");
             menuStage.setScene(scene);
+            EquipoController equipoController= fxmlLoader.getController();
+            equipoController.setEntrenador(entrenador);
             menuStage.show();
         } catch (IOException e) {
             e.printStackTrace(); // Maneja el error apropiadamente
@@ -87,6 +91,8 @@ public class MenuController {
             Stage menuStage = new Stage();
             menuStage.setTitle("Menu");
             menuStage.setScene(scene);
+            CapturaController capturaController = fxmlLoader.getController();
+            capturaController.setEntrenador(entrenador);
             menuStage.show();
         } catch (IOException e) {
             e.printStackTrace(); // Maneja el error apropiadamente
@@ -106,6 +112,8 @@ public class MenuController {
             Stage menuStage = new Stage();
             menuStage.setTitle("Menu");
             menuStage.setScene(scene);
+            CrianzaController crianzaController = fxmlLoader.getController();
+            crianzaController.setEntrenador(entrenador);
             menuStage.show();
         } catch (IOException e) {
             e.printStackTrace(); // Maneja el error apropiadamente
@@ -126,6 +134,8 @@ public class MenuController {
             Stage menuStage = new Stage();
             menuStage.setTitle("Menu");
             menuStage.setScene(scene);
+            CentroController centroController = fxmlLoader.getController();
+            centroController.setEntrenador(entrenador);
             menuStage.show();
         } catch (IOException e) {
             e.printStackTrace(); // Maneja el error apropiadamente
@@ -144,6 +154,8 @@ public class MenuController {
             Stage menuStage = new Stage();
             menuStage.setTitle("Menu");
             menuStage.setScene(scene);
+            EntrenamientoController entrenamientoController = fxmlLoader.getController();
+            entrenamientoController.setEntrenador(entrenador);
             menuStage.show();
         } catch (IOException e) {
             e.printStackTrace(); // Maneja el error apropiadamente

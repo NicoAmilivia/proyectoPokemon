@@ -6,14 +6,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
+import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javafx.stage.Modality;
 public class TiendaController {
 
     @FXML
@@ -23,7 +27,129 @@ public class TiendaController {
 
     @FXML
     private TextArea logTienda;
+
+    @FXML
+    private ImageView imagenPesa;
+    @FXML
+    private ImageView imagenPluma;
+    @FXML
+    private ImageView imagenChaleco;
+    @FXML
+    private ImageView imagenBaston;
+    @FXML
+    private ImageView imagenPila;
+    @FXML
+    private ImageView imagenEter;
+    @FXML
+    private ImageView imagenAnillo;
+    @FXML
+    private ImageView imagenPokeball;
+    @FXML
+    private Text precioPesa;
+    @FXML
+    private Text precioPluma;
+    @FXML
+    private Text precioChaleco;
+    @FXML
+    private Text precioBaston;
+    @FXML
+    private Text precioPila;
+    @FXML
+    private Text precioEter;
+    @FXML
+    private Text precioAnillo;
+    @FXML
+    private Text precioPokeball;
+
+
     private Entrenador entrenador;
+
+
+
+    public void initialize() {
+        // Configurar eventos para la imagen de la pesa
+        configureMouseEvents(imagenPesa);
+        mostrarPrecioObjeto("Pesa");
+
+        // Configurar eventos para la imagen de la pluma
+        configureMouseEvents(imagenPluma);
+        mostrarPrecioObjeto("Pluma");
+
+        // Configurar eventos para la imagen del chaleco
+        configureMouseEvents(imagenChaleco);
+        mostrarPrecioObjeto("Chaleco");
+
+        // Configurar eventos para la imagen del bastón
+        configureMouseEvents(imagenBaston);
+        mostrarPrecioObjeto("Baston");
+
+        // Configurar eventos para la imagen de la pila
+        configureMouseEvents(imagenPila);
+        mostrarPrecioObjeto("Pilas");
+
+        // Configurar eventos para la imagen del éter
+        configureMouseEvents(imagenEter);
+        mostrarPrecioObjeto("Eter");
+
+        // Configurar eventos para la imagen del anillo
+        configureMouseEvents(imagenAnillo);
+        mostrarPrecioObjeto("anilloUnico");
+
+        // Configurar eventos para la imagen de la pokeball
+        configureMouseEvents(imagenPokeball);
+        mostrarPrecioObjeto("pokeball");
+    }
+
+
+    public void mostrarPrecioObjeto(String nombreObjeto){
+        int precioObjeto = obtenerPrecioObjeto(nombreObjeto);
+        switch (nombreObjeto){
+            case "Pesa":
+                precioPesa.setText(String.valueOf(precioObjeto) + "$");
+                break;
+            case "Pluma":
+                precioPluma.setText(String.valueOf(precioObjeto)+ "$");
+                break;
+            case "Chaleco":
+                precioChaleco.setText(String.valueOf(precioObjeto)+ "$");
+                break;
+            case "Baston":
+                precioBaston.setText(String.valueOf(precioObjeto)+ "$");
+                break;
+            case "Pilas":
+                precioPila.setText(String.valueOf(precioObjeto)+ "$");
+                break;
+            case "Eter":
+                precioEter.setText(String.valueOf(precioObjeto) + "$");
+                break;
+            case "anilloUnico":
+                precioAnillo.setText(String.valueOf(precioObjeto) + "$");
+                break;
+            case "pokeball":
+                precioPokeball.setText(String.valueOf(precioObjeto) + "$");
+                break;
+        }
+    }
+
+    private void configureMouseEvents(ImageView imageView) {
+        DropShadow dropShadow = new DropShadow();
+        dropShadow.setColor(Color.GRAY);
+        dropShadow.setWidth(10);
+        dropShadow.setHeight(10);
+
+        imageView.setOnMouseEntered(event -> {
+            imageView.setScaleX(1.1);
+            imageView.setScaleY(1.1);
+            imageView.setEffect(dropShadow);
+        });
+
+        imageView.setOnMouseExited(event -> {
+            imageView.setScaleX(1.0);
+            imageView.setScaleY(1.0);
+            imageView.setEffect(null); // Eliminar el efecto de sombra
+        });
+    }
+
 
 
     //METODO GENERICO PARA TODOS LOS OBJETOS
@@ -48,41 +174,41 @@ public class TiendaController {
 
     @FXML
     public void mancuernaPush(MouseEvent mouseEvent) {
-     objetoPush("Pesa");
+     showConfirmationDialog("Pesa");
     }
 
     @FXML
     public void plumaPush(MouseEvent mouseEvent) {
-        objetoPush("Pluma");
+        showConfirmationDialog("Pluma");
     }
 
     @FXML
     public void chalecoPush(MouseEvent mouseEvent) {
-        objetoPush("Chaleco");
+        showConfirmationDialog("Chaleco");
     }
     @FXML
     public void bastonPush(MouseEvent mouseEvent) {
-        objetoPush("Baston");
+        showConfirmationDialog("Baston");
     }
 
     @FXML
     public void pilaPush(MouseEvent mouseEvent) {
-        objetoPush("Pilas");
+        showConfirmationDialog("Pilas");
     }
 
     @FXML
     public void EterPush(MouseEvent mouseEvent) {
-        objetoPush("Eter");
+        showConfirmationDialog("Eter");
     }
 
     @FXML
     public void anilloUnicoPush(MouseEvent mouseEvent) {
-        objetoPush("anilloUnico");
+        showConfirmationDialog("anilloUnico");
     }
 
     @FXML
     public void pokeballPush(MouseEvent mouseEvent) {
-        objetoPush("pokeball");
+        showConfirmationDialog("pokeball");
     }
 
     private void actualizarPokedollars(int idEntrenador, int diferencia) throws SQLException {
@@ -171,6 +297,35 @@ public class TiendaController {
 
     }
 
+
+
+    private void showConfirmationDialog(String nombreObjeto) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/confirmacionCompra.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(loader.load()));
+            stage.setTitle("Confirmar compra");
+            stage.initModality(Modality.APPLICATION_MODAL);
+
+            int precioObjeto = obtenerPrecioObjeto(nombreObjeto);
+
+            ConfirmarCompraController controller = loader.getController();
+            controller.setNombrePrecioObjeto(nombreObjeto,precioObjeto);
+
+
+
+
+            // Mostrar la ventana y esperar a que se cierre
+            stage.showAndWait();
+
+            // Comprobar si la compra fue confirmada
+            if (controller.isCompraConfirmada()) {
+                objetoPush(nombreObjeto);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 

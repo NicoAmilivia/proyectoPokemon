@@ -1,4 +1,5 @@
 package es.cesur.progprojectpok.controllers;
+import es.cesur.progprojectpok.clases.Entrenador;
 import es.cesur.progprojectpok.clases.Tipo;
 import es.cesur.progprojectpok.clases.Pokemon;
 import es.cesur.progprojectpok.database.DBConnection;
@@ -9,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,6 +30,8 @@ public class CapturaController {
 
     @FXML
     private Button capturar;
+
+    private Entrenador entrenador;
 
     public void setPokemon(Pokemon pokemon) {
         this.pokemon = pokemon;
@@ -77,6 +79,8 @@ public class CapturaController {
             Stage menuStage = new Stage();
             menuStage.setTitle("Menu");
             menuStage.setScene(scene);
+            MenuController menuController = fxmlLoader.getController();
+            menuController.setEntrenador(entrenador);
             menuStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -156,5 +160,10 @@ public class CapturaController {
             e.printStackTrace();
             System.out.println("Pokemon no existente.");
         }
+    }
+
+
+    public void setEntrenador(Entrenador entrenador) {
+        this.entrenador = entrenador;
     }
 }
