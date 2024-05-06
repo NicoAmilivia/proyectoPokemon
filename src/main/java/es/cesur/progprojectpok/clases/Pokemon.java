@@ -85,7 +85,7 @@ public class Pokemon {
         this.fertilidad=fertilidad;
     }
 
-    public Pokemon(int numPokedex, String nombre, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad, int nivel, int vitalidad, int vidaActual, int idPokemon){
+    public Pokemon(int numPokedex, String nombre, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad, int nivel, int vitalidad, int vidaActual, int idPokemon, int experiencia){
         this.nombre = nombre;
         this.numPokedex = numPokedex;
         this.ataque = ataque;
@@ -97,6 +97,7 @@ public class Pokemon {
         this.vitalidad = vitalidad;
         this.vidaActual = vidaActual;
         this.idPokemon = idPokemon;
+        this.experiencia = experiencia;
     }
 
 

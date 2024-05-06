@@ -28,6 +28,17 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class BatallaController {
+    public static final String URL_IMAGEN = "/es/cesur/progprojectpok/images/pokemon/%03d.png";
+    public static final String NUM_USOS = "NUM_USOS";
+    public static final String NOM_MOVIMIENTO = "NOM_MOVIMIENTO";
+    public static final String TIPO = "TIPO";
+    public static final String TURNOS = "TURNOS";
+    public static final String ATAQUE = "ATAQUE";
+    public static final String ESTADO = "ESTADO";
+    public static final String MEJORA = "MEJORA";
+    public static final String HA_UTILIZADO = " ha utilizado ";
+    public static final String NO_ES_TU_TURNO = "No es tu turno \n";
+    public static final String EL_COMBATE_HA_FINALIZADO = "El combate ha finalizado.\n";
     @FXML
     private Button ataque1;
     @FXML
@@ -99,13 +110,13 @@ public class BatallaController {
         int pokemonId = primerPokemon.getNumPokedex();
 
         //Cargar la imagen del primer Pokemon del jugador
-        String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
+        String imageUrl = String.format(URL_IMAGEN, pokemonId);
         Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
         pokemonJugador.setImage(image);
 
         //Cargar la imagen del primer Pokemon del rival
         pokemonId = pokemonRivalEnCombate.getNumPokedex();
-        String imageUrlRival = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
+        String imageUrlRival = String.format(URL_IMAGEN, pokemonId);
         Image imageRival = new Image(getClass().getResource(imageUrlRival).toExternalForm());
         pokemonRival.setImage(imageRival);
 
@@ -162,7 +173,7 @@ public class BatallaController {
             while (resultSet.next()) {
                 String nombre = resultSet.getString("MOTE");
                 int numPokedex = resultSet.getInt("NUM_POKEDEX");
-                int ataque = resultSet.getInt("ATAQUE");
+                int ataque = resultSet.getInt(ATAQUE);
                 int defensa = resultSet.getInt("DEFENSA");
                 int ataqueEspecial = resultSet.getInt("AT_ESPECIAL");
                 int defensaEspecial = resultSet.getInt("DEF_ESPECIAL");
@@ -171,8 +182,10 @@ public class BatallaController {
                 int vitalidad = resultSet.getInt("VITALIDAD");
                 int idPokemon = resultSet.getInt("ID_POKEMON");
                 int vidaActual = resultSet.getInt("VIDA_ACTUAL");
+                int experiencia = resultSet.getInt("EXPERIENCIA");
 
-                Pokemon pokemon = new Pokemon(numPokedex, nombre, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad, nivel, vitalidad, vidaActual, idPokemon);
+
+                Pokemon pokemon = new Pokemon(numPokedex, nombre, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad, nivel, vitalidad, vidaActual, idPokemon, experiencia);
                 pokemones.add(pokemon);
             }
         } catch (SQLException e) {
@@ -206,7 +219,7 @@ public class BatallaController {
 
                 if (resultSet.next()) {
                     String nombrePokemon = resultSet.getString("NOM_POKEMON");
-                    Pokemon pokemonAleatorio = new Pokemon(numPokedex,nombrePokemon,5, 0, 0, 0, 0, 1, 10,  10, 0);
+                    Pokemon pokemonAleatorio = new Pokemon(numPokedex,nombrePokemon,2, 0, 0, 0, 0, 5, 10,  10, 0,10);
                     pokemonAleatorio.setVidaActual(pokemonAleatorio.getVitalidad());
                     cargarMovimientosRival(pokemonAleatorio);
                     equipoRival.add(pokemonAleatorio);
@@ -239,34 +252,7 @@ public class BatallaController {
                 String tipoMovimiento = resultSet.getString("TIPO_MOVIMIENTO");
                 Movimiento movimiento;
 
-                switch (tipoMovimiento) {
-                    case "ATAQUE":
-                        movimiento = new MovimientoAtaque(
-                                resultSet.getInt("NUM_USOS"),
-                                resultSet.getString("NOM_MOVIMIENTO"),
-                                Tipo.TipoStringToEnum(resultSet.getString("TIPO")),
-                                resultSet.getInt("POTENCIA")
-                        );
-                        break;
-                    case "ESTADO":
-                        movimiento = new MovimientoEstado(
-                                resultSet.getInt("NUM_USOS"),
-                                resultSet.getString("NOM_MOVIMIENTO"),
-                                Estado.EstadoStringToEnum(resultSet.getString("ESTADO")),
-                                resultSet.getInt("TURNOS")
-                        );
-                        break;
-                    case "MEJORA":
-                        movimiento = new MovimientoMejora(
-                                resultSet.getInt("NUM_USOS"),
-                                resultSet.getString("NOM_MOVIMIENTO"),
-                                resultSet.getInt("TURNOS"),
-                                CambiosEstado.CambioEstadoStringToEnum(resultSet.getString("MEJORA"))
-                        );
-                        break;
-                    default:
-                        throw new IllegalArgumentException("Tipo de movimiento desconocido: " + tipoMovimiento);
-                }
+                movimiento = getMovimiento(tipoMovimiento, resultSet);
 
                 movimientosPokemon.add(movimiento);
             }
@@ -315,7 +301,7 @@ public class BatallaController {
         equipoJugadorSinPokemones();
 
         if (equipoRivalSinPokemones() || equipoJugadorSinPokemones()){
-            log.appendText("El combate ha finalizado.\n");
+            log.appendText(EL_COMBATE_HA_FINALIZADO);
         } else if (!equipoRivalSinPokemones() && !equipoJugadorSinPokemones()) {
 
             if (turnoJugador) {
@@ -327,7 +313,7 @@ public class BatallaController {
                     ((MovimientoAtaque) movimiento).usarMovimiento(pokemonJugadorEnCombate, pokemonRivalEnCombate);
                 }
 
-                log.appendText(pokemonJugadorEnCombate.getNombre() + " ha utilizado " + movimientosPokemon.get(0).getNombre() + "\n");
+                log.appendText(pokemonJugadorEnCombate.getNombre() + HA_UTILIZADO + movimientosPokemon.get(0).getNombre() + "\n");
                 turnoJugador = false;
 
                 combrobarVidaPokemon();
@@ -340,7 +326,7 @@ public class BatallaController {
                 esperarTurnoRival();
 
             } else
-                log.appendText("No es tu turno \n");
+                log.appendText(NO_ES_TU_TURNO);
         }
     }
 
@@ -350,7 +336,7 @@ public class BatallaController {
         equipoJugadorSinPokemones();
 
         if (equipoRivalSinPokemones() || equipoJugadorSinPokemones()){
-            log.appendText("El combate ha finalizado.\n");
+            log.appendText(EL_COMBATE_HA_FINALIZADO);
         } else if (!equipoRivalSinPokemones() && !equipoJugadorSinPokemones()) {
 
             if (turnoJugador) {
@@ -362,7 +348,7 @@ public class BatallaController {
                     ((MovimientoAtaque) movimiento).usarMovimiento(pokemonJugadorEnCombate, pokemonRivalEnCombate);
                 }
 
-                log.appendText(pokemonJugadorEnCombate.getNombre() + " ha utilizado " + movimientosPokemon.get(1).getNombre() + "\n");
+                log.appendText(pokemonJugadorEnCombate.getNombre() + HA_UTILIZADO + movimientosPokemon.get(1).getNombre() + "\n");
                 turnoJugador = false;
 
                 combrobarVidaPokemon();
@@ -374,7 +360,7 @@ public class BatallaController {
 
                 esperarTurnoRival();
             } else
-                log.appendText("No es tu turno \n");
+                log.appendText(NO_ES_TU_TURNO);
         }
     }
 
@@ -384,7 +370,7 @@ public class BatallaController {
         equipoJugadorSinPokemones();
 
         if (equipoRivalSinPokemones() || equipoJugadorSinPokemones()){
-            log.appendText("El combate ha finalizado.\n");
+            log.appendText(EL_COMBATE_HA_FINALIZADO);
         } else if (!equipoRivalSinPokemones() && !equipoJugadorSinPokemones()) {
 
             if (turnoJugador) {
@@ -396,7 +382,7 @@ public class BatallaController {
                     ((MovimientoAtaque) movimiento).usarMovimiento(pokemonJugadorEnCombate, pokemonRivalEnCombate);
                 }
 
-                log.appendText(pokemonJugadorEnCombate.getNombre() + " ha utilizado " + movimientosPokemon.get(2).getNombre() + "\n");
+                log.appendText(pokemonJugadorEnCombate.getNombre() + HA_UTILIZADO + movimientosPokemon.get(2).getNombre() + "\n");
                 turnoJugador = false;
 
                 combrobarVidaPokemon();
@@ -408,7 +394,7 @@ public class BatallaController {
 
                 esperarTurnoRival();
             } else
-                log.appendText("No es tu turno \n");
+                log.appendText(NO_ES_TU_TURNO);
         }
     }
 
@@ -419,7 +405,7 @@ public class BatallaController {
         equipoJugadorSinPokemones();
 
         if (equipoRivalSinPokemones() || equipoJugadorSinPokemones()){
-            log.appendText("El combate ha finalizado.\n");
+            log.appendText(EL_COMBATE_HA_FINALIZADO);
         } else if (!equipoRivalSinPokemones() && !equipoJugadorSinPokemones()) {
 
             if (turnoJugador) {
@@ -431,7 +417,7 @@ public class BatallaController {
                     ((MovimientoAtaque) movimiento).usarMovimiento(pokemonJugadorEnCombate, pokemonRivalEnCombate);
                 }
 
-                log.appendText(pokemonJugadorEnCombate.getNombre() + " ha utilizado " + movimientosPokemon.get(3).getNombre() + "\n");
+                log.appendText(pokemonJugadorEnCombate.getNombre() + HA_UTILIZADO + movimientosPokemon.get(3).getNombre() + "\n");
                 turnoJugador = false;
 
                 combrobarVidaPokemon();
@@ -443,7 +429,7 @@ public class BatallaController {
 
                 esperarTurnoRival();
             } else
-                log.appendText("No es tu turno \n");
+                log.appendText(NO_ES_TU_TURNO);
         }
     }
 
@@ -459,7 +445,7 @@ public class BatallaController {
             ((MovimientoAtaque) movimientoRival).usarMovimiento(pokemonRivalEnCombate, pokemonJugadorEnCombate);
         }
 
-        log.appendText(pokemonRivalEnCombate.getNombre() + " ha utilizado " + movimientoRival.getNombre() + "\n");
+        log.appendText(pokemonRivalEnCombate.getNombre() + HA_UTILIZADO + movimientoRival.getNombre() + "\n");
 
         combrobarVidaPokemonJugador();
 
@@ -518,6 +504,9 @@ public class BatallaController {
     public void combrobarVidaPokemon(){
 
         if (pokemonRivalEnCombate.getVidaActual() == 0){
+
+            darExperiencia(pokemonJugadorEnCombate, pokemonRivalEnCombate);
+
             int indiceActual = equipoRival.indexOf(pokemonRivalEnCombate);
             if (indiceActual != -1 && indiceActual < equipoRival.size() - 1) {
                 Pokemon siguientePokemon = equipoRival.get(indiceActual + 1);
@@ -547,7 +536,7 @@ public class BatallaController {
     private void cambiarInfoPokemon() {
 
         int pokemonId = pokemonJugadorEnCombate.getNumPokedex();
-        String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
+        String imageUrl = String.format(URL_IMAGEN, pokemonId);
         Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
         pokemonJugador.setImage(image);
 
@@ -565,7 +554,7 @@ public class BatallaController {
 
     private  void cambiarInfoPokemonRival(){
         int pokemonId = pokemonRivalEnCombate.getNumPokedex();
-        String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
+        String imageUrl = String.format(URL_IMAGEN, pokemonId);
         Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
         pokemonRival.setImage(image);
 
@@ -639,34 +628,7 @@ public class BatallaController {
                 String tipoMovimiento = resultSet.getString("TIPO_MOVIMIENTO");
                 Movimiento movimiento;
 
-                switch (tipoMovimiento) {
-                    case "ATAQUE":
-                        movimiento = new MovimientoAtaque(
-                                resultSet.getInt("NUM_USOS"),
-                                resultSet.getString("NOM_MOVIMIENTO"),
-                                Tipo.TipoStringToEnum(resultSet.getString("TIPO")),
-                                resultSet.getInt("POTENCIA")
-                        );
-                        break;
-                    case "ESTADO":
-                        movimiento = new MovimientoEstado(
-                                resultSet.getInt("NUM_USOS"),
-                                resultSet.getString("NOM_MOVIMIENTO"),
-                                Estado.EstadoStringToEnum(resultSet.getString("ESTADO")),
-                                resultSet.getInt("TURNOS")
-                        );
-                        break;
-                    case "MEJORA":
-                        movimiento = new MovimientoMejora(
-                                resultSet.getInt("NUM_USOS"),
-                                resultSet.getString("NOM_MOVIMIENTO"),
-                                resultSet.getInt("TURNOS"),
-                                CambiosEstado.CambioEstadoStringToEnum(resultSet.getString("MEJORA"))
-                        );
-                        break;
-                    default:
-                        throw new IllegalArgumentException("Tipo de movimiento desconocido: " + tipoMovimiento);
-                }
+                movimiento = getMovimiento(tipoMovimiento, resultSet);
 
                 movimientos.add(movimiento);
             }
@@ -674,6 +636,39 @@ public class BatallaController {
             e.printStackTrace();
         }
         pokemon.setMovimientos(movimientos);
+    }
+
+    private static Movimiento getMovimiento(String tipoMovimiento, ResultSet resultSet) throws SQLException {
+        Movimiento movimiento;
+        switch (tipoMovimiento) {
+            case ATAQUE:
+                movimiento = new MovimientoAtaque(
+                        resultSet.getInt(NUM_USOS),
+                        resultSet.getString(NOM_MOVIMIENTO),
+                        Tipo.TipoStringToEnum(resultSet.getString(TIPO)),
+                        resultSet.getInt("POTENCIA")
+                );
+                break;
+            case ESTADO:
+                movimiento = new MovimientoEstado(
+                        resultSet.getInt(NUM_USOS),
+                        resultSet.getString(NOM_MOVIMIENTO),
+                        Estado.EstadoStringToEnum(resultSet.getString(ESTADO)),
+                        resultSet.getInt(TURNOS)
+                );
+                break;
+            case MEJORA:
+                movimiento = new MovimientoMejora(
+                        resultSet.getInt(NUM_USOS),
+                        resultSet.getString(NOM_MOVIMIENTO),
+                        resultSet.getInt(TURNOS),
+                        CambiosEstado.CambioEstadoStringToEnum(resultSet.getString(MEJORA))
+                );
+                break;
+            default:
+                throw new IllegalArgumentException("Tipo de movimiento desconocido: " + tipoMovimiento);
+        }
+        return movimiento;
     }
 
 
@@ -695,6 +690,32 @@ public class BatallaController {
     }
 
 
+    private void darExperiencia(Pokemon pokemon, Pokemon rival){
+
+        int experienciaGanada = (pokemon.getNivel() + rival.getNivel() * 10) / 4;
+
+        pokemon.setExperiencia(pokemon.getExperiencia() + experienciaGanada);
+
+        actualizarExperienciaBD(pokemon);
+
+        comprobarSubidaNivel(pokemon);
+
+    }
+
+
+    public void actualizarExperienciaBD(Pokemon pokemon) {
+        try (Connection connection = DBConnection.getConnection()) {
+            String sql = "UPDATE POKEMON SET EXPERIENCIA = ? WHERE ID_POKEMON = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, pokemon.getExperiencia());
+            statement.setInt(2, pokemon.getIdPokemon());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar la experiencia del Pokemon en la base de datos: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
 
     @FXML
     private void huirBatallaOnAction() {
@@ -712,6 +733,33 @@ public class BatallaController {
             menuController.setEntrenador(entrenador);
             menuStage.show();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void comprobarSubidaNivel(Pokemon pokemon) {
+        int experienciaRequerida = pokemon.getNivel() * 10;
+
+        if (pokemon.getExperiencia() >= experienciaRequerida) {
+
+            pokemon.setNivel(pokemon.getNivel() + 1);
+
+            actualizarNivelBD(pokemon);
+
+            log.appendText(pokemon.getNombre() + " ha subido de nivel.\n");
+        }
+    }
+
+
+    public void actualizarNivelBD(Pokemon pokemon) {
+        try (Connection connection = DBConnection.getConnection()) {
+            String sql = "UPDATE POKEMON SET NIVEL = ? WHERE ID_POKEMON = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, pokemon.getNivel());
+            statement.setInt(2, pokemon.getIdPokemon());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar el nivel del Pokemon en la base de datos: " + e.getMessage());
             e.printStackTrace();
         }
     }
