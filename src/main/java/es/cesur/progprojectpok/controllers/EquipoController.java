@@ -3,14 +3,15 @@ package es.cesur.progprojectpok.controllers;
 import es.cesur.progprojectpok.clases.Entrenador;
 import es.cesur.progprojectpok.clases.Pokemon;
 import es.cesur.progprojectpok.database.DBConnection;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,10 +31,18 @@ public class EquipoController {
     @FXML
     private ListView<Pokemon> cajaListView;
 
+    @FXML
+    private Button aplicarObjetoButton;
+
+    @FXML
+    private TextField logEquipo;
+
     private List<Pokemon> equipo;
     private List<Pokemon> caja;
 
     private Entrenador entrenador;
+
+    private Pokemon pokemonSeleccionado;
 
 
     public void initialize() {
@@ -157,4 +166,52 @@ public class EquipoController {
     public void setEntrenador(Entrenador entrenador) {
         this.entrenador = entrenador;
     }
+
+    @FXML
+    public void aplicarObjetoOnAction() {
+
+        if (hayPokemonSeleccionado()) {
+
+           pokemonSeleccionado=getPokemonSeleccionado();
+            Stage stage = (Stage) aplicarObjetoButton.getScene().getWindow();
+            stage.close();
+
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/es/cesur/progprojectpok/view/mochila-view.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 590, 600);
+                Stage menuStage = new Stage();
+                menuStage.setTitle("Mochila");
+                menuStage.setScene(scene);
+                MochilaController mochilaController = fxmlLoader.getController();
+                mochilaController.setEntrenadorandPokemon(entrenador,pokemonSeleccionado);
+                menuStage.show();
+            } catch (IOException e) {
+                e.printStackTrace(); // Maneja el error apropiadamente
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+        }else {
+            logEquipo.appendText("No has seleccionado ningun Pokemon\n");
+        }
+    }
+
+
+    public Pokemon getPokemonSeleccionado() {
+
+        Pokemon pokemonSeleccionado = equipoListView.getSelectionModel().getSelectedItem();
+
+        if (pokemonSeleccionado == null) {
+            pokemonSeleccionado = cajaListView.getSelectionModel().getSelectedItem();
+        }
+
+        return pokemonSeleccionado;
+    }
+
+    public boolean hayPokemonSeleccionado() {
+        return equipoListView.getSelectionModel().getSelectedItem() != null || cajaListView.getSelectionModel().getSelectedItem() != null;
+    }
+
 }
+
+

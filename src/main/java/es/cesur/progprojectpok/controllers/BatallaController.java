@@ -51,7 +51,6 @@ public class BatallaController {
     @FXML
     private TextArea log;
 
-
     @FXML
     private ImageView pokemonJugador;
 

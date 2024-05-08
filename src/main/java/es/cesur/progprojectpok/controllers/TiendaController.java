@@ -20,6 +20,14 @@ import java.sql.SQLException;
 import javafx.stage.Modality;
 public class TiendaController {
 
+    public static final String PESA = "Pesa";
+    public static final String CHALECO = "Chaleco";
+    public static final String PLUMA = "Pluma";
+    public static final String BASTON = "Baston";
+    public static final String PILAS = "Pilas";
+    public static final String ETER = "Eter";
+    public static final String ANILLO_UNICO = "anilloUnico";
+    public static final String POKEBALL = "pokeball";
     @FXML
     private Button irMenuFromTiendaButton;
 
@@ -69,63 +77,63 @@ public class TiendaController {
     public void initialize() {
         // Configurar eventos para la imagen de la pesa
         configureMouseEvents(imagenPesa);
-        mostrarPrecioObjeto("Pesa");
+        mostrarPrecioObjeto(PESA);
 
         // Configurar eventos para la imagen de la pluma
         configureMouseEvents(imagenPluma);
-        mostrarPrecioObjeto("Pluma");
+        mostrarPrecioObjeto(PLUMA);
 
         // Configurar eventos para la imagen del chaleco
         configureMouseEvents(imagenChaleco);
-        mostrarPrecioObjeto("Chaleco");
+        mostrarPrecioObjeto(CHALECO);
 
         // Configurar eventos para la imagen del bastón
         configureMouseEvents(imagenBaston);
-        mostrarPrecioObjeto("Baston");
+        mostrarPrecioObjeto(BASTON);
 
         // Configurar eventos para la imagen de la pila
         configureMouseEvents(imagenPila);
-        mostrarPrecioObjeto("Pilas");
+        mostrarPrecioObjeto(PILAS);
 
         // Configurar eventos para la imagen del éter
         configureMouseEvents(imagenEter);
-        mostrarPrecioObjeto("Eter");
+        mostrarPrecioObjeto(ETER);
 
         // Configurar eventos para la imagen del anillo
         configureMouseEvents(imagenAnillo);
-        mostrarPrecioObjeto("anilloUnico");
+        mostrarPrecioObjeto(ANILLO_UNICO);
 
         // Configurar eventos para la imagen de la pokeball
         configureMouseEvents(imagenPokeball);
-        mostrarPrecioObjeto("pokeball");
+        mostrarPrecioObjeto(POKEBALL);
     }
 
 
     public void mostrarPrecioObjeto(String nombreObjeto){
         int precioObjeto = obtenerPrecioObjeto(nombreObjeto);
         switch (nombreObjeto){
-            case "Pesa":
+            case PESA:
                 precioPesa.setText(String.valueOf(precioObjeto) + "$");
                 break;
-            case "Pluma":
+            case PLUMA:
                 precioPluma.setText(String.valueOf(precioObjeto)+ "$");
                 break;
-            case "Chaleco":
+            case CHALECO:
                 precioChaleco.setText(String.valueOf(precioObjeto)+ "$");
                 break;
-            case "Baston":
+            case BASTON:
                 precioBaston.setText(String.valueOf(precioObjeto)+ "$");
                 break;
-            case "Pilas":
+            case PILAS:
                 precioPila.setText(String.valueOf(precioObjeto)+ "$");
                 break;
-            case "Eter":
+            case ETER:
                 precioEter.setText(String.valueOf(precioObjeto) + "$");
                 break;
-            case "anilloUnico":
+            case ANILLO_UNICO:
                 precioAnillo.setText(String.valueOf(precioObjeto) + "$");
                 break;
-            case "pokeball":
+            case POKEBALL:
                 precioPokeball.setText(String.valueOf(precioObjeto) + "$");
                 break;
         }
@@ -174,41 +182,41 @@ public class TiendaController {
 
     @FXML
     public void mancuernaPush(MouseEvent mouseEvent) {
-     showConfirmationDialog("Pesa");
+     showConfirmationDialog(PESA);
     }
 
     @FXML
     public void plumaPush(MouseEvent mouseEvent) {
-        showConfirmationDialog("Pluma");
+        showConfirmationDialog(PLUMA);
     }
 
     @FXML
     public void chalecoPush(MouseEvent mouseEvent) {
-        showConfirmationDialog("Chaleco");
+        showConfirmationDialog(CHALECO);
     }
     @FXML
     public void bastonPush(MouseEvent mouseEvent) {
-        showConfirmationDialog("Baston");
+        showConfirmationDialog(BASTON);
     }
 
     @FXML
     public void pilaPush(MouseEvent mouseEvent) {
-        showConfirmationDialog("Pilas");
+        showConfirmationDialog(PILAS);
     }
 
     @FXML
     public void EterPush(MouseEvent mouseEvent) {
-        showConfirmationDialog("Eter");
+        showConfirmationDialog(ETER);
     }
 
     @FXML
     public void anilloUnicoPush(MouseEvent mouseEvent) {
-        showConfirmationDialog("anilloUnico");
+        showConfirmationDialog(ANILLO_UNICO);
     }
 
     @FXML
     public void pokeballPush(MouseEvent mouseEvent) {
-        showConfirmationDialog("pokeball");
+        showConfirmationDialog(POKEBALL);
     }
 
     private void actualizarPokedollars(int idEntrenador, int diferencia) throws SQLException {

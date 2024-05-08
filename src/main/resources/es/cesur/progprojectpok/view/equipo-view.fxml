@@ -14,12 +14,21 @@
             <Image url="@../images/fondo-equipo.jpeg" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="94.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipo" />
-      <Text fill="WHITE" layoutX="459.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caja" />
-      <Button fx:id="irMenuFromEquipoButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#irMenuFromEquipoOnAction" style="-fx-background-color: grey;" text="Atrás" />
-      <ListView fx:id="equipoListView" layoutX="22.0" layoutY="153.0" prefHeight="200.0" prefWidth="200.0" />
-      <ListView fx:id="cajaListView" layoutX="376.0" layoutY="153.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="trasnferirACajaButton" layoutX="47.0" layoutY="441.0" mnemonicParsing="false" onAction="#transferirACaja" text="Transferir a caja" />
-      <Button fx:id="transferirAEquipoButton" layoutX="389.0" layoutY="441.0" mnemonicParsing="false" onAction="#transferirAEquipo" text="Transferir a equipo" />
+      <Text fill="WHITE" layoutX="71.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipo">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Text>
+      <Button fx:id="irMenuFromEquipoButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#irMenuFromEquipoOnAction" text="Atrás" />
+      <ListView fx:id="equipoListView" layoutX="17.0" layoutY="215.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="cajaListView" layoutX="373.0" layoutY="215.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="trasnferirACajaButton" layoutX="48.0" layoutY="457.0" mnemonicParsing="false" onAction="#transferirACaja" text="Transferir a caja" />
+      <Button fx:id="transferirAEquipoButton" layoutX="401.0" layoutY="457.0" mnemonicParsing="false" onAction="#transferirAEquipo" text="Transferir a equipo" />
+      <Button fx:id="aplicarObjetoButton" layoutX="195.0" layoutY="95.0" mnemonicParsing="false" onAction="#aplicarObjetoOnAction" prefHeight="31.0" prefWidth="200.0" text="Aplicar objeto" />
+      <Text fill="WHITE" layoutX="458.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caja" wrappingWidth="64.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="logEquipo" layoutX="164.0" layoutY="521.0" prefHeight="65.0" prefWidth="274.0" />
    </children>
 </AnchorPane>

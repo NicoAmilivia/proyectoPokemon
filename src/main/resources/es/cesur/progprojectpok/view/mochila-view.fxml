@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.MochilaController">
+   <children>
+      <ImageView fitHeight="616.0" fitWidth="606.0" layoutX="-8.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pokemons/mochila.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="irEquipoFromMochilaButton" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#irEquipoFromMochilaOnAction" prefHeight="31.0" prefWidth="66.0" text="Salir" />
+      <Pane layoutX="312.0" layoutY="47.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
+      <Pane layoutX="312.0" layoutY="170.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
+      <Pane layoutX="312.0" layoutY="301.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
+      <Pane layoutX="469.0" layoutY="422.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
+      <Pane layoutX="469.0" layoutY="46.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
+      <Pane layoutX="469.0" layoutY="170.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
+      <Pane layoutX="469.0" layoutY="301.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
+      <ImageView fx:id="objeto1" fitHeight="73.0" fitWidth="89.0" layoutX="320.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="objeto3" fitHeight="73.0" fitWidth="89.0" layoutX="332.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="objeto5" fitHeight="73.0" fitWidth="89.0" layoutX="327.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="objeto7" fitHeight="73.0" fitWidth="89.0" layoutX="487.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="objeto2" fitHeight="73.0" fitWidth="89.0" layoutX="481.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="objeto4" fitHeight="73.0" fitWidth="89.0" layoutX="490.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="objeto6" fitHeight="73.0" fitWidth="89.0" layoutX="481.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true" />
+      <Pane layoutX="10.0" layoutY="75.0" opacity="0.7" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="4.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEMON SELECCIONADO" wrappingWidth="191.748046875">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="10.0" layoutY="113.0" opacity="0.7" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;" />
+      <ImageView fx:id="imagenPokemonSeleccionado" fitHeight="150.0" fitWidth="200.0" layoutX="45.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" />
+      <Pane layoutX="10.0" layoutY="295.0" opacity="0.7" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="26.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OBJETO EQUIPADO" wrappingWidth="147.748046875">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="10.0" layoutY="334.0" opacity="0.7" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;" />
+      <ImageView fx:id="imagenObjetoEquipado" fitHeight="73.0" fitWidth="89.0" layoutX="64.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="desequiparObjetoButton" layoutX="62.0" layoutY="448.0" mnemonicParsing="false" onAction="#desequiparObjetoOnAction" text="Desequipar" />
+      <TextArea fx:id="logMochila" layoutX="10.0" layoutY="510.0" prefHeight="85.0" prefWidth="433.0" />
+   </children>
+</AnchorPane>

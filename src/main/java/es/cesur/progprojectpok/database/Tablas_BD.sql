@@ -598,7 +598,7 @@ VALUES
 (7, 'Placaje', 50, 'NORMAL', NULL, 5),
 (8, 'Golpe Karate', 50, 'LUCHA', NULL, 25),
 (9, 'Cabezazo', 70, 'NORMAL', NULL, 15),
-(10, 'Ataque Alarido', 80, 'NORMAL', NULL, 20);
+(10, 'Ataque Alarido', 80, 'NORMAL', NULL, 20),
 
 -- Movimientos de estado
 INSERT INTO MOVIMIENTOS (ID_MOVIMIENTO, NOM_MOVIMIENTO, ESTADO, TURNOS, NIVEL_APRENDIZAJE)

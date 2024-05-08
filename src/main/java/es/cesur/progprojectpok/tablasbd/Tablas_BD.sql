@@ -642,6 +642,19 @@ SET TIPO_MOVIMIENTO =
     ADD NUM_USOS INT;
 
 
+ALTER TABLE OBJETO ADD URL VARCHAR(100);
+
+UPDATE OBJETO SET URL = 'src\\main\\resources\\es\\cesur\\progprojectpok\\images\\pokemons\\mancuerna-objeto.png' WHERE ID_OBJETO = 1;
+UPDATE OBJETO SET URL = 'src\\main\\resources\\es\\cesur\\progprojectpok\\images\\pokemons\\pluma-objeto.png' WHERE ID_OBJETO = 2;
+UPDATE OBJETO SET URL = 'src\\main\\resources\\es\\cesur\\progprojectpok\\images\\pokemons\\chaleco-objeto.png' WHERE ID_OBJETO = 3;
+UPDATE OBJETO SET URL = 'src\\main\\resources\\es\\cesur\\progprojectpok\\images\\pokemons\\baston-objeto.png' WHERE ID_OBJETO = 4;
+UPDATE OBJETO SET URL = 'src\\main\\resources\\es\\cesur\\progprojectpok\\images\\pokemons\\pilas-objeto.png' WHERE ID_OBJETO = 5;
+UPDATE OBJETO SET URL = 'src\\main\\resources\\es\\cesur\\progprojectpok\\images\\pokemons\\eter-objeto.png' WHERE ID_OBJETO = 6;
+UPDATE OBJETO SET URL = 'src\\main\\resources\\es\\cesur\\progprojectpok\\images\\pokemons\\anillo-objeto.png' WHERE ID_OBJETO = 7;
+UPDATE OBJETO SET URL = 'src\\main\\resources\\es\\cesur\\progprojectpok\\images\\pokemons\\pokeball-objeto.png' WHERE ID_OBJETO = 8;
+
+
+
 
 
 
