@@ -97,6 +97,23 @@ public class BatallaController {
 
     private Entrenador entrenador;
 
+    @FXML
+    private Text usosAt1;
+
+    @FXML
+    private Text usosAt2;
+
+    @FXML
+    private Text usosAt3;
+
+    @FXML
+    private Text usosAt4;
+
+    private int indicePokemonCambiar;
+
+
+
+
     public void initialize() {
         cargarEquipoDesdeBD();
 
@@ -162,6 +179,7 @@ public class BatallaController {
 
         actualizarBotonesAtaque();
 
+        actualizarNumUsos();
 
         comprobarInicio();
 
@@ -278,6 +296,7 @@ public class BatallaController {
             ataque1.setDisable(false);
         } else {
             ataque1.setDisable(true);
+            ataque1.setText("");
         }
 
         if (movimientosPokemon.size() >= 2) {
@@ -285,6 +304,7 @@ public class BatallaController {
             ataque2.setDisable(false);
         } else {
             ataque2.setDisable(true);
+            ataque2.setText("");
         }
 
         if (movimientosPokemon.size() >= 3) {
@@ -292,6 +312,7 @@ public class BatallaController {
             ataque3.setDisable(false);
         } else {
             ataque3.setDisable(true);
+            ataque3.setText("");
         }
 
         if (movimientosPokemon.size() >= 4) {
@@ -299,6 +320,7 @@ public class BatallaController {
             ataque4.setDisable(false);
         } else {
             ataque4.setDisable(true);
+            ataque4.setText("");
         }
     }
 
@@ -309,14 +331,13 @@ public class BatallaController {
 
         equipoRivalSinPokemones();
         equipoJugadorSinPokemones();
+        Movimiento movimiento = movimientosPokemon.get(0);
 
         if (equipoRivalSinPokemones() || equipoJugadorSinPokemones()){
             log.appendText(EL_COMBATE_HA_FINALIZADO);
         } else if (!equipoRivalSinPokemones() && !equipoJugadorSinPokemones()) {
 
-            if (turnoJugador) {
-
-                Movimiento movimiento = movimientosPokemon.get(0);
+            if (turnoJugador && movimiento.getNumUsos() > 0) {
 
                 if (movimiento instanceof MovimientoAtaque) {
                     //Si es un MovimientoAtaque, llamar al método usarMovimiento
@@ -336,10 +357,18 @@ public class BatallaController {
 
                 actualizarBarraProgresoRival();
 
+                reducirUsos(movimiento);
+                actualizarNumUsos();
+
+                if (movimiento.getNumUsos() <= 0){
+                    ataque1.setDisable(true);
+                }
+
                 esperarTurnoRival();
 
-            } else
+            } else if (!turnoJugador) {
                 log.appendText(NO_ES_TU_TURNO);
+            }
         }
     }
 
@@ -348,13 +377,14 @@ public class BatallaController {
         equipoRivalSinPokemones();
         equipoJugadorSinPokemones();
 
+        Movimiento movimiento = movimientosPokemon.get(1);
+
+
         if (equipoRivalSinPokemones() || equipoJugadorSinPokemones()){
             log.appendText(EL_COMBATE_HA_FINALIZADO);
         } else if (!equipoRivalSinPokemones() && !equipoJugadorSinPokemones()) {
 
-            if (turnoJugador) {
-
-                Movimiento movimiento = movimientosPokemon.get(1);
+            if (turnoJugador && movimiento.getNumUsos() > 0) {
 
                 if (movimiento instanceof MovimientoAtaque) {
                     //Si es un MovimientoAtaque, llamar al método usarMovimiento
@@ -374,9 +404,17 @@ public class BatallaController {
 
                 actualizarBarraProgresoRival();
 
+                reducirUsos(movimiento);
+                actualizarNumUsos();
+
+                if (movimiento.getNumUsos() <= 0){
+                    ataque1.setDisable(true);
+                }
+
                 esperarTurnoRival();
-            } else
+            } else if (!turnoJugador) {
                 log.appendText(NO_ES_TU_TURNO);
+            }
         }
     }
 
@@ -385,13 +423,15 @@ public class BatallaController {
         equipoRivalSinPokemones();
         equipoJugadorSinPokemones();
 
+        Movimiento movimiento = movimientosPokemon.get(2);
+
+
         if (equipoRivalSinPokemones() || equipoJugadorSinPokemones()){
             log.appendText(EL_COMBATE_HA_FINALIZADO);
         } else if (!equipoRivalSinPokemones() && !equipoJugadorSinPokemones()) {
 
-            if (turnoJugador) {
+            if (turnoJugador && movimiento.getNumUsos() > 0) {
 
-                Movimiento movimiento = movimientosPokemon.get(2);
 
                 if (movimiento instanceof MovimientoAtaque) {
                     //Si es un MovimientoAtaque, llamar al método usarMovimiento
@@ -411,9 +451,17 @@ public class BatallaController {
 
                 actualizarBarraProgresoRival();
 
+                reducirUsos(movimiento);
+                actualizarNumUsos();
+
+                if (movimiento.getNumUsos() <= 0){
+                    ataque1.setDisable(true);
+                }
+
                 esperarTurnoRival();
-            } else
+            } else if (!turnoJugador) {
                 log.appendText(NO_ES_TU_TURNO);
+            }
         }
     }
 
@@ -423,13 +471,15 @@ public class BatallaController {
         equipoRivalSinPokemones();
         equipoJugadorSinPokemones();
 
+        Movimiento movimiento = movimientosPokemon.get(3);
+
+
         if (equipoRivalSinPokemones() || equipoJugadorSinPokemones()){
             log.appendText(EL_COMBATE_HA_FINALIZADO);
         } else if (!equipoRivalSinPokemones() && !equipoJugadorSinPokemones()) {
 
-            if (turnoJugador) {
+            if (turnoJugador && movimiento.getNumUsos() > 0) {
 
-                Movimiento movimiento = movimientosPokemon.get(3);
 
                 if (movimiento instanceof MovimientoAtaque) {
                     //Si es un MovimientoAtaque, llamar al método usarMovimiento
@@ -449,9 +499,17 @@ public class BatallaController {
 
                 actualizarBarraProgresoRival();
 
+                reducirUsos(movimiento);
+                actualizarNumUsos();
+
+                if (movimiento.getNumUsos() <= 0){
+                    ataque1.setDisable(true);
+                }
+
                 esperarTurnoRival();
-            } else
+            } else if (!turnoJugador) {
                 log.appendText(NO_ES_TU_TURNO);
+            }
         }
     }
 
@@ -585,7 +643,11 @@ public class BatallaController {
 
         cargarMovimientosDesdeBD(pokemonJugadorEnCombate.getIdPokemon());
 
+        actualizarBarraProgresoJugador();
+
         actualizarBotonesAtaque();
+
+        actualizarNumUsos();
 
     }
 
@@ -645,6 +707,10 @@ public class BatallaController {
                 cambiarInfoPokemon(); //Llamada al método cambiarInfoPokemon() al volver de la otra pantalla
                 cargarMovimientosDesdeBD(pokemonJugadorEnCombate.getIdPokemon());
                 actualizarBotonesAtaque();
+                actualizarNumUsos();
+
+                equipo.set(indicePokemonCambiar, pokemonJugadorEnCombate);
+
             });
 
             menuStage.show();
@@ -832,6 +898,47 @@ public class BatallaController {
         }
     }
 
+
+    private void actualizarNumUsos() {
+        if (movimientosPokemon.size() >= 1) {
+            usosAt1.setText("Usos: " + String.valueOf(movimientosPokemon.get(0).getNumUsos()));
+        }else {
+            usosAt1.setText("");
+        }
+
+        if (movimientosPokemon.size() >= 2) {
+            usosAt2.setText("Usos: " + String.valueOf(movimientosPokemon.get(1).getNumUsos()));
+        }else {
+            usosAt2.setText("");
+        }
+
+        if (movimientosPokemon.size() >= 3) {
+            usosAt3.setText("Usos: " + String.valueOf(movimientosPokemon.get(2).getNumUsos()));
+        }else {
+            usosAt3.setText("");
+        }
+
+        if (movimientosPokemon.size() >= 4) {
+            usosAt4.setText("Usos: " + String.valueOf(movimientosPokemon.get(3).getNumUsos()));
+        }else {
+            usosAt4.setText("");
+        }
+    }
+
+    private void reducirUsos(Movimiento movimiento){
+
+        movimiento.setNumUsos(movimiento.getNumUsos() - 1);
+
+    }
+
+
+    public int getIndicePokemonCambiar() {
+        return indicePokemonCambiar;
+    }
+
+    public void setIndicePokemonCambiar(int indicePokemonCambiar) {
+        this.indicePokemonCambiar = indicePokemonCambiar;
+    }
 
     public void setEntrenador(Entrenador entrenador) {
         this.entrenador = entrenador;

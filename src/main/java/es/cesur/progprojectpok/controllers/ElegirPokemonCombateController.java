@@ -60,7 +60,8 @@ public class ElegirPokemonCombateController {
                 int experiencia = resultSet.getInt("EXPERIENCIA");
                 int vitalidad = resultSet.getInt("VITALIDAD");
                 int idPokemon = resultSet.getInt("ID_POKEMON");
-                Pokemon pokemon = new Pokemon(nombre, numPokedex, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad, nivel, experiencia, vitalidad, idPokemon);
+                int vidaActual = resultSet.getInt("VIDA_ACTUAL");
+                Pokemon pokemon = new Pokemon(numPokedex, nombre, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad, nivel, vitalidad, vidaActual, idPokemon, experiencia);
                 pokemones.add(pokemon);
             }
         } catch (SQLException e) {
@@ -86,6 +87,7 @@ public class ElegirPokemonCombateController {
 
         if (seleccionado != null && batallaController != null) {
             batallaController.setPokemonJugadorEnCombate(seleccionado);
+            batallaController.setIndicePokemonCambiar(equipo.indexOf(seleccionado));
         }
 
         Stage stage = (Stage) irMenuFromEPC.getScene().getWindow();
