@@ -16,10 +16,19 @@
       <Button fx:id="irEquipoFromMochilaButton" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#irEquipoFromMochilaOnAction" prefHeight="31.0" prefWidth="66.0" text="Salir" />
       <Pane layoutX="312.0" layoutY="47.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
       <Pane layoutX="312.0" layoutY="170.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
-      <Pane layoutX="312.0" layoutY="301.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
-      <Pane layoutX="469.0" layoutY="422.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
+      <Pane layoutX="312.0" layoutY="301.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;">
+         <children>
+            <Text fx:id="numObjeto5" layoutX="42.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children></Pane>
+      <Pane layoutX="469.0" layoutY="422.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;">
+         <children>
+            <Text fx:id="numObjeto7" layoutX="43.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children></Pane>
       <Pane layoutX="469.0" layoutY="46.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
-      <Pane layoutX="469.0" layoutY="170.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
+      <Pane layoutX="469.0" layoutY="170.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;">
+         <children>
+            <Text fx:id="numObjeto4" layoutX="42.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children></Pane>
       <Pane layoutX="469.0" layoutY="301.0" opacity="0.7" prefHeight="85.0" prefWidth="107.0" style="-fx-background-color: white;" />
       <ImageView fx:id="objeto1" fitHeight="73.0" fitWidth="89.0" layoutX="320.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="objeto3" fitHeight="73.0" fitWidth="89.0" layoutX="332.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
@@ -52,5 +61,9 @@
       <ImageView fx:id="imagenObjetoEquipado" fitHeight="73.0" fitWidth="89.0" layoutX="64.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="desequiparObjetoButton" layoutX="62.0" layoutY="448.0" mnemonicParsing="false" onAction="#desequiparObjetoOnAction" text="Desequipar" />
       <TextArea fx:id="logMochila" layoutX="10.0" layoutY="510.0" prefHeight="85.0" prefWidth="433.0" />
+      <Text fx:id="numObjeto1" layoutX="354.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="numObjeto2" layoutX="512.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="numObjeto3" layoutX="354.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="numObjeto6" layoutX="512.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>

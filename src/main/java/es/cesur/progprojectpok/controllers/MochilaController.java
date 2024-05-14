@@ -8,10 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
-import javafx.stage.Modality;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -44,6 +43,26 @@ public class MochilaController {
 
     @FXML
     private ImageView objeto7;
+
+    @FXML
+    private Text numObjeto1;
+
+    @FXML
+    private Text numObjeto2;
+
+    @FXML
+    private Text numObjeto3;
+    @FXML
+    private Text numObjeto4;
+    @FXML
+    private Text numObjeto5;
+    @FXML
+    private Text numObjeto6;
+    @FXML
+    private Text numObjeto7;
+
+
+
 
     @FXML
     private ImageView imagenObjetoEquipado;
@@ -100,126 +119,131 @@ public class MochilaController {
 
     public void cargarImagenesMochila() {
         List<ImageView> imageViews = Arrays.asList(objeto1, objeto2, objeto3, objeto4, objeto5, objeto6, objeto7);
+        List<Text> numObjetos = Arrays.asList(numObjeto1, numObjeto2, numObjeto3, numObjeto4, numObjeto5, numObjeto6, numObjeto7);
         int idEntrenador = entrenador.getId();
         try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT m.ID_OBJETO, o.URL " +
+            String sql = "SELECT m.ID_OBJETO, m.NUM_OBJETO, o.URL " +
                     "FROM Objeto o " +
                     "INNER JOIN Mochila m ON o.ID_OBJETO = m.ID_OBJETO " +
-                    "WHERE m.ID_ENTRENADOR = ? AND M.ID_OBJETO!=8";
+                    "WHERE m.ID_ENTRENADOR = ? AND m.ID_OBJETO != 8";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, idEntrenador);
             ResultSet resultSet = statement.executeQuery();
 
-
-            Map<Integer, String> idToUrlMap = new HashMap<>();
+            Map<Integer, Pair<String, Integer>> idToUrlAndNumObjetoMap = new HashMap<>();
             while (resultSet.next()) {
                 int idObjeto = resultSet.getInt("ID_OBJETO");
                 String url = resultSet.getString("URL");
-                idToUrlMap.put(idObjeto, url);
-
+                int numObjeto = resultSet.getInt("NUM_OBJETO");
+                idToUrlAndNumObjetoMap.put(idObjeto, new Pair<>(url, numObjeto));
             }
 
             for (int i = 0; i < imageViews.size(); i++) {
                 ImageView imageView = imageViews.get(i);
+                Text numObjetoText = numObjetos.get(i);
                 int idObjeto = i + 1;
-                String url = idToUrlMap.get(idObjeto);
+                Pair<String, Integer> urlAndNumObjeto = idToUrlAndNumObjetoMap.get(idObjeto);
 
-                if (url != null && !url.isEmpty()) {
-                    try {
-                        // Intenta cargar la imagen
-                        File archivo = new File(url);
-                        String rutaAbsoluta = archivo.getAbsolutePath();
-                        if (System.getProperty("os.name").startsWith("Windows")) {
-                            rutaAbsoluta = rutaAbsoluta.replace("/", "\\");
+                if (urlAndNumObjeto != null) {
+                    String url = urlAndNumObjeto.getKey();
+                    int numObjeto = urlAndNumObjeto.getValue();
+
+                    // Cargar la imagen
+                    if (url != null && !url.isEmpty()) {
+                        try {
+                            File archivo = new File(url);
+                            String rutaAbsoluta = archivo.getAbsolutePath();
+                            if (System.getProperty("os.name").startsWith("Windows")) {
+                                rutaAbsoluta = rutaAbsoluta.replace("/", "\\");
+                            }
+                            Image objetoGenerado = new Image("file:\\" + rutaAbsoluta);
+                            imageView.setImage(objetoGenerado);
+
+                            // Asignar el número de objetos al Text correspondiente
+                            numObjetoText.setText(Integer.toString(numObjeto));
+
+                            imageView.setOnMouseClicked(event -> {
+                                aplicarIdObjetoEnBD(idObjeto);
+                            });
+
+                        } catch (NullPointerException e) {
+                            System.err.println("La imagen no se encuentra en la ruta especificada: " + url);
                         }
-                        Image objetoGenerado = new Image("file:\\" + rutaAbsoluta);
-                        imageView.setImage(objetoGenerado);
-
-                        imageView.setOnMouseClicked(event -> {
-                            aplicaridObjetoEnBD(idObjeto);
-                        });
-
-
-                    } catch (NullPointerException e) {
-                        System.err.println("La imagen no se encuentra en la ruta especificada: " + url);
-
                     }
-                } else {
-
-                    System.err.println("La URL de la imagen es nula o vacía para el objeto con ID: " + idObjeto);
-
                 }
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    private void aplicaridObjetoEnBD(int idObjeto) {
 
+
+    private void aplicarIdObjetoEnBD(int idObjeto) {
         Pair<Boolean, String> objetoEquipado = obtenerObjetoEquipado(pokemonSeleccionado.getIdPokemon());
 
-        if (objetoEquipado.getKey()==true){
-
+        if (objetoEquipado.getKey()) {
             logMochila.appendText(pokemonSeleccionado.getNombre() + " ya tiene equipado " + objetoEquipado.getValue().toUpperCase() + " !!!!\n" +
                     "Desequipa " + objetoEquipado.getValue().toUpperCase() + " para poder equipar un nuevo objeto\n");
-
-
-        }else {
-
+        } else {
             try (Connection connection = DBConnection.getConnection()) {
+                // Restar uno al número de objetos en la mochila
+                String updateMochilaSQL = "UPDATE Mochila SET NUM_OBJETO = NUM_OBJETO - 1 WHERE ID_ENTRENADOR = ? AND ID_OBJETO = ?";
+                PreparedStatement mochilaStatement = connection.prepareStatement(updateMochilaSQL);
+                mochilaStatement.setInt(1, entrenador.getId());
+                mochilaStatement.setInt(2, idObjeto);
+                mochilaStatement.executeUpdate();
 
-                String updateSQL = "UPDATE POKEMON SET ";
-                switch (idObjeto) {
-                    case 1: // pesa
-                        updateSQL += " ID_OBJETO= 1";
-                        logMochila.appendText("Se ha equipado el objeto pesa");
-                        break;
-                    case 2: // pluma
-                        updateSQL += " ID_OBJETO= 2";
-                        logMochila.appendText("Se ha equipado el objeto pluma");
-                        break;
-                    case 3: // chaleco
-                        updateSQL += " ID_OBJETO= 3";
-                        logMochila.appendText("Se ha equipado el objeto chaleco");
-                        break;
-                    case 4: // bastón
-                        updateSQL += " ID_OBJETO= 4";
-                        logMochila.appendText("Se ha equipado el objeto baston");
-                        break;
-                    case 5: // pilas
-                        updateSQL += " ID_OBJETO= 5";
-                        logMochila.appendText("Se ha equipado el objeto pilas");
-                        break;
-                    case 6: // Eter
-                        updateSQL += "ID_OBJETO=6";
-                        logMochila.appendText("Se ha equipado el objeto eter");
-                        break;
-                    case 7: // Anillo único
-                        updateSQL += "ID_OBJETO= 7";
-                        logMochila.appendText("Se ha equipado el objeto anillo");
-                        break;
-                    default:
-                        System.out.println("Objeto no reconocido.");
-                        return;
+                if (obtenerNumObjetosMochila(idObjeto)==0){
+                    eliminarObjetoMochila(idObjeto);
                 }
-                // Completa el updateSQL
-                updateSQL += " WHERE ID_POKEMON = ?";
+                // Asignar el nuevo objeto al Pokémon seleccionado
+                String updatePokemonSQL = "UPDATE POKEMON SET ID_OBJETO = ? WHERE ID_POKEMON = ?";
+                PreparedStatement statement = connection.prepareStatement(updatePokemonSQL);
+                statement.setInt(1, idObjeto);
+                statement.setInt(2, pokemonSeleccionado.getIdPokemon());
+                int rowsUpdated = statement.executeUpdate();
 
-                // Prepara y ejecuta la sentencia SQL
-                PreparedStatement statement = connection.prepareStatement(updateSQL);
-                statement.setInt(1, pokemonSeleccionado.getIdPokemon());
-                statement.executeUpdate();
-                cargarImagenObjetoEquipado();
+                if (rowsUpdated > 0) {
+                    logMochila.appendText("Se ha equipado el objeto correctamente\n");
+                    cargarImagenObjetoEquipado(idObjeto);
+                    // Actualizar el número de objetos en la vista
+                    switch (idObjeto) {
+                        case 1:
+                            numObjeto1.setText(String.valueOf(Integer.parseInt(numObjeto1.getText()) - 1));
+                            break;
+                        case 2:
+                            numObjeto2.setText(String.valueOf(Integer.parseInt(numObjeto2.getText()) - 1));
+                            break;
+                        case 3:
+                            numObjeto3.setText(String.valueOf(Integer.parseInt(numObjeto3.getText()) - 1));
+                            break;
+                        case 4:
+                            numObjeto4.setText(String.valueOf(Integer.parseInt(numObjeto4.getText()) - 1));
+                            break;
+                        case 5:
+                            numObjeto5.setText(String.valueOf(Integer.parseInt(numObjeto5.getText()) - 1));
+                            break;
+                        case 6:
+                            numObjeto6.setText(String.valueOf(Integer.parseInt(numObjeto6.getText()) - 1));
+                            break;
+                        case 7:
+                            numObjeto7.setText(String.valueOf(Integer.parseInt(numObjeto7.getText()) - 1));
+                            break;
+                        default:
+                            break;
+                    }
+                } else {
+                    logMochila.appendText("No se pudo equipar el objeto\n");
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
+            }catch (NumberFormatException n){
+
             }
-
         }
-
-
     }
+
 
 
 
@@ -275,7 +299,7 @@ public class MochilaController {
 
     public static Pair<Boolean, String> obtenerObjetoEquipado(int idPokemon) {
         try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT o.NOMBRE FROM POKEMON p INNER JOIN Objeto o ON p.ID_OBJETO = o.ID_OBJETO WHERE p.ID_POKEMON = ?";
+            String sql = "SELECT o.NOMBRE FROM OBJETO o INNER JOIN POKEMON p ON o.ID_OBJETO = p.ID_OBJETO WHERE p.ID_POKEMON = ?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, idPokemon);
             ResultSet resultSet = statement.executeQuery();
@@ -290,6 +314,7 @@ public class MochilaController {
             return new Pair<>(false, ""); // Manejar el error apropiadamente
         }
     }
+
 
 
 
@@ -316,37 +341,136 @@ public class MochilaController {
                             Image imagenObjeto = new Image("file:\\" + rutaAbsoluta);
                             imagenObjetoEquipado.setImage(imagenObjeto);
                         } catch (NullPointerException e) {
-                            System.err.println("La imagen no se encuentra en la ruta especificada: " + url);
+
                         }
-                    } else {
-                        System.err.println("La URL de la imagen es nula o vacía para el objeto equipado del Pokémon con ID: " + idPokemon);
                     }
-                } else {
-                    System.err.println("No se encontró un objeto equipado para el Pokémon con ID: " + idPokemon);
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        } else {
-            System.err.println("No se ha seleccionado ningún Pokémon");
         }
     }
-
 
 
     @FXML
     public void desequiparObjetoOnAction() {
         try (Connection connection = DBConnection.getConnection()) {
-            String updateSQL = "UPDATE POKEMON SET ID_OBJETO = NULL WHERE ID_POKEMON = ?";
-            PreparedStatement statement = connection.prepareStatement(updateSQL);
-            statement.setInt(1, pokemonSeleccionado.getIdPokemon());
-            int rowsUpdated = statement.executeUpdate();
-            if (rowsUpdated > 0) {
-                imagenObjetoEquipado.setImage(null);
-                logMochila.appendText("Se ha desequipado el objeto del pokemon " + "'"+pokemonSeleccionado.getNombre()+"'" + "\n");
+            // Obtener el ID del objeto equipado por el Pokémon seleccionado
+            Pair<Boolean, String> objetoEquipado = obtenerObjetoEquipado(pokemonSeleccionado.getIdPokemon());
+
+            // Verificar si el Pokémon tiene un objeto equipado
+            if (objetoEquipado.getKey()) {
+                // Obtener el nombre del objeto equipado
+                String nombreObjeto = objetoEquipado.getValue();
+
+                // Obtener el ID del objeto a partir de su nombre
+                int idObjeto = obtenerIdObjeto(nombreObjeto);
+
+                // Actualizar la tabla POKEMON para desequipar el objeto
+                String updateSQL = "UPDATE POKEMON SET ID_OBJETO = NULL WHERE ID_POKEMON = ?";
+                PreparedStatement statement = connection.prepareStatement(updateSQL);
+                statement.setInt(1, pokemonSeleccionado.getIdPokemon());
+                int rowsUpdated = statement.executeUpdate();
+
+
+                if (objetoEquipado.getKey()){
+                    insertarObjetoEnMochila(entrenador.getId(),idObjeto);
+                }else {
+                    incrementarNumObjetoEnMochila(idObjeto);
+                }
+
+
+
+                cargarImagenesMochila();
+
+
+                // Verificar si se actualizó correctamente
+                if (rowsUpdated > 0) {
+
+
+                    // Limpiar la imagen del objeto equipado en la vista
+                    imagenObjetoEquipado.setImage(null);
+
+                    // Mostrar un mensaje en el log
+                    logMochila.appendText("Se ha desequipado el objeto del Pokémon " + pokemonSeleccionado.getNombre() + "\n");
+
+                } else {
+                    // Mostrar un mensaje en el log si no se encontró ningún objeto equipado
+                    logMochila.appendText("No se encontró ningún objeto equipado para el Pokémon " + pokemonSeleccionado.getNombre() + "\n");
+                }
             } else {
-                logMochila.appendText("No se encontró ningún objeto equipado para el Pokémon " + "'"+pokemonSeleccionado.getNombre()+ "'" + "\n");
+                // Mostrar un mensaje en el log si el Pokémon no tiene ningún objeto equipado
+                logMochila.appendText(pokemonSeleccionado.getNombre() + " no tiene ningún objeto equipado.\n");
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void incrementarNumObjetoEnMochila(int idObjeto) {
+        try (Connection connection = DBConnection.getConnection()) {
+            String updateMochilaSQL = "UPDATE Mochila SET NUM_OBJETO = NUM_OBJETO + 1 WHERE ID_ENTRENADOR = ? AND ID_OBJETO = ?";
+            PreparedStatement mochilaStatement = connection.prepareStatement(updateMochilaSQL);
+            mochilaStatement.setInt(1, entrenador.getId());
+            mochilaStatement.setInt(2, idObjeto);
+            mochilaStatement.executeUpdate();
+
+            // Actualizar el número de objetos en la vista
+            switch (idObjeto) {
+                case 1:
+                    try {
+                        numObjeto1.setText(String.valueOf(Integer.parseInt(numObjeto1.getText()) + 1));
+                    } catch (NumberFormatException e) {
+
+                    }
+                    break;
+                case 2:
+                    try {
+                        numObjeto2.setText(String.valueOf(Integer.parseInt(numObjeto2.getText()) + 1));
+                    } catch (NumberFormatException e) {
+
+                    }
+                    break;
+                case 3:
+                    try {
+                        numObjeto3.setText(String.valueOf(Integer.parseInt(numObjeto3.getText()) + 1));
+                    } catch (NumberFormatException e) {
+
+                    }
+                    break;
+                case 4:
+                    try {
+                        numObjeto4.setText(String.valueOf(Integer.parseInt(numObjeto4.getText()) + 1));
+                    } catch (NumberFormatException e) {
+
+                    }
+                    break;
+                case 5:
+                    try {
+                        numObjeto5.setText(String.valueOf(Integer.parseInt(numObjeto5.getText()) + 1));
+                    } catch (NumberFormatException e) {
+
+                    }
+                    break;
+                case 6:
+                    try {
+                        numObjeto6.setText(String.valueOf(Integer.parseInt(numObjeto6.getText()) + 1));
+                    } catch (NumberFormatException e) {
+
+                    }
+                    break;
+                case 7:
+                    try {
+                        numObjeto7.setText(String.valueOf(Integer.parseInt(numObjeto7.getText()) + 1));
+                    } catch (NumberFormatException e) {
+
+                    }
+                    break;
+                default:
+                    break;
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -355,7 +479,204 @@ public class MochilaController {
 
 
 
+
+    private int obtenerNumObjetosMochila(int idObjeto) throws SQLException {
+        Connection connection = DBConnection.getConnection();
+        int numObjetos = 0;
+
+        try {
+            String sql = "SELECT NUM_OBJETO FROM Mochila WHERE ID_ENTRENADOR = ? AND ID_OBJETO = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, entrenador.getId());
+            statement.setInt(2, idObjeto);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                numObjetos = resultSet.getInt("NUM_OBJETO");
+            }
+        } finally {
+            connection.close();
+        }
+
+        return numObjetos;
+    }
+
+
+
+    private int obtenerIdObjeto(String nombreObjeto) {
+        try (Connection connection = DBConnection.getConnection()) {
+            String sql = "SELECT ID_OBJETO FROM Objeto WHERE NOMBRE = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, nombreObjeto);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt("ID_OBJETO");
+            } else {
+                return -1; // O algún otro valor que indique que no se encontró el objeto
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Maneja el error apropiadamente
+            return -1; // O algún otro valor que indique que hubo un error
+        }
+    }
+
+
+
+    private void cargarImagenObjetoEquipado(int idObjeto) {
+        try (Connection connection = DBConnection.getConnection()) {
+            String sql = "SELECT URL FROM Objeto WHERE ID_OBJETO = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, idObjeto);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                String url = resultSet.getString("URL");
+                if (url != null && !url.isEmpty()) {
+                    try {
+                        // Intenta cargar la imagen
+                        File archivo = new File(url);
+                        String rutaAbsoluta = archivo.getAbsolutePath();
+                        if (System.getProperty("os.name").startsWith("Windows")) {
+                            rutaAbsoluta = rutaAbsoluta.replace("/", "\\");
+                        }
+                        Image imagenObjeto = new Image("file:\\" + rutaAbsoluta);
+                        imagenObjetoEquipado.setImage(imagenObjeto);
+                    } catch (NullPointerException e) {
+                        // Maneja la excepción
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void eliminarObjetoMochila(int idObjeto){
+
+        try (Connection connection = DBConnection.getConnection()) {
+            String deleteObjetoSQL = "DELETE FROM Mochila WHERE ID_ENTRENADOR = ? AND ID_OBJETO = ?";
+            PreparedStatement deleteStatement = connection.prepareStatement(deleteObjetoSQL);
+            deleteStatement.setInt(1, entrenador.getId());
+            deleteStatement.setInt(2, idObjeto);
+            deleteStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace(); // Manejar el error apropiadamente
+        }
+
+        switch (idObjeto) {
+            case 1:
+                objeto1.setImage(null);
+                numObjeto1.setText("");
+                break;
+            case 2:
+                objeto2.setImage(null);
+                numObjeto2.setText("");
+                break;
+            case 3:
+                objeto3.setImage(null);
+                numObjeto3.setText("");
+                break;
+            case 4:
+                objeto4.setImage(null);
+                numObjeto4.setText("");
+                break;
+            case 5:
+                objeto5.setImage(null);
+                numObjeto5.setText("");
+                break;
+            case 6:
+                objeto6.setImage(null);
+                numObjeto6.setText("");
+                break;
+            case 7:
+                objeto7.setImage(null);
+                numObjeto7.setText("");
+                break;
+            default:
+                break;
+        }
+
+
+
+    }
+
+
+    private void insertarObjetoEnMochila(int idEntrenador, int idObjeto) throws SQLException {
+        String insertMochilaQuery = "INSERT INTO MOCHILA (ID_ENTRENADOR, ID_OBJETO, NUM_OBJETO) VALUES (?, ?, 1) " +
+                "ON DUPLICATE KEY UPDATE NUM_OBJETO = NUM_OBJETO + 1";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement insertStatement = connection.prepareStatement(insertMochilaQuery)) {
+            insertStatement.setInt(1, idEntrenador);
+            insertStatement.setInt(2, idObjeto);
+            insertStatement.executeUpdate();
+        }
+
+        switch (idObjeto) {
+            case 1:
+                try {
+                    numObjeto1.setText(String.valueOf(Integer.parseInt(numObjeto1.getText()) + 1));
+                } catch (NumberFormatException e) {
+
+                }
+                break;
+            case 2:
+                try {
+                    numObjeto2.setText(String.valueOf(Integer.parseInt(numObjeto2.getText()) + 1));
+                } catch (NumberFormatException e) {
+
+                }
+                break;
+            case 3:
+                try {
+                    numObjeto3.setText(String.valueOf(Integer.parseInt(numObjeto3.getText()) + 1));
+                } catch (NumberFormatException e) {
+
+                }
+                break;
+            case 4:
+                try {
+                    numObjeto4.setText(String.valueOf(Integer.parseInt(numObjeto4.getText()) + 1));
+                } catch (NumberFormatException e) {
+
+                }
+                break;
+            case 5:
+                try {
+                    numObjeto5.setText(String.valueOf(Integer.parseInt(numObjeto5.getText()) + 1));
+                } catch (NumberFormatException e) {
+
+                }
+                break;
+            case 6:
+                try {
+                    numObjeto6.setText(String.valueOf(Integer.parseInt(numObjeto6.getText()) + 1));
+                } catch (NumberFormatException e) {
+
+                }
+                break;
+            case 7:
+                try {
+                    numObjeto7.setText(String.valueOf(Integer.parseInt(numObjeto7.getText()) + 1));
+                } catch (NumberFormatException e) {
+
+                }
+                break;
+            default:
+                break;
+        }
+
+
+
+
+
+
+    }
+
+
+
+
 }
+
 
 
 

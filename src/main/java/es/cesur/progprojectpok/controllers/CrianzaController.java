@@ -139,8 +139,6 @@ public class CrianzaController {
 
     @FXML
     private void realizarCrianzaOnAction() {
-
-
         machoSeleccionado = machoViewList.getSelectionModel().getSelectedItem();
         hembraSeleccionada = hembraViewList.getSelectionModel().getSelectedItem();
 
@@ -155,37 +153,25 @@ public class CrianzaController {
         }
 
 
-
-
-        if (machoSeleccionado.getFertilidad() > 0 && hembraSeleccionada.getFertilidad() > 0){
-
-            pokemonHijo = generarHijo(machoSeleccionado, hembraSeleccionada);
-
-            redurcirFertilidad = true;
-
-        } else {
-            logCrianza.appendText("El pokemon no tiene suficiente fertilidad");
+        if (machoSeleccionado.getFertilidad() <= 0 || hembraSeleccionada.getFertilidad() <= 0) {
+            logCrianza.setText("Los padres no tienen suficiente fertilidad para la crianza.");
+            return;
         }
 
+        pokemonHijo = generarHijo(machoSeleccionado, hembraSeleccionada);
 
-
-        if (redurcirFertilidad) {
+        if (pokemonHijo != null) {
             // Reducir la fertilidad de los padres en 1 punto
             reducirFertilidadPadres(machoSeleccionado);
             reducirFertilidadPadres(hembraSeleccionada);
 
-
-
-
             // Mostrar mensaje de éxito y agregar el hijo a la base de datos
             logCrianza.setText("¡Crianza realizada con éxito! Abra el huevo");
-
         } else {
-
+            logCrianza.setText("Error al generar el Pokémon hijo.");
         }
-
-
     }
+
 
     private Pokemon generarHijo(Pokemon machoSeleccionado, Pokemon hembraSeleccionada) {
 
@@ -195,6 +181,7 @@ public class CrianzaController {
         pokemonHijo.setSexo(randomSex());
         pokemonHijo.setTipo1(machoSeleccionado.getTipo1());
         pokemonHijo.setTipo2(machoSeleccionado.getTipo2());
+        pokemonHijo.setFertilidad(Math.max(machoSeleccionado.getFertilidad(), hembraSeleccionada.getFertilidad()));
         pokemonHijo.setAtaque(Math.max(machoSeleccionado.getAtaque(), hembraSeleccionada.getAtaque()));
         pokemonHijo.setDefensa(Math.max(machoSeleccionado.getDefensa(), hembraSeleccionada.getDefensa()));
         pokemonHijo.setAtaqueEspecial(Math.max(machoSeleccionado.getAtaqueEspecial(), hembraSeleccionada.getAtaqueEspecial()));
@@ -228,23 +215,25 @@ public class CrianzaController {
     private void insertarPokemonEnBD(Pokemon pokemon) throws SQLException {
 
         try (Connection connection = DBConnection.getConnection()) {
-            String sql = "INSERT INTO POKEMON (NUM_POKEDEX, MOTE, CAJA, ATAQUE, AT_ESPECIAL, DEFENSA, DEF_ESPECIAL, VELOCIDAD, NIVEL, FERTILIDAD, SEXO, ESTADO, EXPERIENCIA, VITALIDAD) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO POKEMON (NUM_POKEDEX,ID_ENTRENADOR, MOTE, CAJA, ATAQUE, AT_ESPECIAL, DEFENSA, DEF_ESPECIAL, VELOCIDAD, NIVEL, FERTILIDAD, SEXO, ESTADO, EXPERIENCIA, VITALIDAD,VIDA_ACTUAL) " +
+                    "VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
             PreparedStatement statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             statement.setInt(1, pokemon.getNumPokedex());
-            statement.setString(2, pokemon.getNombre());
-            statement.setInt(3, 1); // Ajustar el valor de la caja según corresponda
-            statement.setInt(4, pokemon.getAtaque());
-            statement.setInt(5, pokemon.getAtaqueEspecial());
-            statement.setInt(6, pokemon.getDefensa());
-            statement.setInt(7, pokemon.getDefensaEspecial());
-            statement.setInt(8, pokemon.getVelocidad());
-            statement.setInt(9, pokemon.getNivel());
-            statement.setInt(10, pokemon.getFertilidad());
-            statement.setString(11, String.valueOf(pokemon.getSexo()));
-            statement.setString(12, "Normal"); // Establecer el estado según corresponda
-            statement.setInt(13, pokemon.getExperiencia());
-            statement.setInt(14, pokemon.getVitalidad());
+            statement.setInt(2,entrenador.getId());
+            statement.setString(3, pokemon.getNombre());
+            statement.setInt(4, 1); // Ajustar el valor de la caja según corresponda
+            statement.setInt(5, pokemon.getAtaque());
+            statement.setInt(6, pokemon.getAtaqueEspecial());
+            statement.setInt(7, pokemon.getDefensa());
+            statement.setInt(8, pokemon.getDefensaEspecial());
+            statement.setInt(9, pokemon.getVelocidad());
+            statement.setInt(10, pokemon.getNivel());
+            statement.setInt(11, pokemon.getFertilidad());
+            statement.setString(12, String.valueOf(pokemon.getSexo()));
+            statement.setString(13, "Normal"); // Establecer el estado según corresponda
+            statement.setInt(14, pokemon.getExperiencia());
+            statement.setInt(15, pokemon.getVitalidad());
+            statement.setInt(16, pokemon.getVitalidad());
 
             int rowsAffected = statement.executeUpdate();
             if (rowsAffected == 0) {
