@@ -522,6 +522,9 @@ public class BatallaController {
 
         if (movimientoRival instanceof MovimientoAtaque) {
             ((MovimientoAtaque) movimientoRival).usarMovimiento(pokemonRivalEnCombate, pokemonJugadorEnCombate);
+        }else if (movimientoRival instanceof MovimientoMejora) {
+
+            ((MovimientoMejora) movimientoRival).usarMovimiento(pokemonRivalEnCombate, pokemonJugadorEnCombate);
         }
 
         log.appendText(pokemonRivalEnCombate.getNombre() + HA_UTILIZADO + movimientoRival.getNombre() + "\n");

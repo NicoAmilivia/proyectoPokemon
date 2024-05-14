@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cesur.progprojectpok.controllers.ElegirPokemonEntrenamientoController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondoElegirPokemonCombate.jpeg" />
+         </image>
+      </ImageView>
+      <ListView fx:id="elegirPokemonList" layoutX="195.0" layoutY="200.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="elegirPokemonButton" layoutX="261.0" layoutY="418.0" mnemonicParsing="false" onAction="#elegirPokemonOnAction" text="Elegir" />
+      <Button fx:id="irMenuFromEPC" layoutX="508.0" layoutY="22.0" mnemonicParsing="false" onAction="#irMenuOnAction" text="Salir" />
+   </children>
+</AnchorPane>

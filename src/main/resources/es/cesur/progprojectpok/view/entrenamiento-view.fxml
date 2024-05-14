@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -12,17 +13,52 @@
             <Image url="@../images/gimnasioPokemon.jpeg" />
          </image>
       </ImageView>
-      <Pane layoutX="60.0" layoutY="406.0" opacity="0.44" prefHeight="141.0" prefWidth="143.0" style="-fx-background-color: lightgrey;" />
-      <Pane layoutX="380.0" layoutY="311.0" opacity="0.44" prefHeight="141.0" prefWidth="143.0" style="-fx-background-color: lightgrey;" />
-      <Button fx:id="irMenuFromEntrenamientoButton" layoutX="494.0" layoutY="25.0" mnemonicParsing="false" onAction="#irMenuFromEntrenamientoOnAction" text="Huir" />
-      <Button layoutX="342.0" layoutY="488.0" mnemonicParsing="false" text="Ataque 1" />
-      <Button layoutX="446.0" layoutY="540.0" mnemonicParsing="false" text="Ataque 4" />
-      <Button layoutX="342.0" layoutY="540.0" mnemonicParsing="false" text="Ataque 3" />
-      <Button layoutX="446.0" layoutY="488.0" mnemonicParsing="false" text="Ataque 2" />
-      <Pane layoutX="25.0" layoutY="32.0" opacity="0.44" prefHeight="64.0" prefWidth="275.0" style="-fx-background-color: lightgrey;">
+      <Button fx:id="huirBatallaButton" layoutX="494.0" layoutY="25.0" mnemonicParsing="false" onAction="#huirBatallaOnAction" text="Huir" />
+      <Button fx:id="ataque1" layoutX="60.0" layoutY="508.0" mnemonicParsing="false" onAction="#ataqueOnAction1" text="Ataque 1" />
+      <Button fx:id="ataque4" layoutX="446.0" layoutY="508.0" mnemonicParsing="false" onAction="#ataqueOnAction4" text="Ataque 4" />
+      <Button fx:id="ataque3" layoutX="341.0" layoutY="508.0" mnemonicParsing="false" onAction="#ataqueOnAction3" text="Ataque 3" />
+      <Button fx:id="ataque2" layoutX="183.0" layoutY="508.0" mnemonicParsing="false" onAction="#ataqueOnAction2" text="Ataque 2" />
+      <Pane layoutX="25.0" layoutY="32.0" prefHeight="64.0" prefWidth="275.0" style="-fx-background-color: lightgrey;">
          <children>
-            <TextArea layoutX="9.0" layoutY="5.0" prefHeight="53.0" prefWidth="256.0" />
+            <TextArea fx:id="log" layoutX="9.0" layoutY="5.0" prefHeight="53.0" prefWidth="256.0" />
          </children>
       </Pane>
+      <ImageView fx:id="pokemonJugador" fitHeight="150.0" fitWidth="200.0" layoutX="56.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="pokemonRival" fitHeight="150.0" fitWidth="200.0" layoutX="346.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true" />
+      <Pane layoutX="38.0" layoutY="420.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
+         <children>
+            <Text fx:id="nomPokemonJugador" fill="WHITE" layoutX="16.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text fx:id="nivPokemonJugador" fill="WHITE" layoutX="146.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <ProgressBar fx:id="progressJugador" layoutX="6.0" layoutY="34.0" minHeight="8.0" prefHeight="15.0" prefWidth="192.0" progress="0.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="341.0" layoutY="420.0" prefHeight="59.0" prefWidth="210.0" style="-fx-background-color: black;">
+         <children>
+            <Text fx:id="nomPokemonRival" fill="WHITE" layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text fx:id="nivPokemonRival" fill="WHITE" layoutX="149.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <ProgressBar fx:id="progressRival" layoutX="14.0" layoutY="34.0" minHeight="8.0" prefHeight="15.0" prefWidth="184.0" progress="0.0" />
+         </children>
+      </Pane>
+      <Button fx:id="cambiarPokemonButton" layoutX="71.0" layoutY="111.0" mnemonicParsing="false" onAction="#cambiarPokemonOnAction" prefHeight="15.0" prefWidth="184.0" text="Cambiar Pokemon" />
+      <Text fx:id="usosAt1" fill="WHITE" layoutX="89.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="usosAt2" fill="WHITE" layoutX="212.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="usosAt3" fill="WHITE" layoutX="370.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="usosAt4" fill="WHITE" layoutX="475.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
