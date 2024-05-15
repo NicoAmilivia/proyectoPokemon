@@ -39,6 +39,7 @@ public class EntrenamientoController {
     public static final String HA_UTILIZADO = " ha utilizado ";
     public static final String NO_ES_TU_TURNO = "No es tu turno \n";
     public static final String EL_COMBATE_HA_FINALIZADO = "El combate ha finalizado.\n";
+    public static final String USOS = "Usos: ";
     @FXML
     private Button ataque1;
     @FXML
@@ -877,6 +878,8 @@ public class EntrenamientoController {
             subirEstadisticas(pokemon);
 
             log.appendText(pokemon.getNombre() + " ha subido de nivel.\n");
+
+            comprobarAprenderMov(pokemon);
         }
     }
 
@@ -925,25 +928,25 @@ public class EntrenamientoController {
 
     private void actualizarNumUsos() {
         if (movimientosPokemon.size() >= 1) {
-            usosAt1.setText("Usos: " + String.valueOf(movimientosPokemon.get(0).getNumUsos()));
+            usosAt1.setText(USOS + String.valueOf(movimientosPokemon.get(0).getNumUsos()));
         }else {
             usosAt1.setText("");
         }
 
         if (movimientosPokemon.size() >= 2) {
-            usosAt2.setText("Usos: " + String.valueOf(movimientosPokemon.get(1).getNumUsos()));
+            usosAt2.setText(USOS + String.valueOf(movimientosPokemon.get(1).getNumUsos()));
         }else {
             usosAt2.setText("");
         }
 
         if (movimientosPokemon.size() >= 3) {
-            usosAt3.setText("Usos: " + String.valueOf(movimientosPokemon.get(2).getNumUsos()));
+            usosAt3.setText(USOS + String.valueOf(movimientosPokemon.get(2).getNumUsos()));
         }else {
             usosAt3.setText("");
         }
 
         if (movimientosPokemon.size() >= 4) {
-            usosAt4.setText("Usos: " + String.valueOf(movimientosPokemon.get(3).getNumUsos()));
+            usosAt4.setText(USOS + String.valueOf(movimientosPokemon.get(3).getNumUsos()));
         }else {
             usosAt4.setText("");
         }
@@ -953,6 +956,51 @@ public class EntrenamientoController {
 
         movimiento.setNumUsos(movimiento.getNumUsos() - 1);
 
+    }
+
+    private void comprobarAprenderMov(Pokemon pokemon){
+
+        if ((pokemon.getNivel() % 3) == 0){
+
+            String sql = "SELECT * FROM MOVIMIENTOS " +
+                    "WHERE NOT EXISTS (" +
+                    "    SELECT *" +
+                    "    FROM MOVIMIENTOS_POKEMON MP" +
+                    "    WHERE MP.ID_MOVIMIENTO = MOVIMIENTOS.ID_MOVIMIENTO AND" +
+                    "    MP.ID_POKEMON = ?" +
+                    ")" +
+                    "ORDER BY RAND() LIMIT 1";
+
+            String sql2 = "INSERT INTO MOVIMIENTOS_POKEMON (ID_MOVIMIENTO, ID_POKEMON, ACTIVO) VALUES (?, ?, ?)";
+
+
+
+            try(Connection connection = DBConnection.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+                PreparedStatement statement2 = connection.prepareStatement(sql2)){
+
+                statement.setInt(1, pokemon.getIdPokemon());
+
+                ResultSet resultSet = statement.executeQuery();
+
+                while (resultSet.next()) {
+
+                    int numMovimiento= resultSet.getInt("ID_MOVIMIENTO");
+
+                    statement2.setInt(1, numMovimiento);
+                    statement2.setInt(2, pokemon.getIdPokemon());
+                    statement2.setString(3, "N");
+
+                    statement2.executeUpdate();
+
+                }
+
+                log.appendText(pokemon.getNombre() + " ha aprendido un nuevo movimiento.\n");
+
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
     }
 
 
