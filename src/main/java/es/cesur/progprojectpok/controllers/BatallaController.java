@@ -873,6 +873,8 @@ public class BatallaController {
             subirEstadisticas(pokemon);
 
             log.appendText(pokemon.getNombre() + " ha subido de nivel.\n");
+
+            comprobarAprenderMov(pokemon);
         }
     }
 
@@ -950,6 +952,52 @@ public class BatallaController {
 
         movimiento.setNumUsos(movimiento.getNumUsos() - 1);
 
+    }
+
+
+    private void comprobarAprenderMov(Pokemon pokemon){
+
+        if ((pokemon.getNivel() % 3) == 0){
+
+            String sql = "SELECT * FROM MOVIMIENTOS " +
+                    "WHERE NOT EXISTS (" +
+                    "    SELECT *" +
+                    "    FROM MOVIMIENTOS_POKEMON MP" +
+                    "    WHERE MP.ID_MOVIMIENTO = MOVIMIENTOS.ID_MOVIMIENTO AND" +
+                    "    MP.ID_POKEMON = ?" +
+                    ")" +
+                    "ORDER BY RAND() LIMIT 1";
+
+            String sql2 = "INSERT INTO MOVIMIENTOS_POKEMON (ID_MOVIMIENTO, ID_POKEMON, ACTIVO) VALUES (?, ?, ?)";
+
+
+
+            try(Connection connection = DBConnection.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+                PreparedStatement statement2 = connection.prepareStatement(sql2)){
+
+                statement.setInt(1, pokemon.getIdPokemon());
+
+                ResultSet resultSet = statement.executeQuery();
+
+                while (resultSet.next()) {
+
+                    int numMovimiento= resultSet.getInt("ID_MOVIMIENTO");
+
+                    statement2.setInt(1, numMovimiento);
+                    statement2.setInt(2, pokemon.getIdPokemon());
+                    statement2.setString(3, "N");
+
+                    statement2.executeUpdate();
+
+                }
+
+                log.appendText(pokemon.getNombre() + " ha aprendido un nuevo movimiento.\n");
+
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
     }
 
 
