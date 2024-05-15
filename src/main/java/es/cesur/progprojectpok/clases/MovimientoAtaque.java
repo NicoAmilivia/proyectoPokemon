@@ -18,21 +18,12 @@ public class MovimientoAtaque extends Movimiento {
 
     //GET Y SET
 
-    public Tipo getTipoMovimiento() {
-        return tipoMovimiento;
-    }
 
-    public void setTipoMovimiento(Tipo tipoMovimiento) {
-        this.tipoMovimiento = tipoMovimiento;
-    }
 
     public int getPotenciaAtaque() {
         return potenciaAtaque;
     }
 
-    public void setPotenciaAtaque(int potenciaAtaque) {
-        this.potenciaAtaque = potenciaAtaque;
-    }
 
 
     //Metodo de ataque

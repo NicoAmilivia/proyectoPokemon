@@ -20,17 +20,10 @@ public class Pokemon {
     private Estado estado;
     private Tipo tipo1;
     private Tipo tipo2;
-    private String rutaImagen;
-    private String rutaSonidoCombate;
-    public static final int TOTAL_MOVIMIENTOS = 4;
-    public static final int FACTOR_SUBIDA_NVL = 1;
+
     private int ataqueEspecial;
     private int defensaEspecial;
     private static final int VALOR_INICIAL_FERT = 5;
-    public static final int CRIANZA_ATTR_MIN_ALEATORIO = 1;
-    private static final int CRIANZA_ATTR_MAX_ALEATORIO = 10;
-
-    private String imagePath;
 
     private int idPokemon;
 
@@ -115,27 +108,6 @@ public class Pokemon {
     }
 
 
-    //METODOS
-
-    public void subirNivel(int experienciaGanada) {
-
-    }
-
-
-    public void atacarPokemon(Movimiento movimientoAtaque) {
-
-    }
-
-    public void comprobarVentajaRival(Pokemon pokemonRival) {
-
-
-    }
-
-    public void aprenderMovimiento(Movimiento movActualASustituir, Movimiento movNuevoPosible) {
-
-    }
-
-
     //GET AND SET
 
     public String getNombre() {
@@ -198,21 +170,6 @@ public class Pokemon {
         this.estado = estado;
     }
 
-    public String getRutaImagen() {
-        return rutaImagen;
-    }
-
-    public void setRutaImagen(String rutaImagen) {
-        this.rutaImagen = rutaImagen;
-    }
-
-    public String getRutaSonidoCombate() {
-        return rutaSonidoCombate;
-    }
-
-    public void setRutaSonidoCombate(String rutaSonidoCombate) {
-        this.rutaSonidoCombate = rutaSonidoCombate;
-    }
 
     public int getAtaqueEspecial() {
         return ataqueEspecial;
@@ -339,7 +296,7 @@ public class Pokemon {
 
 
 
-    // Constructor que acepta la ruta de la imagen del Pokémon
+
 
 
 }

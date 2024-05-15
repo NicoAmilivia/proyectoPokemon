@@ -16,22 +16,6 @@ public class Entrenador {
     }
 
 
-    //METODOS
-    public void moverPokemon(Pokemon pokemonAMover, boolean aCaja) {
-
-    }
-
-    public void entrenarPokemon(Pokemon pokemonAEntrenar) {
-
-    }
-
-    public void capturarPokemon(Pokemon pokemonACapturar) {
-
-    }
-
-
-
-
 
     //GET Y SET
     public int getId() {

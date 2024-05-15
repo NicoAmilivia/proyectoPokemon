@@ -2,16 +2,11 @@ package es.cesur.progprojectpok.controllers;
 import es.cesur.progprojectpok.clases.Pokemon;
 import es.cesur.progprojectpok.database.DBConnection;
 import javafx.fxml.FXML;
-import es.cesur.progprojectpok.controllers.CrianzaController;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.sql.*;
 
 
@@ -38,6 +33,8 @@ public class AsignarMoteController {
             mostrarImagenPokemon();
         }
     }
+
+
 
 
 
