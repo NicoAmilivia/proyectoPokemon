@@ -23,6 +23,9 @@ import java.io.IOException;
 
 public class MochilaController {
 
+    public static final String OS_NAME = "os.name";
+    public static final String WINDOWS = "Windows";
+    public static final String FILE = "file:\\";
     @FXML
     private ImageView objeto1;
 
@@ -121,12 +124,12 @@ public class MochilaController {
         List<ImageView> imageViews = Arrays.asList(objeto1, objeto2, objeto3, objeto4, objeto5, objeto6, objeto7);
         List<Text> numObjetos = Arrays.asList(numObjeto1, numObjeto2, numObjeto3, numObjeto4, numObjeto5, numObjeto6, numObjeto7);
         int idEntrenador = entrenador.getId();
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT m.ID_OBJETO, m.NUM_OBJETO, o.URL " +
-                    "FROM Objeto o " +
-                    "INNER JOIN Mochila m ON o.ID_OBJETO = m.ID_OBJETO " +
-                    "WHERE m.ID_ENTRENADOR = ? AND m.ID_OBJETO != 8";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT m.ID_OBJETO, m.NUM_OBJETO, o.URL " +
+                "FROM Objeto o " +
+                "INNER JOIN Mochila m ON o.ID_OBJETO = m.ID_OBJETO " +
+                "WHERE m.ID_ENTRENADOR = ? AND m.ID_OBJETO != 8";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql);) {
             statement.setInt(1, idEntrenador);
             ResultSet resultSet = statement.executeQuery();
 
@@ -153,10 +156,10 @@ public class MochilaController {
                         try {
                             File archivo = new File(url);
                             String rutaAbsoluta = archivo.getAbsolutePath();
-                            if (System.getProperty("os.name").startsWith("Windows")) {
+                            if (System.getProperty(OS_NAME).startsWith(WINDOWS)) {
                                 rutaAbsoluta = rutaAbsoluta.replace("/", "\\");
                             }
-                            Image objetoGenerado = new Image("file:\\" + rutaAbsoluta);
+                            Image objetoGenerado = new Image(FILE + rutaAbsoluta);
                             imageView.setImage(objetoGenerado);
 
                             // Asignar el número de objetos al Text correspondiente
@@ -181,15 +184,16 @@ public class MochilaController {
 
     private void aplicarIdObjetoEnBD(int idObjeto) {
         Pair<Boolean, String> objetoEquipado = obtenerObjetoEquipado(pokemonSeleccionado.getIdPokemon());
+        String updatePokemonSQL = "UPDATE POKEMON SET ID_OBJETO = ? WHERE ID_POKEMON = ?";
 
         if (objetoEquipado.getKey()) {
             logMochila.appendText(pokemonSeleccionado.getNombre() + " ya tiene equipado " + objetoEquipado.getValue().toUpperCase() + " !!!!\n" +
                     "Desequipa " + objetoEquipado.getValue().toUpperCase() + " para poder equipar un nuevo objeto\n");
         } else {
-            try (Connection connection = DBConnection.getConnection()) {
-                // Restar uno al número de objetos en la mochila
-                String updateMochilaSQL = "UPDATE Mochila SET NUM_OBJETO = NUM_OBJETO - 1 WHERE ID_ENTRENADOR = ? AND ID_OBJETO = ?";
-                PreparedStatement mochilaStatement = connection.prepareStatement(updateMochilaSQL);
+            String updateMochilaSQL = "UPDATE Mochila SET NUM_OBJETO = NUM_OBJETO - 1 WHERE ID_ENTRENADOR = ? AND ID_OBJETO = ?";
+            try (Connection connection = DBConnection.getConnection();
+                 PreparedStatement mochilaStatement = connection.prepareStatement(updateMochilaSQL);
+                 PreparedStatement statement = connection.prepareStatement(updatePokemonSQL);) {
                 mochilaStatement.setInt(1, entrenador.getId());
                 mochilaStatement.setInt(2, idObjeto);
                 mochilaStatement.executeUpdate();
@@ -197,9 +201,6 @@ public class MochilaController {
                 if (obtenerNumObjetosMochila(idObjeto)==0){
                     eliminarObjetoMochila(idObjeto);
                 }
-                // Asignar el nuevo objeto al Pokémon seleccionado
-                String updatePokemonSQL = "UPDATE POKEMON SET ID_OBJETO = ? WHERE ID_POKEMON = ?";
-                PreparedStatement statement = connection.prepareStatement(updatePokemonSQL);
                 statement.setInt(1, idObjeto);
                 statement.setInt(2, pokemonSeleccionado.getIdPokemon());
                 int rowsUpdated = statement.executeUpdate();
@@ -259,10 +260,9 @@ public class MochilaController {
 
     public void cargarImagenPokemonSeleccionado() throws SQLException {
 
-        try (Connection connection = DBConnection.getConnection()) {
-
-            String sql = "SELECT IMAGEN FROM POKEDEX WHERE NUM_POKEDEX = ? ";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT IMAGEN FROM POKEDEX WHERE NUM_POKEDEX = ? ";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql);) {
             statement.setInt(1, pokemonSeleccionado.getNumPokedex());
             ResultSet resultSet = statement.executeQuery();
 
@@ -298,9 +298,9 @@ public class MochilaController {
 
 
     public static Pair<Boolean, String> obtenerObjetoEquipado(int idPokemon) {
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT o.NOMBRE FROM OBJETO o INNER JOIN POKEMON p ON o.ID_OBJETO = p.ID_OBJETO WHERE p.ID_POKEMON = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT o.NOMBRE FROM OBJETO o INNER JOIN POKEMON p ON o.ID_OBJETO = p.ID_OBJETO WHERE p.ID_POKEMON = ?";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql);) {
             statement.setInt(1, idPokemon);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
@@ -321,11 +321,11 @@ public class MochilaController {
     private void cargarImagenObjetoEquipado() {
         if (pokemonSeleccionado != null) {
             int idPokemon = pokemonSeleccionado.getIdPokemon();
-            try (Connection connection = DBConnection.getConnection()) {
-                String sql = "SELECT o.URL FROM Pokemon p " +
-                        "INNER JOIN Objeto o ON p.ID_OBJETO = o.ID_OBJETO " +
-                        "WHERE p.ID_POKEMON = ?";
-                PreparedStatement statement = connection.prepareStatement(sql);
+            String sql = "SELECT o.URL FROM Pokemon p " +
+                    "INNER JOIN Objeto o ON p.ID_OBJETO = o.ID_OBJETO " +
+                    "WHERE p.ID_POKEMON = ?";
+            try (Connection connection = DBConnection.getConnection();
+                 PreparedStatement statement = connection.prepareStatement(sql);) {
                 statement.setInt(1, idPokemon);
                 ResultSet resultSet = statement.executeQuery();
                 if (resultSet.next()) {
@@ -335,10 +335,10 @@ public class MochilaController {
                             // Intenta cargar la imagen
                             File archivo = new File(url);
                             String rutaAbsoluta = archivo.getAbsolutePath();
-                            if (System.getProperty("os.name").startsWith("Windows")) {
+                            if (System.getProperty(OS_NAME).startsWith(WINDOWS)) {
                                 rutaAbsoluta = rutaAbsoluta.replace("/", "\\");
                             }
-                            Image imagenObjeto = new Image("file:\\" + rutaAbsoluta);
+                            Image imagenObjeto = new Image(FILE + rutaAbsoluta);
                             imagenObjetoEquipado.setImage(imagenObjeto);
                         } catch (NullPointerException e) {
 
@@ -354,7 +354,9 @@ public class MochilaController {
 
     @FXML
     public void desequiparObjetoOnAction() {
-        try (Connection connection = DBConnection.getConnection()) {
+        String updateSQL = "UPDATE POKEMON SET ID_OBJETO = NULL WHERE ID_POKEMON = ?";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(updateSQL);) {
             // Obtener el ID del objeto equipado por el Pokémon seleccionado
             Pair<Boolean, String> objetoEquipado = obtenerObjetoEquipado(pokemonSeleccionado.getIdPokemon());
 
@@ -362,32 +364,18 @@ public class MochilaController {
             if (objetoEquipado.getKey()) {
                 // Obtener el nombre del objeto equipado
                 String nombreObjeto = objetoEquipado.getValue();
-
                 // Obtener el ID del objeto a partir de su nombre
                 int idObjeto = obtenerIdObjeto(nombreObjeto);
-
-                // Actualizar la tabla POKEMON para desequipar el objeto
-                String updateSQL = "UPDATE POKEMON SET ID_OBJETO = NULL WHERE ID_POKEMON = ?";
-                PreparedStatement statement = connection.prepareStatement(updateSQL);
                 statement.setInt(1, pokemonSeleccionado.getIdPokemon());
                 int rowsUpdated = statement.executeUpdate();
-
-
                 if (objetoEquipado.getKey()){
                     insertarObjetoEnMochila(entrenador.getId(),idObjeto);
                 }else {
                     incrementarNumObjetoEnMochila(idObjeto);
                 }
-
-
-
                 cargarImagenesMochila();
-
-
                 // Verificar si se actualizó correctamente
                 if (rowsUpdated > 0) {
-
-
                     // Limpiar la imagen del objeto equipado en la vista
                     imagenObjetoEquipado.setImage(null);
 
@@ -409,70 +397,58 @@ public class MochilaController {
 
 
     private void incrementarNumObjetoEnMochila(int idObjeto) {
-        try (Connection connection = DBConnection.getConnection()) {
-            String updateMochilaSQL = "UPDATE Mochila SET NUM_OBJETO = NUM_OBJETO + 1 WHERE ID_ENTRENADOR = ? AND ID_OBJETO = ?";
-            PreparedStatement mochilaStatement = connection.prepareStatement(updateMochilaSQL);
+        String updateMochilaSQL = "UPDATE Mochila SET NUM_OBJETO = NUM_OBJETO + 1 WHERE ID_ENTRENADOR = ? AND ID_OBJETO = ?";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement mochilaStatement = connection.prepareStatement(updateMochilaSQL);) {
             mochilaStatement.setInt(1, entrenador.getId());
             mochilaStatement.setInt(2, idObjeto);
             mochilaStatement.executeUpdate();
 
             // Actualizar el número de objetos en la vista
+
             switch (idObjeto) {
                 case 1:
-                    try {
-                        numObjeto1.setText(String.valueOf(Integer.parseInt(numObjeto1.getText()) + 1));
-                    } catch (NumberFormatException e) {
 
-                    }
+                        numObjeto1.setText(String.valueOf(Integer.parseInt(numObjeto1.getText()) + 1));
+
                     break;
                 case 2:
-                    try {
-                        numObjeto2.setText(String.valueOf(Integer.parseInt(numObjeto2.getText()) + 1));
-                    } catch (NumberFormatException e) {
 
-                    }
+                        numObjeto2.setText(String.valueOf(Integer.parseInt(numObjeto2.getText()) + 1));
+
                     break;
                 case 3:
-                    try {
-                        numObjeto3.setText(String.valueOf(Integer.parseInt(numObjeto3.getText()) + 1));
-                    } catch (NumberFormatException e) {
 
-                    }
+                        numObjeto3.setText(String.valueOf(Integer.parseInt(numObjeto3.getText()) + 1));
                     break;
                 case 4:
-                    try {
-                        numObjeto4.setText(String.valueOf(Integer.parseInt(numObjeto4.getText()) + 1));
-                    } catch (NumberFormatException e) {
 
-                    }
+                        numObjeto4.setText(String.valueOf(Integer.parseInt(numObjeto4.getText()) + 1));
+
                     break;
                 case 5:
-                    try {
-                        numObjeto5.setText(String.valueOf(Integer.parseInt(numObjeto5.getText()) + 1));
-                    } catch (NumberFormatException e) {
 
-                    }
+                        numObjeto5.setText(String.valueOf(Integer.parseInt(numObjeto5.getText()) + 1));
+
                     break;
                 case 6:
-                    try {
-                        numObjeto6.setText(String.valueOf(Integer.parseInt(numObjeto6.getText()) + 1));
-                    } catch (NumberFormatException e) {
 
-                    }
+                        numObjeto6.setText(String.valueOf(Integer.parseInt(numObjeto6.getText()) + 1));
+
                     break;
                 case 7:
-                    try {
-                        numObjeto7.setText(String.valueOf(Integer.parseInt(numObjeto7.getText()) + 1));
-                    } catch (NumberFormatException e) {
 
-                    }
+                        numObjeto7.setText(String.valueOf(Integer.parseInt(numObjeto7.getText()) + 1));
+
                     break;
                 default:
                     break;
             }
 
-        } catch (SQLException e) {
+        } catch (SQLException e ) {
             e.printStackTrace();
+        }catch (NumberFormatException n){
+
         }
     }
 
@@ -481,12 +457,12 @@ public class MochilaController {
 
 
     private int obtenerNumObjetosMochila(int idObjeto) throws SQLException {
-        Connection connection = DBConnection.getConnection();
-        int numObjetos = 0;
 
-        try {
-            String sql = "SELECT NUM_OBJETO FROM Mochila WHERE ID_ENTRENADOR = ? AND ID_OBJETO = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        int numObjetos = 0;
+        String sql = "SELECT NUM_OBJETO FROM Mochila WHERE ID_ENTRENADOR = ? AND ID_OBJETO = ?";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql);
+        ){
             statement.setInt(1, entrenador.getId());
             statement.setInt(2, idObjeto);
             ResultSet resultSet = statement.executeQuery();
@@ -494,8 +470,6 @@ public class MochilaController {
             if (resultSet.next()) {
                 numObjetos = resultSet.getInt("NUM_OBJETO");
             }
-        } finally {
-            connection.close();
         }
 
         return numObjetos;
@@ -504,9 +478,9 @@ public class MochilaController {
 
 
     private int obtenerIdObjeto(String nombreObjeto) {
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT ID_OBJETO FROM Objeto WHERE NOMBRE = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT ID_OBJETO FROM Objeto WHERE NOMBRE = ?";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql);) {
             statement.setString(1, nombreObjeto);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
@@ -523,9 +497,9 @@ public class MochilaController {
 
 
     private void cargarImagenObjetoEquipado(int idObjeto) {
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT URL FROM Objeto WHERE ID_OBJETO = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT URL FROM Objeto WHERE ID_OBJETO = ?";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql);) {
             statement.setInt(1, idObjeto);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
@@ -535,10 +509,10 @@ public class MochilaController {
                         // Intenta cargar la imagen
                         File archivo = new File(url);
                         String rutaAbsoluta = archivo.getAbsolutePath();
-                        if (System.getProperty("os.name").startsWith("Windows")) {
+                        if (System.getProperty(OS_NAME).startsWith(WINDOWS)) {
                             rutaAbsoluta = rutaAbsoluta.replace("/", "\\");
                         }
-                        Image imagenObjeto = new Image("file:\\" + rutaAbsoluta);
+                        Image imagenObjeto = new Image(FILE + rutaAbsoluta);
                         imagenObjetoEquipado.setImage(imagenObjeto);
                     } catch (NullPointerException e) {
                         // Maneja la excepción
@@ -553,9 +527,10 @@ public class MochilaController {
 
     public void eliminarObjetoMochila(int idObjeto){
 
-        try (Connection connection = DBConnection.getConnection()) {
-            String deleteObjetoSQL = "DELETE FROM Mochila WHERE ID_ENTRENADOR = ? AND ID_OBJETO = ?";
-            PreparedStatement deleteStatement = connection.prepareStatement(deleteObjetoSQL);
+        String deleteObjetoSQL = "DELETE FROM Mochila WHERE ID_ENTRENADOR = ? AND ID_OBJETO = ?";
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement deleteStatement = connection.prepareStatement(deleteObjetoSQL);) {
             deleteStatement.setInt(1, entrenador.getId());
             deleteStatement.setInt(2, idObjeto);
             deleteStatement.executeUpdate();

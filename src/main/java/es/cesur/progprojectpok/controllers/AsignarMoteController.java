@@ -35,6 +35,9 @@ public class AsignarMoteController {
     }
 
 
+    public void setCrianzaController(CrianzaController crianzaController){
+        this.crianzaController=crianzaController;
+    }
 
 
 
@@ -74,9 +77,10 @@ public class AsignarMoteController {
     pokemonHijo.setNombre(mote);
 
 
-    try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT MAX(ID_POKEMON) FROM POKEMON";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    String sql = "SELECT MAX(ID_POKEMON) FROM POKEMON";
+
+    try (Connection connection = DBConnection.getConnection();
+         PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
             ResultSet resultSet = preparedStatement.executeQuery();
 
 
@@ -91,6 +95,9 @@ public class AsignarMoteController {
             }
 
         actualizarMoteEnBD(mote);
+
+            crianzaController.actualizarLogCrianza("¡Huevo abierto! Nuevo Pokémon agregado " + pokemonHijo.getNombre());
+
         Stage stage = (Stage) asignarMoteButton.getScene().getWindow();
         stage.close();
         } catch (SQLException e) {
@@ -112,7 +119,7 @@ public class AsignarMoteController {
                     throw new SQLException("No se pudo actualizar el mote del Pokémon hijo");
                 } else {
                     pokemonHijo.setNombre(mote);
-                    System.out.println("Mote actualizado correctamente a: " + mote);;
+                    System.out.println("Mote actualizado correctamente a: " + mote);
                 }
             }
         }
@@ -123,10 +130,6 @@ public class AsignarMoteController {
 
 
 
-    @FXML
-    public void omitirMoteOnAction(){
-
-    }
 
 
 

@@ -653,7 +653,7 @@ UPDATE OBJETO SET URL = 'src\\main\\resources\\es\\cesur\\progprojectpok\\images
 UPDATE OBJETO SET URL = 'src\\main\\resources\\es\\cesur\\progprojectpok\\images\\pokemons\\anillo-objeto.png' WHERE ID_OBJETO = 7;
 UPDATE OBJETO SET URL = 'src\\main\\resources\\es\\cesur\\progprojectpok\\images\\pokemons\\pokeball-objeto.png' WHERE ID_OBJETO = 8;
 
-
+ALTER TABLE movimientos_pokemon CHANGE COLUMN ARCHIVO ACTIVO VARCHAR(10);
 
 
 

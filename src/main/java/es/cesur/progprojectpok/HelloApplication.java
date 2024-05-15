@@ -1,7 +1,6 @@
 package es.cesur.progprojectpok;
 
-import es.cesur.progprojectpok.managers.UserManager;
-import es.cesur.progprojectpok.model.User;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

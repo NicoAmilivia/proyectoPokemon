@@ -136,6 +136,9 @@ public class TiendaController {
             case POKEBALL:
                 precioPokeball.setText(String.valueOf(precioObjeto) + "$");
                 break;
+            default:
+                System.out.println("ERROR");
+
         }
     }
 
@@ -261,9 +264,9 @@ public class TiendaController {
 
     private int obtenerPrecioObjeto(String nombreObjeto) {
         // Método para obtener el precio de un objeto de la base de datos
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT precio FROM objeto WHERE nombre = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT precio FROM objeto WHERE nombre = ?";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql);) {
             statement.setString(1, nombreObjeto);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {

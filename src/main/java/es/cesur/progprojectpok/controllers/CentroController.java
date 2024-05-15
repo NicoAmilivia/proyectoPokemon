@@ -86,13 +86,13 @@ public class CentroController {
     private Entrenador entrenador;
 
     public void initialize() {
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT pd.IMAGEN, p.VIDA_ACTUAL, p.VITALIDAD, p.MOTE " +
-                    "FROM POKEMON p " +
-                    "INNER JOIN POKEDEX pd ON p.NUM_POKEDEX = pd.NUM_POKEDEX " +
-                    "WHERE p.CAJA = 0 " +
-                    "ORDER BY p.NUM_POKEDEX";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT pd.IMAGEN, p.VIDA_ACTUAL, p.VITALIDAD, p.MOTE " +
+                "FROM POKEMON p " +
+                "INNER JOIN POKEDEX pd ON p.NUM_POKEDEX = pd.NUM_POKEDEX " +
+                "WHERE p.CAJA = 0 " +
+                "ORDER BY p.NUM_POKEDEX";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql);) {
             ResultSet resultSet = statement.executeQuery();
 
             int i = 1;
@@ -150,16 +150,15 @@ public class CentroController {
     @FXML
     public void recuperarOnAction() {
 
-                try (Connection connection = DBConnection.getConnection()) {
-                    // Actualizar la vida de los Pokémon en la caja a su valor máximo en la base de datos
-                    String sqlUpdate = "UPDATE POKEMON SET VIDA_ACTUAL = VITALIDAD WHERE CAJA = 0";
-                    PreparedStatement updateStatement = connection.prepareStatement(sqlUpdate);
+        // Actualizar la vida de los Pokémon en la caja a su valor máximo en la base de datos
+        String sqlUpdate = "UPDATE POKEMON SET VIDA_ACTUAL = VITALIDAD WHERE CAJA = 0";
+        String sqlSelect = "SELECT VIDA_ACTUAL, VITALIDAD FROM POKEMON WHERE CAJA = 0 ORDER BY NUM_POKEDEX";
+
+                try (Connection connection = DBConnection.getConnection();
+                     PreparedStatement updateStatement = connection.prepareStatement(sqlUpdate);
+                     PreparedStatement selectStatement = connection.prepareStatement(sqlSelect);) {
                     int rowsAffected = updateStatement.executeUpdate();
 
-
-                        // Actualizar las barras de progreso solo para los Pokémon en la caja
-                        String sqlSelect = "SELECT VIDA_ACTUAL, VITALIDAD FROM POKEMON WHERE CAJA = 0 ORDER BY NUM_POKEDEX";
-                        PreparedStatement selectStatement = connection.prepareStatement(sqlSelect);
                         ResultSet resultSet = selectStatement.executeQuery();
 
                         int i = 1;

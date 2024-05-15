@@ -11,10 +11,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.Parent;
@@ -75,9 +72,9 @@ public class CrianzaController {
     private List<Pokemon> cargarPokemonesDesdeBD(char sexo) {
         List<Pokemon> pokemones = new ArrayList<>();
 
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT * FROM POKEMON WHERE SEXO = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT * FROM POKEMON WHERE SEXO = ?";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql);) {
             statement.setString(1, String.valueOf(sexo));
             ResultSet resultSet = statement.executeQuery();
 
@@ -175,23 +172,32 @@ public class CrianzaController {
 
     private Pokemon generarHijo(Pokemon machoSeleccionado, Pokemon hembraSeleccionada) {
 
-        pokemonHijo= new Pokemon();
-        pokemonHijo.setNombre(machoSeleccionado.getNombre());
-        pokemonHijo.setNumPokedex(machoSeleccionado.getNumPokedex());
-        pokemonHijo.setSexo(randomSex());
-        pokemonHijo.setTipo1(machoSeleccionado.getTipo1());
-        pokemonHijo.setTipo2(machoSeleccionado.getTipo2());
-        pokemonHijo.setFertilidad(Math.max(machoSeleccionado.getFertilidad(), hembraSeleccionada.getFertilidad()));
-        pokemonHijo.setAtaque(Math.max(machoSeleccionado.getAtaque(), hembraSeleccionada.getAtaque()));
-        pokemonHijo.setDefensa(Math.max(machoSeleccionado.getDefensa(), hembraSeleccionada.getDefensa()));
-        pokemonHijo.setAtaqueEspecial(Math.max(machoSeleccionado.getAtaqueEspecial(), hembraSeleccionada.getAtaqueEspecial()));
-        pokemonHijo.setDefensaEspecial(Math.max(machoSeleccionado.getDefensaEspecial(), hembraSeleccionada.getDefensaEspecial()));
-        pokemonHijo.setVelocidad(Math.max(machoSeleccionado.getVelocidad(), hembraSeleccionada.getVelocidad()));
-        pokemonHijo.setNivel(1);
-        pokemonHijo.setExperiencia(0);
-        pokemonHijo.setVitalidad(Math.max(machoSeleccionado.getVitalidad(),hembraSeleccionada.getVitalidad()));
+
+
+
+            pokemonHijo = new Pokemon();
+            pokemonHijo.setNombre(machoSeleccionado.getNombre());
+            pokemonHijo.setNumPokedex(machoSeleccionado.getNumPokedex());
+            pokemonHijo.setSexo(randomSex());
+            pokemonHijo.setTipo1(machoSeleccionado.getTipo1());
+            pokemonHijo.setTipo2(machoSeleccionado.getTipo2());
+            pokemonHijo.setFertilidad(Math.max(machoSeleccionado.getFertilidad(), hembraSeleccionada.getFertilidad()));
+            pokemonHijo.setAtaque(Math.max(machoSeleccionado.getAtaque(), hembraSeleccionada.getAtaque()));
+            pokemonHijo.setDefensa(Math.max(machoSeleccionado.getDefensa(), hembraSeleccionada.getDefensa()));
+            pokemonHijo.setAtaqueEspecial(Math.max(machoSeleccionado.getAtaqueEspecial(), hembraSeleccionada.getAtaqueEspecial()));
+            pokemonHijo.setDefensaEspecial(Math.max(machoSeleccionado.getDefensaEspecial(), hembraSeleccionada.getDefensaEspecial()));
+            pokemonHijo.setVelocidad(Math.max(machoSeleccionado.getVelocidad(), hembraSeleccionada.getVelocidad()));
+            pokemonHijo.setNivel(1);
+            pokemonHijo.setExperiencia(0);
+            pokemonHijo.setVitalidad(Math.max(machoSeleccionado.getVitalidad(), hembraSeleccionada.getVitalidad()));
+
+
+
+
         return pokemonHijo;
+
     }
+
 
 
 
@@ -213,11 +219,9 @@ public class CrianzaController {
 
 
     private void insertarPokemonEnBD(Pokemon pokemon) throws SQLException {
-
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "INSERT INTO POKEMON (NUM_POKEDEX,ID_ENTRENADOR, MOTE, CAJA, ATAQUE, AT_ESPECIAL, DEFENSA, DEF_ESPECIAL, VELOCIDAD, NIVEL, FERTILIDAD, SEXO, ESTADO, EXPERIENCIA, VITALIDAD,VIDA_ACTUAL) " +
-                    "VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
-            PreparedStatement statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+        String sql = "INSERT INTO POKEMON (NUM_POKEDEX,ID_ENTRENADOR, MOTE, CAJA, ATAQUE, AT_ESPECIAL, DEFENSA, DEF_ESPECIAL, VELOCIDAD, NIVEL, FERTILIDAD, SEXO, ESTADO, EXPERIENCIA, VITALIDAD,VIDA_ACTUAL) " +
+                "VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+        try (Connection connection = DBConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             statement.setInt(1, pokemon.getNumPokedex());
             statement.setInt(2,entrenador.getId());
             statement.setString(3, pokemon.getNombre());
@@ -245,16 +249,25 @@ public class CrianzaController {
                 if (generatedKeys.next()) {
                     int idPokemon = generatedKeys.getInt(1); // Obtener el valor del ID del Pokémon hijo
                     pokemonHijo.setIdPokemon(idPokemon); // Establecer el ID del Pokémon hijo en el objeto Pokemon
+
+                    String insertMovimiento = "INSERT INTO MOVIMIENTOS_POKEMON (ID_MOVIMIENTO, ID_POKEMON, ACTIVO ) VALUES (?,?,?)";
+                    try (PreparedStatement statementMovimiento = connection.prepareStatement(insertMovimiento)){
+                        statementMovimiento.setInt(1, 7);
+                        statementMovimiento.setInt(2,pokemonHijo.getIdPokemon());
+                        statementMovimiento.setString(3,"S");
+                        statementMovimiento.executeUpdate();
+                    }
+
                 } else {
                     throw new SQLException("No se generó ningún ID para el Pokémon hijo");
                 }
+
             }
         } catch (SQLException e) {
             // Manejar cualquier excepción que pueda ocurrir al ejecutar la consulta SQL
             e.printStackTrace();
             // Puedes mostrar un mensaje de error al usuario si lo deseas
         }
-
 
     }
 
@@ -288,6 +301,7 @@ public class CrianzaController {
             AsignarMoteController asignarMoteController = fxmlLoader.getController();
             asignarMoteController.setPokemonHijo(pokemonHijo);
             asignarMoteController.setMachoSeleccionado(machoSeleccionado);
+            asignarMoteController.setCrianzaController(this);
             menuStage.setTitle("Asignar Mote");
             menuStage.setScene(new Scene(root, 590, 600));
             menuStage.show();
@@ -300,5 +314,10 @@ public class CrianzaController {
 
     public void setEntrenador(Entrenador entrenador) {
         this.entrenador = entrenador;
+    }
+
+
+    public void actualizarLogCrianza(String mensaje){
+        logCrianza.setText(mensaje);
     }
 }
