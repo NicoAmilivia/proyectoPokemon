@@ -38,15 +38,20 @@ public class LoginController {
 
     private Entrenador entrenador;
 
+    Random rd = new Random();
+
     @FXML
     private void handleLoginButtonAction() {
         String usernameLog = usernameField.getText();
         String passwordLog = passwordField.getText();
 
+        String sql = "SELECT * FROM entrenador WHERE NOM_ENTRENADOR = ? AND PASS = ?";
+
         // Realizar la conexión con la base de datos
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT * FROM entrenador WHERE NOM_ENTRENADOR = ? AND PASS = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+
             preparedStatement.setString(1, usernameLog);
             preparedStatement.setString(2, passwordLog);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -88,12 +93,15 @@ public class LoginController {
     private void handleSignUpButtonAction() {
         String usernameSign = usernameField.getText();
         String passwordSign = passwordField.getText();
-        Random rd =  new Random();
+
         int pokedollarsRandom = rd.nextInt(201)+800;
 
-        try(Connection connection = DBConnection.getConnection()) {
-            String sql = "INSERT INTO entrenador (nom_entrenador, pass, pokedollars) VALUES (?, ?, ?)";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "INSERT INTO entrenador (nom_entrenador, pass, pokedollars) VALUES (?, ?, ?)";
+
+
+        try(Connection connection = DBConnection.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql)) {
+
             statement.setString(1, usernameSign);
             statement.setString(2, passwordSign);
             statement.setInt(3, pokedollarsRandom);

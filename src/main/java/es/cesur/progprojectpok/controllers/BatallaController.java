@@ -3,7 +3,7 @@ package es.cesur.progprojectpok.controllers;
 import es.cesur.progprojectpok.clases.*;
 import es.cesur.progprojectpok.database.DBConnection;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,6 +39,7 @@ public class BatallaController {
     public static final String HA_UTILIZADO = " ha utilizado ";
     public static final String NO_ES_TU_TURNO = "No es tu turno \n";
     public static final String EL_COMBATE_HA_FINALIZADO = "El combate ha finalizado.\n";
+    public static final String USOS = "Usos: ";
     @FXML
     private Button ataque1;
     @FXML
@@ -109,6 +110,8 @@ public class BatallaController {
     private Text usosAt4;
 
     private int indicePokemonCambiar;
+
+    Random rd = new Random();
 
 
 
@@ -188,9 +191,11 @@ public class BatallaController {
     private List<Pokemon> cargarPokemonesDesdeBD(int cajaId) {
         List<Pokemon> pokemones = new ArrayList<>();
 
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT * FROM POKEMON WHERE CAJA = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT * FROM POKEMON WHERE CAJA = ?";
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
             statement.setInt(1, cajaId);
             ResultSet resultSet = statement.executeQuery();
 
@@ -211,6 +216,7 @@ public class BatallaController {
 
                 Pokemon pokemon = new Pokemon(numPokedex, nombre, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad, nivel, vitalidad, vidaActual, idPokemon, experiencia);
                 pokemones.add(pokemon);
+
             }
         } catch (SQLException e) {
             System.out.println("Error al cargar los Pokémon desde la base de datos: " + e.getMessage());
@@ -230,23 +236,23 @@ public class BatallaController {
     //Generar equipo rival
     private void crearEquipoRival() {
         equipoRival = new ArrayList<>();
-        Random random = new Random();
 
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT NOM_POKEMON FROM POKEDEX WHERE NUM_POKEDEX = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT NOM_POKEMON FROM POKEDEX WHERE NUM_POKEDEX = ?";
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
 
             for (int i = 0; i < 6; i++) {
-                int numPokedex = random.nextInt(151) + 1;
+                int numPokedex = rd.nextInt(151) + 1;
 
-                int vida = random.nextInt(30);
+                int vida = rd.nextInt(30);
 
                 statement.setInt(1, numPokedex);
                 ResultSet resultSet = statement.executeQuery();
 
                 if (resultSet.next()) {
                     String nombrePokemon = resultSet.getString("NOM_POKEMON");
-                    Pokemon pokemonAleatorio = new Pokemon(numPokedex,nombrePokemon,random.nextInt(30), random.nextInt(30), random.nextInt(30), random.nextInt(30), random.nextInt(30), pokemonJugadorEnCombate.getNivel(), vida,  vida, 0,10);
+                    Pokemon pokemonAleatorio = new Pokemon(numPokedex,nombrePokemon,rd.nextInt(30), rd.nextInt(30), rd.nextInt(30), rd.nextInt(30), rd.nextInt(30), pokemonJugadorEnCombate.getNivel(), vida,  vida, 0,10);
                     pokemonAleatorio.setVidaActual(pokemonAleatorio.getVitalidad());
                     cargarMovimientosRival(pokemonAleatorio);
                     equipoRival.add(pokemonAleatorio);
@@ -265,13 +271,15 @@ public class BatallaController {
     private void cargarMovimientosDesdeBD(int idPokemon) {
         movimientosPokemon = new ArrayList<>();
 
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT M.* " +
-                    "FROM MOVIMIENTOS M " +
-                    "INNER JOIN MOVIMIENTOS_POKEMON MP " +
-                    "ON M.ID_MOVIMIENTO = MP.ID_MOVIMIENTO " +
-                    "WHERE MP.ID_POKEMON = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT M.* " +
+                "FROM MOVIMIENTOS M " +
+                "INNER JOIN MOVIMIENTOS_POKEMON MP " +
+                "ON M.ID_MOVIMIENTO = MP.ID_MOVIMIENTO " +
+                "WHERE MP.ID_POKEMON = ?";
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
             statement.setInt(1, idPokemon);
             ResultSet resultSet = statement.executeQuery();
 
@@ -514,8 +522,8 @@ public class BatallaController {
 
 
     private void realizarAccionRival() {
-        Random random = new Random();
-        int indiceMovimientoAleatorio = random.nextInt(pokemonRivalEnCombate.getMovimientos().size());
+
+        int indiceMovimientoAleatorio = rd.nextInt(pokemonRivalEnCombate.getMovimientos().size());
 
         //Selecciona el movimiento aleatorio que va a usar el rival
         Movimiento movimientoRival = pokemonRivalEnCombate.getMovimientos().get(indiceMovimientoAleatorio);
@@ -724,9 +732,12 @@ public class BatallaController {
 
     private void cargarMovimientosRival(Pokemon pokemon) {
         List<Movimiento> movimientos = new ArrayList<>();
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT * FROM MOVIMIENTOS ORDER BY RAND() LIMIT 4";
-            PreparedStatement statement = connection.prepareStatement(sql);
+
+        String sql = "SELECT * FROM MOVIMIENTOS ORDER BY RAND() LIMIT 4";
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
@@ -810,9 +821,11 @@ public class BatallaController {
 
 
     public void actualizarExperienciaBD(Pokemon pokemon) {
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "UPDATE POKEMON SET EXPERIENCIA = ? WHERE ID_POKEMON = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "UPDATE POKEMON SET EXPERIENCIA = ? WHERE ID_POKEMON = ?";
+
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, pokemon.getExperiencia());
             statement.setInt(2, pokemon.getIdPokemon());
             statement.executeUpdate();
@@ -865,9 +878,12 @@ public class BatallaController {
 
 
     public void actualizarNivelBD(Pokemon pokemon) {
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "UPDATE POKEMON SET NIVEL = ? WHERE ID_POKEMON = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+
+        String sql = "UPDATE POKEMON SET NIVEL = ? WHERE ID_POKEMON = ?";
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
             statement.setInt(1, pokemon.getNivel());
             statement.setInt(2, pokemon.getIdPokemon());
             statement.executeUpdate();
@@ -879,11 +895,14 @@ public class BatallaController {
 
     public void subirEstadisticas(Pokemon pokemon){
 
-        Random rd = new Random();
 
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "UPDATE POKEMON SET ATAQUE = ?, AT_ESPECIAL = ?, DEFENSA = ?, DEF_ESPECIAL = ?, VITALIDAD = ?, VELOCIDAD = ? WHERE ID_POKEMON = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+
+        String sql = "UPDATE POKEMON SET ATAQUE = ?, AT_ESPECIAL = ?, DEFENSA = ?, DEF_ESPECIAL = ?, VITALIDAD = ?, VELOCIDAD = ? WHERE ID_POKEMON = ?";
+
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
             statement.setInt(1, pokemon.getAtaque() + rd.nextInt(5) );
             statement.setInt(2, pokemon.getAtaqueEspecial() + rd.nextInt(5) );
             statement.setInt(3, pokemon.getDefensa() + rd.nextInt(5) );
@@ -903,25 +922,25 @@ public class BatallaController {
 
     private void actualizarNumUsos() {
         if (movimientosPokemon.size() >= 1) {
-            usosAt1.setText("Usos: " + String.valueOf(movimientosPokemon.get(0).getNumUsos()));
+            usosAt1.setText(USOS + String.valueOf(movimientosPokemon.get(0).getNumUsos()));
         }else {
             usosAt1.setText("");
         }
 
         if (movimientosPokemon.size() >= 2) {
-            usosAt2.setText("Usos: " + String.valueOf(movimientosPokemon.get(1).getNumUsos()));
+            usosAt2.setText(USOS + String.valueOf(movimientosPokemon.get(1).getNumUsos()));
         }else {
             usosAt2.setText("");
         }
 
         if (movimientosPokemon.size() >= 3) {
-            usosAt3.setText("Usos: " + String.valueOf(movimientosPokemon.get(2).getNumUsos()));
+            usosAt3.setText(USOS + String.valueOf(movimientosPokemon.get(2).getNumUsos()));
         }else {
             usosAt3.setText("");
         }
 
         if (movimientosPokemon.size() >= 4) {
-            usosAt4.setText("Usos: " + String.valueOf(movimientosPokemon.get(3).getNumUsos()));
+            usosAt4.setText(USOS + String.valueOf(movimientosPokemon.get(3).getNumUsos()));
         }else {
             usosAt4.setText("");
         }

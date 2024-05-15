@@ -41,7 +41,7 @@ public class Movimiento {
     //Metodo para atacar
 
     public void usarMovimiento(Pokemon atacante, Pokemon objetivo){
-
+        //Metodo vacio para ser sobreescrito en cada tipo de ataque
     }
 
     @Override

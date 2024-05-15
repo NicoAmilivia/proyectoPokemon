@@ -3,7 +3,7 @@ package es.cesur.progprojectpok.controllers;
 import es.cesur.progprojectpok.clases.Entrenador;
 import es.cesur.progprojectpok.clases.Pokemon;
 import es.cesur.progprojectpok.database.DBConnection;
-import javafx.beans.binding.Bindings;
+
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -91,9 +91,12 @@ public class EquipoController {
     private List<Pokemon> cargarPokemonesDesdeBD(int cajaId) {
         List<Pokemon> pokemones = new ArrayList<>();
 
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT * FROM POKEMON WHERE CAJA = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT * FROM POKEMON WHERE CAJA = ?";
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+
             statement.setInt(1, cajaId);
             ResultSet resultSet = statement.executeQuery();
 
@@ -127,9 +130,13 @@ public class EquipoController {
     }
 
     private void actualizarBD(int caja, int idPokemon) {
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "UPDATE POKEMON SET CAJA = ? WHERE ID_POKEMON = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+
+        String sql = "UPDATE POKEMON SET CAJA = ? WHERE ID_POKEMON = ?";
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+
             statement.setInt(1, caja);
             statement.setInt(2, idPokemon);
 

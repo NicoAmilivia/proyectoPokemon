@@ -42,9 +42,12 @@ public class ElegirPokemonCombateController {
     private List<Pokemon> cargarPokemonesDesdeBD(int cajaId) {
         List<Pokemon> pokemones = new ArrayList<>();
 
-        try (Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT * FROM POKEMON WHERE CAJA = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT * FROM POKEMON WHERE CAJA = ?";
+
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
             statement.setInt(1, cajaId);
             ResultSet resultSet = statement.executeQuery();
 

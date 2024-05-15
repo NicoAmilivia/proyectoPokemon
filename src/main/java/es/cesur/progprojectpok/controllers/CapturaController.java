@@ -37,18 +37,21 @@ public class CapturaController {
         this.pokemon = pokemon;
     }
 
+    Random random = new Random();
+
     public void initialize() {
-        //Generar un número aleatorio para el ID del Pokémon
-        Random random = new Random();
+
         int pokemonId = random.nextInt(151) + 1;
         // Cargar la imagen del Pokémon según el ID generado
         String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
         Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
         pokemonImageView.setImage(image);
 
-        try(Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT * FROM pokedex WHERE NUM_POKEDEX = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT * FROM pokedex WHERE NUM_POKEDEX = ?";
+
+        try(Connection connection = DBConnection.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql)) {
+
             statement.setInt(1, pokemonId);
             ResultSet resultSet = statement.executeQuery();
 
@@ -91,14 +94,16 @@ public class CapturaController {
     @FXML
     private void capturarOnAction(){
 
-        Random random = new Random();
+
         int capturar = random.nextInt(3);
+
+        String sql = "INSERT INTO POKEMON (NUM_POKEDEX, ID_ENTRENADOR, MOTE, CAJA, ATAQUE, AT_ESPECIAL, DEFENSA, DEF_ESPECIAL, VELOCIDAD, NIVEL, FERTILIDAD, SEXO, ESTADO, EXPERIENCIA, VITALIDAD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         if (capturar >= 1) {
 
-            try (Connection connection = DBConnection.getConnection()) {
-                String sql = "INSERT INTO POKEMON (NUM_POKEDEX, ID_ENTRENADOR, MOTE, CAJA, ATAQUE, AT_ESPECIAL, DEFENSA, DEF_ESPECIAL, VELOCIDAD, NIVEL, FERTILIDAD, SEXO, ESTADO, EXPERIENCIA, VITALIDAD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                PreparedStatement statement = connection.prepareStatement(sql);
+            try (Connection connection = DBConnection.getConnection();
+                 PreparedStatement statement = connection.prepareStatement(sql)) {
+
                 statement.setInt(1, pokemon.getNumPokedex());
                 statement.setInt(2, 1);
                 statement.setString(3, pokemon.getNombre());
@@ -134,16 +139,19 @@ public class CapturaController {
     @FXML
     private void capturarNuevoOnAction(){
         //Generar un número aleatorio para el ID del Pokémon
-        Random random = new Random();
+
         int pokemonId = random.nextInt(151) + 1;
         // Cargar la imagen del Pokémon según el ID generado
         String imageUrl = String.format("/es/cesur/progprojectpok/images/pokemon/%03d.png", pokemonId);
         Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
         pokemonImageView.setImage(image);
 
-        try(Connection connection = DBConnection.getConnection()) {
-            String sql = "SELECT * FROM pokedex WHERE NUM_POKEDEX = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "SELECT * FROM pokedex WHERE NUM_POKEDEX = ?";
+
+
+        try(Connection connection = DBConnection.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql)) {
+
             statement.setInt(1, pokemonId);
             ResultSet resultSet = statement.executeQuery();
 
