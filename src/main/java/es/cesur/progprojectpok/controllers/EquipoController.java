@@ -54,14 +54,16 @@ public class EquipoController {
 
     @FXML
     private void transferirACaja() {
-        Pokemon seleccionado = equipoListView.getSelectionModel().getSelectedItem();
-        if (seleccionado != null) {
-            equipo.remove(seleccionado);
-            caja.add(seleccionado);
-            int idPokemon = seleccionado.getIdPokemon();
-            actualizarBD(1, idPokemon);
-            equipoListView.setItems(FXCollections.observableArrayList(equipo));
-            cajaListView.setItems(FXCollections.observableArrayList(caja));
+        if (equipo.size() > 1) {
+            Pokemon seleccionado = equipoListView.getSelectionModel().getSelectedItem();
+            if (seleccionado != null) {
+                equipo.remove(seleccionado);
+                caja.add(seleccionado);
+                int idPokemon = seleccionado.getIdPokemon();
+                actualizarBD(1, idPokemon);
+                equipoListView.setItems(FXCollections.observableArrayList(equipo));
+                cajaListView.setItems(FXCollections.observableArrayList(caja));
+            }
         }
     }
 
@@ -172,7 +174,7 @@ public class EquipoController {
 
         if (hayPokemonSeleccionado()) {
 
-           pokemonSeleccionado=getPokemonSeleccionado();
+            pokemonSeleccionado=getPokemonSeleccionado();
             Stage stage = (Stage) aplicarObjetoButton.getScene().getWindow();
             stage.close();
 
@@ -213,5 +215,3 @@ public class EquipoController {
     }
 
 }
-
-
