@@ -3,6 +3,17 @@ package es.cesur.progprojectpok.clases;
 import javax.swing.text.Element;
 import java.util.List;
 
+/**
+ * Representa a un Pokémon en el juego.
+ * Contiene atributos que describen las características del Pokémon, como nombre, vitalidad, ataque, defensa, etc.
+ *
+ * @version 1.0
+ * @see Tipo
+ * @see Movimiento
+ * @see Estado
+ * @author Nico
+ * @author Fernando
+ */
 public class Pokemon {
 
 
@@ -94,6 +105,11 @@ public class Pokemon {
     }
 
 
+    /**
+     * Genera aleatoriamente el sexo del Pokémon.
+     *
+     * @return El sexo generado para el Pokémon ('H' para macho, 'M' para hembra).
+     */
     public char randomSex() {
         char sexo;
         int sexoBinario = (int) (Math.random() * 2);

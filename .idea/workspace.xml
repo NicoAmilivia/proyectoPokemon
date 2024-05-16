@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Correción del centroController">
+    <list default="true" id="e07ae385-9630-470c-a22c-fecfb725187e" name="Changes" comment="Funcionalidad para aprender nuevos movimientos.">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_12_15_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_12_15__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_12_47_[Changes]/shelved.patch" beforeDir="false" />
@@ -23,9 +23,30 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_04_2024_9_37__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2024_11_13_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2024_11_13__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_04_2024_10_14_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_04_2024_10_14__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_04_2024_10_37_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_04_2024_10_37__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_04_2024_13_21_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_04_2024_13_21__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/CentroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/CentroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/centro-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/centro-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/CambiosEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/CambiosEstado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Entrenador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Entrenador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Estado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Movimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Movimiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/MovimientoAtaque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/MovimientoAtaque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/MovimientoEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/MovimientoEstado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/MovimientoMejora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/MovimientoMejora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Objeto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Objeto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Tipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/Turno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/clases/VentajaAtaque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/CapturaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/CapturaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/EquipoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/controllers/EquipoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/database/Tablas_BD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/database/Tablas_BD.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/tablasbd/Tablas_BD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cesur/progprojectpok/tablasbd/Tablas_BD.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/capturar-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/es/cesur/progprojectpok/view/capturar-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +59,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -68,28 +89,34 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ferna/OneDrive/Escritorio/proyecto_PK&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicoa/Desktop/PROG-PROJECT-POK/src/main/resources/es/cesur/progprojectpok/view&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.rainbow.brackets.disable.when&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\view" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\images" />
+      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\view" />
       <recent name="C:\Users\ferna\OneDrive\Escritorio\proyectoPokemon\src\main\resources\es\cesur\progprojectpok\images" />
       <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\java\es\cesur\progprojectpok\daos" />
       <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\java\es\cesur\progprojectpok\database" />
-      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\images" />
-      <recent name="C:\Users\nicoa\Desktop\PROG-PROJECT-POK\src\main\resources\es\cesur\progprojectpok\view" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
       <recent name="es.cesur.progprojectpok.database.ConfigDB" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="es.cesur.progprojectpok.controllers" />
     </key>
   </component>
   <component name="RunManager" selected="Application.SplashApplication">
@@ -98,7 +125,7 @@
       <module name="PROG-PROJECT-POK" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.cesur.progprojectpok.*" />
+          <option name="PATTERN" value="es.cesur.progprojectpok.clases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,7 +138,7 @@
       <module name="PROG-PROJECT-POK" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.cesur.progprojectpok.*" />
+          <option name="PATTERN" value="es.cesur.progprojectpok.clases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -143,30 +170,7 @@
       <workItem from="1713436580219" duration="3256000" />
       <workItem from="1713779834408" duration="6976000" />
       <workItem from="1713803002481" duration="4500000" />
-      <workItem from="1713807596140" duration="1668000" />
-      <workItem from="1713809278598" duration="46000" />
-      <workItem from="1713854513020" duration="3262000" />
-      <workItem from="1713866212540" duration="1517000" />
-      <workItem from="1713867750730" duration="103000" />
-      <workItem from="1713867888184" duration="3433000" />
-      <workItem from="1713872025313" duration="3125000" />
-      <workItem from="1713897923689" duration="3573000" />
-      <workItem from="1714030843447" duration="164000" />
-      <workItem from="1714038718957" duration="1669000" />
-      <workItem from="1714040862625" duration="1452000" />
-      <workItem from="1714114765990" duration="625000" />
-      <workItem from="1714115781840" duration="520000" />
-      <workItem from="1714116926378" duration="865000" />
-      <workItem from="1714117822549" duration="365000" />
-      <workItem from="1714118259577" duration="4000" />
-      <workItem from="1714118288683" duration="261000" />
-      <workItem from="1714118685673" duration="136000" />
-      <workItem from="1714119260078" duration="145000" />
-      <workItem from="1714119493757" duration="220000" />
-      <workItem from="1714120030921" duration="201000" />
-      <workItem from="1714120351673" duration="682000" />
-      <workItem from="1714121063743" duration="1431000" />
-      <workItem from="1714130108156" duration="3495000" />
+      <workItem from="1713807596140" duration="1439000" />
     </task>
     <task id="LOCAL-00001" summary="Base del proyecto + menu de login.">
       <created>1712647307928</created>
@@ -197,39 +201,119 @@
       <option name="project" value="LOCAL" />
       <updated>1713776398551</updated>
     </task>
-    <task id="LOCAL-00005" summary="Logica de centro pokemon + retoques graficos">
-      <option name="closed" value="true" />
-      <created>1713809247194</created>
+    <task id="LOCAL-00005" summary="Logica inicial del combate.">
+      <created>1714380737688</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1713809247194</updated>
+      <updated>1714380737688</updated>
     </task>
-    <task id="LOCAL-00006" summary="Logica de centro pokemon ii">
-      <option name="closed" value="true" />
-      <created>1713875148128</created>
+    <task id="LOCAL-00006" summary="Solucion error en CrianzaController y AsignarController">
+      <created>1714385527131</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1713875148128</updated>
+      <updated>1714385527131</updated>
     </task>
-    <task id="LOCAL-00007" summary="Relacion vidaActual-ProgressBar en centro pokemon">
-      <option name="closed" value="true" />
-      <created>1713901466067</created>
+    <task id="LOCAL-00007" summary="Cambios en logica de combate">
+      <created>1714390522901</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1713901466067</updated>
+      <updated>1714390522901</updated>
     </task>
-    <task id="LOCAL-00008" summary="Correción del centroController">
-      <option name="closed" value="true" />
-      <created>1714115365862</created>
+    <task id="LOCAL-00008" summary="Logica combate + movimientos">
+      <created>1714478590496</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1714115365862</updated>
+      <updated>1714478590496</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Logica combate ii">
+      <created>1714556367093</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714556367093</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Funcionamiento inicial de los ataques">
+      <created>1714645044193</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714645044193</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Funcionamiento de cambiar pokemon en combate">
+      <created>1714651084002</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1714651084002</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Funcion que permite cargar los movimientos segun su tipo.">
+      <created>1714831992250</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1714831992250</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Logica del combate + funcionamiento de ataques del rival">
+      <created>1714927730904</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714927730904</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Logica de la experiencia + Funcionamiento subir de nivel">
+      <created>1714986809288</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714986809288</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Subir estadisticas + solucion errores combate">
+      <created>1715079668230</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1715079668230</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Implementacion restriccion de usos en los ataques + solucion de bugs">
+      <created>1715162098056</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1715162098056</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Funcionamiento completo del Entrenamiento.">
+      <created>1715683552918</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1715683552918</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Solucion error equipo + archivo querys sql">
+      <created>1715760054963</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1715760054963</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Optimizacion SonarLint en los Controladores de Batalla, Captura, Entrenamiento, Equipo y Login">
+      <created>1715769690471</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1715769690471</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Funcionalidad para aprender nuevos movimientos.">
+      <created>1715782781803</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1715782781803</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,10 +347,22 @@
     <MESSAGE value="Conexion a la base de datos" />
     <MESSAGE value="Solucion de error en la conexion a base de datos." />
     <MESSAGE value="Creacion de clases" />
-    <MESSAGE value="Logica de centro pokemon + retoques graficos" />
-    <MESSAGE value="Logica de centro pokemon ii" />
-    <MESSAGE value="Relacion vidaActual-ProgressBar en centro pokemon" />
-    <MESSAGE value="Correción del centroController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correción del centroController" />
+    <MESSAGE value="Logica inicial del combate." />
+    <MESSAGE value="Solucion error en CrianzaController y AsignarController" />
+    <MESSAGE value="Cambios en logica de combate" />
+    <MESSAGE value="Logica combate + movimientos" />
+    <MESSAGE value="Logica combate ii" />
+    <MESSAGE value="Funcionamiento inicial de los ataques" />
+    <MESSAGE value="Funcionamiento de cambiar pokemon en combate" />
+    <MESSAGE value="Funcion que permite cargar los movimientos segun su tipo." />
+    <MESSAGE value="Logica del combate + funcionamiento de ataques del rival" />
+    <MESSAGE value="Logica de la experiencia + Funcionamiento subir de nivel" />
+    <MESSAGE value="Subir estadisticas + solucion errores combate" />
+    <MESSAGE value="Implementacion restriccion de usos en los ataques + solucion de bugs" />
+    <MESSAGE value="Funcionamiento completo del Entrenamiento." />
+    <MESSAGE value="Solucion error equipo + archivo querys sql" />
+    <MESSAGE value="Optimizacion SonarLint en los Controladores de Batalla, Captura, Entrenamiento, Equipo y Login" />
+    <MESSAGE value="Funcionalidad para aprender nuevos movimientos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Funcionalidad para aprender nuevos movimientos." />
   </component>
 </project>

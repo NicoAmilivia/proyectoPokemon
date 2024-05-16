@@ -629,4 +629,7 @@ INSERT INTO OBJETO VALUES
                        (8,'pokeball',NULL,NULL,NULL,NULL,NULL,80);
 
 
+
+
+
 ALTER TABLE movimientos_pokemon CHANGE COLUMN ARCHIVO ACTIVO VARCHAR(10);

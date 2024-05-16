@@ -1,5 +1,17 @@
 package es.cesur.progprojectpok.clases;
 
+
+/**
+ * Representa un movimiento de ataque que puede ser utilizado por un Pokémon durante una batalla.
+ * Además de la información básica de un movimiento, contiene información sobre el tipo del movimiento y su potencia de ataque.
+ *
+ * @version 1.0
+ * @see Movimiento
+ * @see Tipo
+ * @author Nico
+ * @author Fernando
+ */
+
 public class MovimientoAtaque extends Movimiento {
 
     //ATRIBUTO
@@ -26,7 +38,15 @@ public class MovimientoAtaque extends Movimiento {
 
 
 
-    //Metodo de ataque
+    /**
+     * {@inheritDoc}
+     * Realiza el cálculo del daño infligido al Pokémon objetivo basado en la potencia de ataque del movimiento.
+     *
+     * @param atacante El Pokémon que realiza el movimiento de ataque.
+     * @param objetivo El Pokémon que recibe el ataque.
+     * @author Nico
+     * @author Fernando
+     */
 
     @Override
     public void usarMovimiento(Pokemon atacante, Pokemon objetivo) {

@@ -1,0 +1,24 @@
+
+\	java:S107>"BConstructor has 11 parameters, which is greater than 7 authorized.(¡ÅÚ«ıÿÿÿÿ
+V	java:S107M"BConstructor has 12 parameters, which is greater than 7 authorized.(ŠÚ
+
+\	java:S107\"BConstructor has 12 parameters, which is greater than 7 authorized.(ì²Ì·øÿÿÿÿ
+?
+java:S21401")Use "java.util.Random.nextInt()" instead.(•“©
+?
+java:S21402")Use "java.util.Random.nextInt()" instead.(ï¥¯ï
+?
+java:S21403")Use "java.util.Random.nextInt()" instead.(µ·É
+D
+java:S21404")Use "java.util.Random.nextInt()" instead.(Ò—ÏÕøÿÿÿÿ
+D
+java:S21405")Use "java.util.Random.nextInt()" instead.(„‡“ãıÿÿÿÿ
+D
+java:S21406")Use "java.util.Random.nextInt()" instead.(é«ÌÈüÿÿÿÿ
+M
+java:S1117r"8Rename "sexo" which hides the field declared at line 29.(¯ÎéX
+?
+java:S2140s")Use "java.util.Random.nextInt()" instead.(„·Ã
+d	java:S100”"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›­äü
+P
+java:S1128"5Remove this unused import 'javax.swing.text.Element'.(æÆÍ‚ıÿÿÿÿ

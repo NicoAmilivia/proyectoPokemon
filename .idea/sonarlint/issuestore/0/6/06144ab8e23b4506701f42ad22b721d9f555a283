@@ -1,0 +1,35 @@
+
+H	java:S106Þ"+Replace this use of System.out by a logger.(®ה־¶8×״ֽהק1
+H	java:S106„"+Replace this use of System.out by a logger.(×צםע8­״ֽהק1
+M	java:S106ˆ"+Replace this use of System.out by a logger.(”ֻ–־ÿÿÿÿÿ8­״ֽהק1
+a
+java:S1155­">Use isEmpty() to check whether the collection is empty or not.( ֽׂ÷תÿÿÿÿ8¯״ֽהק1
+}
+java:S6201Ý"ZReplace this instanceof check and cast with 'instanceof MovimientoAtaque movimientoataque'(ל»ל‏ÿÿÿÿ8²״ֽהק1
+}
+java:S6201א"ZReplace this instanceof check and cast with 'instanceof MovimientoMejora movimientomejora'(₪ׂ©–üÿÿÿÿ8²״ֽהק1
+}
+java:S6201"ZReplace this instanceof check and cast with 'instanceof MovimientoAtaque movimientoataque'(ל»ל‏ÿÿÿÿ8¹״ֽהק1
+}
+java:S6201"ZReplace this instanceof check and cast with 'instanceof MovimientoMejora movimientomejora'(₪ׂ©–üÿÿÿÿ8¼״ֽהק1
+}
+java:S6201»"ZReplace this instanceof check and cast with 'instanceof MovimientoAtaque movimientoataque'(ל»ל‏ÿÿÿÿ8¿״ֽהק1
+}
+java:S6201¾"ZReplace this instanceof check and cast with 'instanceof MovimientoMejora movimientomejora'(₪ׂ©–üÿÿÿÿ8¿״ֽהק1
+}
+java:S6201כ"ZReplace this instanceof check and cast with 'instanceof MovimientoAtaque movimientoataque'(ל»ל‏ÿÿÿÿ8ֱ״ֽהק1
+}
+java:S6201מ"ZReplace this instanceof check and cast with 'instanceof MovimientoMejora movimientomejora'(₪ׂ©–üÿÿÿÿ8ֲ״ֽהק1
+x
+java:S6201“"ZReplace this instanceof check and cast with 'instanceof MovimientoAtaque movimientoataque'(»°ױ­8ִ״ֽהק1
+x
+java:S6201•"ZReplace this instanceof check and cast with 'instanceof MovimientoMejora movimientomejora'(›ÚÜ8ֵ״ֽהק1
+J
+java:S1602±",Remove useless curly braces around statement(ֳֹ‏©8ָ״ֽהק1
+v
+java:S1612±"XReplace this lambda with method reference 'BatallaController.this::realizarAccionRival'.(ֳֹ‏©8ָ״ֽהק1
+M	java:S106ֱ"+Replace this use of System.out by a logger.(‘­‰ûÿÿÿÿ8ב״ֽהק1
+H	java:S106‎"+Replace this use of System.out by a logger.(מְ¯‎8ח״ֽהק1
+H	java:S106—"+Replace this use of System.out by a logger.(ƒֻא8ך״ֽהק1
+a
+java:S1155">Use isEmpty() to check whether the collection is empty or not.( ֽׂ÷תÿÿÿÿ8ך״ֽהק1

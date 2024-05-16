@@ -1,5 +1,16 @@
 package es.cesur.progprojectpok.clases;
 
+/**
+ * Representa un movimiento de mejora que puede ser utilizado por un Pokémon durante una batalla.
+ * Además de la información básica de un movimiento, contiene información sobre qué estadística del Pokémon será mejorada, la cantidad de mejora y la duración de la mejora.
+ *
+ * @version 1.0
+ * @see Movimiento
+ * @see CambiosEstado
+ * @author Nico
+ * @author Fernando
+ */
+
 public class MovimientoMejora extends Movimiento{
 
 
@@ -46,6 +57,15 @@ public class MovimientoMejora extends Movimiento{
         this.cantidadMejora = cantidadMejora;
     }
 
+
+    /**
+     * {@inheritDoc}
+     * Realiza la mejora de la estadística del Pokémon atacante según la especificación del movimiento.
+     *
+     * @param atacante El Pokémon que realiza el movimiento de mejora.
+     * @param objetivo El Pokémon objetivo, no utilizado en este método.
+     * @author Nico
+     */
     @Override
     public void usarMovimiento(Pokemon atacante, Pokemon objetivo) {
         super.usarMovimiento(atacante, objetivo);

@@ -64,7 +64,8 @@ public class EquipoController {
                 equipoListView.setItems(FXCollections.observableArrayList(equipo));
                 cajaListView.setItems(FXCollections.observableArrayList(caja));
             }
-        }
+        }else
+            logEquipo.appendText("El equipo no puede quedar vacio");
     }
 
     @FXML
@@ -79,9 +80,8 @@ public class EquipoController {
                 equipoListView.setItems(FXCollections.observableArrayList(equipo));
                 cajaListView.setItems(FXCollections.observableArrayList(caja));
             }
-        }else {
-
-        }
+        }else
+            logEquipo.appendText("El equipo no puede superar los 6 Pokemons");
     }
 
     private void cargarEquipoDesdeBD() {

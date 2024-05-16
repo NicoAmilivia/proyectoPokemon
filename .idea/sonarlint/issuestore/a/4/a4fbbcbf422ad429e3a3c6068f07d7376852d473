@@ -1,0 +1,35 @@
+
+H	java:S106Þ"+Replace this use of System.out by a logger.(®äÎ¶8Ø†Žµ÷1
+H	java:S106‡"+Replace this use of System.out by a logger.(ªöíò8Û†Žµ÷1
+M	java:S106‹"+Replace this use of System.out by a logger.(”Ë–Îÿÿÿÿÿ8Ü†Žµ÷1
+a
+java:S1155±">Use isEmpty() to check whether the collection is empty or not.( ÒÍºúÿÿÿÿ8ß†Žµ÷1
+}
+java:S6201á"ZReplace this instanceof check and cast with 'instanceof MovimientoAtaque movimientoataque'(ì»ìþÿÿÿÿ8å†Žµ÷1
+}
+java:S6201ä"ZReplace this instanceof check and cast with 'instanceof MovimientoMejora movimientomejora'(¤Ò©–üÿÿÿÿ8å†Žµ÷1
+}
+java:S6201"ZReplace this instanceof check and cast with 'instanceof MovimientoAtaque movimientoataque'(ì»ìþÿÿÿÿ8é†Žµ÷1
+}
+java:S6201“"ZReplace this instanceof check and cast with 'instanceof MovimientoMejora movimientomejora'(¤Ò©–üÿÿÿÿ8ê†Žµ÷1
+}
+java:S6201¿"ZReplace this instanceof check and cast with 'instanceof MovimientoAtaque movimientoataque'(ì»ìþÿÿÿÿ8î†Žµ÷1
+}
+java:S6201Â"ZReplace this instanceof check and cast with 'instanceof MovimientoMejora movimientomejora'(¤Ò©–üÿÿÿÿ8î†Žµ÷1
+}
+java:S6201ï"ZReplace this instanceof check and cast with 'instanceof MovimientoAtaque movimientoataque'(ì»ìþÿÿÿÿ8ò†Žµ÷1
+}
+java:S6201ò"ZReplace this instanceof check and cast with 'instanceof MovimientoMejora movimientomejora'(¤Ò©–üÿÿÿÿ8ò†Žµ÷1
+x
+java:S6201—"ZReplace this instanceof check and cast with 'instanceof MovimientoAtaque movimientoataque'(»°Õ­8õ†Žµ÷1
+x
+java:S6201™"ZReplace this instanceof check and cast with 'instanceof MovimientoMejora movimientomejora'(Ž›ÚÜ8ö†Žµ÷1
+J
+java:S1602µ",Remove useless curly braces around statement(ÃÉþ©8ù†Žµ÷1
+|
+java:S1612µ"^Replace this lambda with method reference 'EntrenamientoController.this::realizarAccionRival'.(ÃÉþ©8ù†Žµ÷1
+M	java:S106Æ"+Replace this use of System.out by a logger.(‘­ž‰ûÿÿÿÿ8ª‡Žµ÷1
+H	java:S106ƒ"+Replace this use of System.out by a logger.(îÀ¯ý8®‡Žµ÷1
+H	java:S106›"+Replace this use of System.out by a logger.(ƒŒËà8±‡Žµ÷1
+a
+java:S1155¢">Use isEmpty() to check whether the collection is empty or not.( ÒÍºúÿÿÿÿ8²‡Žµ÷1

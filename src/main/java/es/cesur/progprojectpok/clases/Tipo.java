@@ -1,5 +1,12 @@
 package es.cesur.progprojectpok.clases;
 
+/**
+ * Enumeración que representa los posibles tipos de un Pokemon.
+ * Cada tipo tiene ventajas y desventajas contra otros tipos en combate.
+ *
+ * @version 1.0
+ * @author Nico
+ */
 public enum Tipo {
     AGUA,
     BICHO,
@@ -19,6 +26,14 @@ public enum Tipo {
     NULL;
 
 
+
+    /**
+     * Convierte una cadena de texto en un valor de la enumeración Tipo.
+     *
+     * @param tipoString la cadena de texto que representa el tipo
+     * @return el valor de la enumeración correspondiente al tipo especificado
+     * @throws IllegalArgumentException si la cadena de texto no coincide con ningún tipo conocido
+     */
     public static Tipo TipoStringToEnum(String tipoString) {
         return switch (tipoString.toUpperCase()) {
             case "AGUA" -> AGUA;

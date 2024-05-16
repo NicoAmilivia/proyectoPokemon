@@ -1,5 +1,14 @@
 package es.cesur.progprojectpok.clases;
 
+
+/**
+ * Representa un objeto que puede ser utilizado por un Pokémon durante una batalla.
+ * Contiene información sobre bonificaciones, penalizaciones y otros efectos que el objeto puede tener en el Pokémon que lo utiliza.
+ *
+ * @version 1.0
+ * @author Nico
+ * @author Fernando
+ */
 public class Objeto {
 
 

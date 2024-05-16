@@ -1,0 +1,10 @@
+
+h	java:S112È"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ï‰ê‡ø1
+
+java:S1450-"bRemove the "pokemonSeleccionado" field and declare it as a local variable in the relevant methods.(¯ŒÂÜ8óÉ˜·÷1
+G	java:S106w"+Replace this use of System.out by a logger.(®äÎ¶8›Šê‡ø1
+M	java:S106’"+Replace this use of System.out by a logger.(â®ƒ„úÿÿÿÿ8Šê‡ø1
+G	java:S106”"+Replace this use of System.out by a logger.(çĞ&8Šê‡ø1
+M	java:S106—"+Replace this use of System.out by a logger.(‡åî®øÿÿÿÿ8ŸŠê‡ø1
+e
+java:S1117Ó"GRename "pokemonSeleccionado" which hides the field declared at line 45.(¼Û–ß8¶Šê‡ø1

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -38,6 +39,9 @@ public class CapturaController {
     }
 
     Random random = new Random();
+
+    @FXML
+    private TextArea logCaptura;
 
     public void initialize() {
 
@@ -124,15 +128,17 @@ public class CapturaController {
                 int filasInsertadas = statement.executeUpdate();
 
                 if (filasInsertadas > 0) {
-                    System.out.println("Pokemon insertado en la base de datos correctamente.");
+                    logCaptura.appendText("Has capturado al Pokemon " + pokemon.getNombre() + "\n");
                 } else {
                     System.out.println("No se pudo insertar el Pokemon en la base de datos.");
                 }
             } catch (SQLException e) {
                 System.out.println("Error al insertar el Pokemon en la base de datos: " + e.getMessage());
             }
-        }else
+        }else {
+            logCaptura.appendText("El pokemon ha escapado\n");
             capturarNuevoOnAction();
+        }
     }
 
 
@@ -162,11 +168,11 @@ public class CapturaController {
 
                 Pokemon pokemon = new Pokemon(nombrePokemon, pokemonId);
                 setPokemon(pokemon);
-                System.out.println(pokemon);
+                logCaptura.appendText("Ha aparecido un " + nombrePokemon + " salvaje");
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Pokemon no existente.");
+
         }
     }
 

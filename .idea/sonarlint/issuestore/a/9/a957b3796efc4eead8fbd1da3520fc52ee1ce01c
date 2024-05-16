@@ -1,0 +1,17 @@
+
+O
+java:S1481?"2Remove this unused "imagenPokemon" local variable.(úØÜ«8ºÙ‡ø1
+X
+java:S1117C";Rename "pokemon" which hides the field declared at line 23.(ûˆ•8»Ù‡ø1
+L	java:S106E"+Replace this use of System.out by a logger.(Ê·åıÿÿÿÿ8½Ù‡ø1
+G	java:S106I"+Replace this use of System.out by a logger.(•ö¤8½Ù‡ø1
+^
+java:S1117f"<Rename "capturar" which hides the field declared at line 32.(Ûìšîøÿÿÿÿ8ÍÙ‡ø1
+H	java:S106…"+Replace this use of System.out by a logger.(Ë¯¹İ8ĞÙ‡ø1
+M	java:S106ˆ"+Replace this use of System.out by a logger.(‚‡½şÿÿÿÿ8ĞÙ‡ø1
+P
+java:S1481¥"2Remove this unused "imagenPokemon" local variable.(úØÜ«8ÒÙ‡ø1
+Y
+java:S1117©";Rename "pokemon" which hides the field declared at line 23.(ûˆ•8ÒÙ‡ø1
+\
+java:S1128"@Remove this unused import 'es.cesur.progprojectpok.clases.Tipo'.(İ­8ÕÙ‡ø1

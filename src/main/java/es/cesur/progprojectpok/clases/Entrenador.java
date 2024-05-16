@@ -1,5 +1,14 @@
 package es.cesur.progprojectpok.clases;
 
+
+/**
+ * Representa a un Entrenador en el juego.
+ * Contiene atributos que describen las características del Entrenador, como su identificador, nombre y cantidad de PokeDólares.
+ *
+ * @version 1.0
+ * @author Fernando
+ */
+
 public class Entrenador {
 
     //ATRIBUTOS

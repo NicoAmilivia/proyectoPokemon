@@ -21,5 +21,6 @@
             <Image url="@../images/bulbasaur.png" />
          </image>
       </ImageView>
+      <TextArea fx:id="logCaptura" layoutX="153.0" layoutY="53.0" prefHeight="52.0" prefWidth="284.0" />
    </children>
 </AnchorPane>

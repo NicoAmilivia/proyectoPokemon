@@ -1,5 +1,15 @@
 package es.cesur.progprojectpok.clases;
 
+
+/**
+ * Representa un movimiento que puede ser utilizado por un Pokémon durante una batalla.
+ * Contiene información sobre el nombre del movimiento y su número de usos.
+ *
+ * @version 1.0
+ * @see Pokemon
+ * @author Nico
+ * @author Fernando
+ */
 public class Movimiento {
 
     //ATRIBUTOS
@@ -38,7 +48,14 @@ public class Movimiento {
 
 
 
-    //Metodo para atacar
+    /**
+     * Método para ejecutar el movimiento sobre un Pokémon atacante y un Pokémon objetivo.
+     * Este método debe ser sobreescrito por cada tipo de movimiento específico.
+     *
+     * @param atacante El Pokémon que realiza el movimiento.
+     * @param objetivo El Pokémon que recibe el movimiento.
+     * @author Nico
+     */
 
     public void usarMovimiento(Pokemon atacante, Pokemon objetivo){
         //Metodo vacio para ser sobreescrito en cada tipo de ataque
