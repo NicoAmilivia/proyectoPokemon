@@ -38,6 +38,6 @@
          </effect>
       </ImageView>
       <ListView fx:id="hembraViewList" layoutX="343.0" layoutY="102.0" opacity="0.85" prefHeight="346.0" prefWidth="235.0" />
-      <TextField fx:id="logCrianza" layoutX="164.0" layoutY="4.0" prefHeight="69.0" prefWidth="285.0" />
+      <TextField fx:id="logCrianza" layoutX="123.0" layoutY="4.0" prefHeight="69.0" prefWidth="343.0" />
    </children>
 </AnchorPane>
