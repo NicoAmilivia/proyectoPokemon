@@ -36,3 +36,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Carpeta comentariosJavadoc ###
+src/main/java/es/cesur/progprojectpok/comentariosJavadoc/
