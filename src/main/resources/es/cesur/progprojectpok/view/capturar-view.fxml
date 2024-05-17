@@ -13,14 +13,29 @@
             <Image url="@../images/fondo-captura.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="capturar" layoutX="149.0" layoutY="215.0" mnemonicParsing="false" onAction="#capturarOnAction" prefHeight="40.0" prefWidth="109.0" text="Capturar" />
-      <Button fx:id="capturarNuevo" layoutX="355.0" layoutY="215.0" mnemonicParsing="false" onAction="#capturarNuevoOnAction" prefHeight="40.0" prefWidth="109.0" text="Nuevo" />
-      <Button fx:id="irMenuFromCapturarButton" layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#irMenuFromCapturarOnAction" text="Huir" />
+      <Button fx:id="capturar" layoutX="143.0" layoutY="258.0" mnemonicParsing="false" onAction="#capturarOnAction" prefHeight="40.0" prefWidth="109.0" text="Capturar" />
+      <Button fx:id="capturarNuevo" layoutX="359.0" layoutY="258.0" mnemonicParsing="false" onAction="#capturarNuevoOnAction" prefHeight="40.0" prefWidth="109.0" text="Nuevo" />
+      <Button fx:id="irMenuFromCapturarButton" layoutX="517.0" layoutY="14.0" mnemonicParsing="false" onAction="#irMenuFromCapturarOnAction" text="Huir" />
       <ImageView fx:id="pokemonImageView" fitHeight="303.0" fitWidth="232.0" layoutX="197.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/bulbasaur.png" />
          </image>
       </ImageView>
-      <TextArea fx:id="logCaptura" layoutX="153.0" layoutY="53.0" prefHeight="52.0" prefWidth="284.0" />
+      <TextArea fx:id="logCaptura" layoutX="164.0" layoutY="148.0" prefHeight="52.0" prefWidth="284.0" />
+      <Pane layoutX="14.0" opacity="0.8" prefHeight="101.0" prefWidth="140.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="14.0" layoutY="-1.0">
+         <image>
+            <Image url="@../images/pokemons/pokeball-objeto.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="65.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEBALLS">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+      <Text fx:id="num_pokeball" fill="RED" layoutX="70.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
