@@ -164,6 +164,9 @@ public class CapturaController {
                 } catch (SQLException e) {
                     System.out.println("Error al insertar el Pokemon en la base de datos: " + e.getMessage());
                 }
+
+                capturarNuevoOnAction();
+                
             } else {
                 logCaptura.appendText("El pokemon ha escapado\n");
                 capturarNuevoOnAction();

@@ -126,6 +126,9 @@ public class BatallaController {
         setPokemonRivalEnCombate(equipoRival.get(0));
 
 
+        comprobarObjetoPok(pokemonJugadorEnCombate);
+
+
 
         Pokemon primerPokemon = equipo.get(0);
 
@@ -632,6 +635,7 @@ public class BatallaController {
                 setPokemonJugadorEnCombate(siguientePokemon);
 
                 cambiarInfoPokemon();
+                comprobarObjetoPok(pokemonJugadorEnCombate);
             }
         }
 
@@ -721,6 +725,7 @@ public class BatallaController {
 
                 equipo.set(indicePokemonCambiar, pokemonJugadorEnCombate);
 
+                comprobarObjetoPok(pokemonJugadorEnCombate);
             });
 
             menuStage.show();
@@ -997,6 +1002,70 @@ public class BatallaController {
             }catch (SQLException e){
                 e.printStackTrace();
             }
+        }
+    }
+
+    private void comprobarObjetoPok(Pokemon pokemon){
+
+        String sql = "SELECT ID_OBJETO FROM POKEMON WHERE ID_POKEMON = ?";
+
+        try(Connection connection = DBConnection.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql)){
+
+            statement.setInt(1, pokemon.getIdPokemon());
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+
+                int idObjeto= resultSet.getInt("ID_OBJETO");
+
+                switch (idObjeto) {
+                    case 1:
+                        //Pesa: Aumenta el ataque y la defensa un 20%, pero disminuye su velocidad un 20%
+                        pokemon.setAtaque((int) Math.round(pokemon.getAtaque() * 1.2));
+                        pokemon.setDefensa((int) Math.round(pokemon.getDefensa() * 1.2));
+                        pokemon.setVelocidad((int) Math.round(pokemon.getVelocidad() * 0.8));
+                        break;
+
+                    case 2:
+                        //Pluma: Aumenta la velocidad un 30%, pero disminuye la defensa y la defensa especial en un 20%
+                        pokemon.setVelocidad((int) Math.round(pokemon.getVelocidad() * 1.3));
+                        pokemon.setDefensa((int) Math.round(pokemon.getDefensa() * 0.8));
+                        pokemon.setDefensaEspecial((int) Math.round(pokemon.getDefensaEspecial() * 0.8));
+                        break;
+
+                    case 3:
+                        //Chaleco: Aumenta la defensa y la defensa especial un 20%, pero disminuye la velocidad y el ataque un 15%
+                        pokemon.setDefensa((int) Math.round(pokemon.getDefensa() * 1.2));
+                        pokemon.setDefensaEspecial((int) Math.round(pokemon.getDefensaEspecial() * 1.2));
+                        pokemon.setVelocidad((int) Math.round(pokemon.getVelocidad() * 0.85));
+                        pokemon.setAtaque((int) Math.round(pokemon.getAtaque() * 0.85));
+                        break;
+
+                    case 4:
+                        //Baston: Aumenta la estamina un 20%, pero disminuye en un 15% la velocidad
+                        pokemon.setVelocidad((int) Math.round(pokemon.getVelocidad() * 0.85));
+                        break;
+
+                    case 5:
+                        //Pilas: Aumenta la recuperación de estamina en un 50%, pero disminuye la defensa especial un 30%
+                        pokemon.setDefensaEspecial((int) Math.round(pokemon.getDefensaEspecial() * 0.7));
+                        break;
+
+                    default:
+                        //Caso por defecto si el idObjeto no coincide con ninguno de los casos anteriores
+
+                        break;
+                }
+
+
+            }
+
+            log.appendText(pokemon.getNombre() + " ha aprendido un nuevo movimiento.\n");
+
+        }catch (SQLException e){
+            e.printStackTrace();
         }
     }
 
