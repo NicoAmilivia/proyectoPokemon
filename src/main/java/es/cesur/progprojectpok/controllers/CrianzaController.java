@@ -200,16 +200,30 @@ public class CrianzaController {
 
 
 
-
-
-
-
-
     private void reducirFertilidadPadres(Pokemon pokemon) {
-
         int nuevaFertilidad = pokemon.getFertilidad() - 1;
-        pokemon.setFertilidad(Math.max(nuevaFertilidad, 0));
+        pokemon.setFertilidad(nuevaFertilidad);
+
+        String updateFertilidad = "UPDATE POKEMON SET FERTILIDAD = ? WHERE ID_POKEMON = ?";
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(updateFertilidad)) {
+
+            statement.setInt(1, nuevaFertilidad);
+            statement.setInt(2, pokemon.getIdPokemon());
+
+            int rowsAffected = statement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Fertilidad actualizada correctamente para el Pokémon con ID: " + pokemon.getIdPokemon());
+            } else {
+                System.out.println("No se encontró el Pokémon con ID: " + pokemon.getIdPokemon());
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar la fertilidad del Pokémon");
+            e.printStackTrace();
+        }
     }
+
 
     private char randomSex() {
         return Math.random() < 0.5 ? 'M' : 'H';
