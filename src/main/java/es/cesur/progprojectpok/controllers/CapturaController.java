@@ -12,10 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Random;
 
 public class CapturaController {
@@ -106,7 +103,7 @@ public class CapturaController {
         if (capturar >= 1) {
 
             try (Connection connection = DBConnection.getConnection();
-                 PreparedStatement statement = connection.prepareStatement(sql)) {
+                 PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
                 statement.setInt(1, pokemon.getNumPokedex());
                 statement.setInt(2, 1);
@@ -132,6 +129,27 @@ public class CapturaController {
                 } else {
                     System.out.println("No se pudo insertar el Pokemon en la base de datos.");
                 }
+
+
+                try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        int idPokemon = generatedKeys.getInt(1);
+                        pokemon.setIdPokemon(idPokemon);
+
+                        String insertMovimiento = "INSERT INTO MOVIMIENTOS_POKEMON (ID_MOVIMIENTO, ID_POKEMON, ACTIVO ) VALUES (?,?,?)";
+                        try (PreparedStatement statementMovimiento = connection.prepareStatement(insertMovimiento)){
+                            statementMovimiento.setInt(1, 7);
+                            statementMovimiento.setInt(2,pokemon.getIdPokemon());
+                            statementMovimiento.setString(3,"S");
+                            statementMovimiento.executeUpdate();
+                        }
+
+                    } else {
+                        throw new SQLException("No se generó ningún ID para el Pokémon");
+                    }
+
+                }
+
             } catch (SQLException e) {
                 System.out.println("Error al insertar el Pokemon en la base de datos: " + e.getMessage());
             }
@@ -168,7 +186,7 @@ public class CapturaController {
 
                 Pokemon pokemon = new Pokemon(nombrePokemon, pokemonId);
                 setPokemon(pokemon);
-                logCaptura.appendText("Ha aparecido un " + nombrePokemon + " salvaje");
+                logCaptura.appendText("Ha aparecido un " + nombrePokemon + " salvaje\n");
             }
         } catch (SQLException e) {
             e.printStackTrace();

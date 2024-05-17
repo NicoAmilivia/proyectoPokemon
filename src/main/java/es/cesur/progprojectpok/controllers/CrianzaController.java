@@ -175,21 +175,21 @@ public class CrianzaController {
 
 
 
-            pokemonHijo = new Pokemon();
-            pokemonHijo.setNombre(machoSeleccionado.getNombre());
-            pokemonHijo.setNumPokedex(machoSeleccionado.getNumPokedex());
-            pokemonHijo.setSexo(randomSex());
-            pokemonHijo.setTipo1(machoSeleccionado.getTipo1());
-            pokemonHijo.setTipo2(machoSeleccionado.getTipo2());
-            pokemonHijo.setFertilidad(Math.max(machoSeleccionado.getFertilidad(), hembraSeleccionada.getFertilidad()));
-            pokemonHijo.setAtaque(Math.max(machoSeleccionado.getAtaque(), hembraSeleccionada.getAtaque()));
-            pokemonHijo.setDefensa(Math.max(machoSeleccionado.getDefensa(), hembraSeleccionada.getDefensa()));
-            pokemonHijo.setAtaqueEspecial(Math.max(machoSeleccionado.getAtaqueEspecial(), hembraSeleccionada.getAtaqueEspecial()));
-            pokemonHijo.setDefensaEspecial(Math.max(machoSeleccionado.getDefensaEspecial(), hembraSeleccionada.getDefensaEspecial()));
-            pokemonHijo.setVelocidad(Math.max(machoSeleccionado.getVelocidad(), hembraSeleccionada.getVelocidad()));
-            pokemonHijo.setNivel(1);
-            pokemonHijo.setExperiencia(0);
-            pokemonHijo.setVitalidad(Math.max(machoSeleccionado.getVitalidad(), hembraSeleccionada.getVitalidad()));
+        pokemonHijo = new Pokemon();
+        pokemonHijo.setNombre(machoSeleccionado.getNombre());
+        pokemonHijo.setNumPokedex(machoSeleccionado.getNumPokedex());
+        pokemonHijo.setSexo(randomSex());
+        pokemonHijo.setTipo1(machoSeleccionado.getTipo1());
+        pokemonHijo.setTipo2(machoSeleccionado.getTipo2());
+        pokemonHijo.setFertilidad(Math.max(machoSeleccionado.getFertilidad(), hembraSeleccionada.getFertilidad()));
+        pokemonHijo.setAtaque(Math.max(machoSeleccionado.getAtaque(), hembraSeleccionada.getAtaque()));
+        pokemonHijo.setDefensa(Math.max(machoSeleccionado.getDefensa(), hembraSeleccionada.getDefensa()));
+        pokemonHijo.setAtaqueEspecial(Math.max(machoSeleccionado.getAtaqueEspecial(), hembraSeleccionada.getAtaqueEspecial()));
+        pokemonHijo.setDefensaEspecial(Math.max(machoSeleccionado.getDefensaEspecial(), hembraSeleccionada.getDefensaEspecial()));
+        pokemonHijo.setVelocidad(Math.max(machoSeleccionado.getVelocidad(), hembraSeleccionada.getVelocidad()));
+        pokemonHijo.setNivel(1);
+        pokemonHijo.setExperiencia(0);
+        pokemonHijo.setVitalidad(Math.max(machoSeleccionado.getVitalidad(), hembraSeleccionada.getVitalidad()));
 
 
 
@@ -274,7 +274,7 @@ public class CrianzaController {
     @FXML
     public void abrirHuevoOnAction() {
         if (pokemonHijo == null) {
-            logCrianza.setText("No hay huevo que abrir. Realiza primero la crianza.");
+            logCrianza.setText("No hay huevo que abrir. Realiza primero la crianza.\n");
             return;
         }
 
