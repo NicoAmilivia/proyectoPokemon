@@ -21,6 +21,8 @@ import java.sql.SQLException;
 
 public class CentroController {
 
+    public static final String VIDA_ACTUAL = "VIDA_ACTUAL";
+    public static final String VITALIDAD = "VITALIDAD";
     @FXML
     private Button irMenuFromCentroButton;
 
@@ -99,8 +101,8 @@ public class CentroController {
 
             while (resultSet.next() && i <= 6) {
                 String imageUrl = resultSet.getString("IMAGEN");
-                int vidaActual = resultSet.getInt("VIDA_ACTUAL");
-                int vidaMaxima = resultSet.getInt("VITALIDAD");
+                int vidaActual = resultSet.getInt(VIDA_ACTUAL);
+                int vidaMaxima = resultSet.getInt(VITALIDAD);
                 String motePokemon = resultSet.getString("MOTE");
                 Image image = new Image(getClass().getResource(imageUrl).toExternalForm());
 
@@ -161,8 +163,8 @@ public class CentroController {
             ResultSet resultSet = checkStatement.executeQuery();
 
             while (resultSet.next()) {
-                int vidaActual = resultSet.getInt("VIDA_ACTUAL");
-                int vidaMaxima = resultSet.getInt("VITALIDAD");
+                int vidaActual = resultSet.getInt(VIDA_ACTUAL);
+                int vidaMaxima = resultSet.getInt(VITALIDAD);
 
                 if (vidaActual < vidaMaxima) {
                     necesitaRecuperacion = true;
@@ -178,8 +180,8 @@ public class CentroController {
 
                 int i = 1;
                 while (resultSet.next() && i <= 6) {
-                    int vidaActual = resultSet.getInt("VIDA_ACTUAL");
-                    int vidaMaxima = resultSet.getInt("VITALIDAD");
+                    int vidaActual = resultSet.getInt(VIDA_ACTUAL);
+                    int vidaMaxima = resultSet.getInt(VITALIDAD);
 
                     ProgressBar pokemonProgressBar = switch (i) {
                         case 1 -> progressPK1;
